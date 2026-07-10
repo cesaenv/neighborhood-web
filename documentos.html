@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentos y Archivos · Aldeanueva de Cameros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .page-hero {
+      position: relative; padding: 160px 0 80px;
+      background: var(--dark); overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('assets/img/villa/escuela1.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .page-hero-content {
+      position: relative; z-index: 1;
+      text-align: center; color: var(--white);
+    }
+    .page-hero-content .section-tag { margin-bottom: 16px; }
+    .page-hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+    }
+    .page-hero-content p {
+      color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto; font-size: 1.05rem;
+    }
+    .page-breadcrumb {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 28px; font-size: 0.82rem; color: rgba(255,255,255,.45);
+    }
+    .page-breadcrumb a { color: rgba(255,255,255,.65); transition: color var(--transition); }
+    .page-breadcrumb a:hover { color: var(--white); }
+    .page-breadcrumb span { color: rgba(255,255,255,.3); }
+
+    .docs-section { padding: 80px 0 96px; background: var(--stone-light); }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 110px 0 56px; }
+      .docs-section { padding: 56px 0 72px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero { padding: 96px 0 44px; }
+      .docs-section { padding: 40px 0 56px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-escudo">⛰️</span>
+        <div>
+          <span class="nav-title">Aldeanueva de Cameros</span>
+          <span class="nav-subtitle">Asociación de Vecinos</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#noticias">Noticias <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#noticias">Últimas noticias</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-noticias.html" class="dropdown-highlight">📰 Histórico de noticias</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#fiestas">Fiestas <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#fiestas">Programa de fiestas</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-fiestas.html" class="dropdown-highlight">📅 Histórico de fiestas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#actividades">Actividades <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#actividades">Próximas actividades</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-actividades.html" class="dropdown-highlight">📋 Histórico de actividades</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#patrimonio">Patrimonio</a></li>
+        <li><a href="index.html#naturaleza">Naturaleza</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#contacto">Contacto <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="merchandising.html" class="dropdown-highlight">🛍️ Tienda</a></li>
+            <li><a href="documentos.html" class="dropdown-highlight">📄 Documentos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag section-tag--light">Archivo</span>
+        <h1>Documentos y Archivos</h1>
+        <p>Memoria documental de la asociación y del pueblo de Aldeanueva de Cameros</p>
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <a href="index.html#contacto">Contacto</a>
+          <span>›</span>
+          <span>Documentos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCUMENTOS -->
+  <section class="docs-section">
+    <div class="container">
+      <div class="docs-categories">
+
+        <div class="doc-category">
+          <div class="doc-cat-header">
+            <span class="doc-cat-icon">📋</span>
+            <h3>Asociación de Vecinos</h3>
+          </div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Estatutos de la Asociación</span>
+                <span class="doc-meta">PDF · Vigente</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Acta Asamblea 2025</span>
+                <span class="doc-meta">PDF · Dic 2025</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📊</span>
+              <div class="doc-info">
+                <span class="doc-name">Presupuesto anual 2026</span>
+                <span class="doc-meta">PDF · Ene 2026</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📋</span>
+              <div class="doc-info">
+                <span class="doc-name">Memoria de actividades 2025</span>
+                <span class="doc-meta">PDF · Dic 2025</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-header">
+            <span class="doc-cat-icon">🎉</span>
+            <h3>Fiestas y Eventos</h3>
+          </div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Programa Fiestas Patronales 2025</span>
+                <span class="doc-meta">PDF · Jul 2025</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">🖼️</span>
+              <div class="doc-info">
+                <span class="doc-name">Cartel Fiestas 2025</span>
+                <span class="doc-meta">Imagen · Jul 2025</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Crónica Fiestas 2024</span>
+                <span class="doc-meta">PDF · Ago 2024</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-header">
+            <span class="doc-cat-icon">🏛️</span>
+            <h3>Patrimonio e Historia</h3>
+          </div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Inventario del patrimonio local</span>
+                <span class="doc-meta">PDF · 2023</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Estudio de las icnitas de dinosaurio</span>
+                <span class="doc-meta">PDF · Riojarchivo</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📷</span>
+              <div class="doc-info">
+                <span class="doc-name">Archivo fotográfico histórico</span>
+                <span class="doc-meta">Carpeta · Varios años</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Archivo disponible próximamente')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-header">
+            <span class="doc-cat-icon">🏗️</span>
+            <h3>Gestión Municipal</h3>
+          </div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Solicitudes al Ayuntamiento 2025</span>
+                <span class="doc-meta">PDF · 2025</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+            <div class="doc-item">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-name">Plan de mejora de infraestructuras</span>
+                <span class="doc-meta">PDF · 2024</span>
+              </div>
+              <button class="doc-btn" onclick="alert('Documento disponible próximamente')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand" style="flex-direction:column;align-items:flex-start;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <span class="footer-escudo">⛰️</span>
+          <div>
+            <h4>Aldeanueva de Cameros</h4>
+            <p>Asociación de Vecinos</p>
+          </div>
+        </div>
+        <p class="footer-desc">Preservando la memoria, fomentando la comunidad y difundiendo la riqueza de nuestro pueblo en la Sierra de Cameros, La Rioja.</p>
+        <div class="footer-links">
+          <a href="https://www.larioja.org" target="_blank" rel="noopener">Gobierno de La Rioja</a>
+          <a href="https://lariojaturismo.com" target="_blank" rel="noopener">La Rioja Turismo</a>
+          <a href="https://www.riojarchivo.com/localidad/aldeanueva-de-cameros/" target="_blank" rel="noopener">Riojarchivo</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="index.html#fiestas">Fiestas</a></li>
+          <li><a href="index.html#patrimonio">Patrimonio</a></li>
+          <li><a href="index.html#naturaleza">Naturaleza</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="merchandising.html">Tienda</a></li>
+          <li><a href="documentos.html">Documentos</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-data">
+        <h5>El pueblo en cifras</h5>
+        <ul class="footer-stats">
+          <li><span>Municipio</span><strong>Villanueva de Cameros</strong></li>
+          <li><span>Comarca</span><strong>Sierra de Cameros</strong></li>
+          <li><span>Altitud</span><strong>1.140 m s.n.m.</strong></li>
+          <li><span>Río</span><strong>Iregua</strong></li>
+          <li><span>Provincia</span><strong>La Rioja</strong></li>
+          <li><span>Fiestas</span><strong>25-26 de Julio</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Asociación de Vecinos de Aldeanueva de Cameros · La Rioja · España</p>
+      <p>Diseñado con ❤️ para nuestro pueblo</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      const navbar = document.getElementById('navbar');
+      if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('open');
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+    document.querySelectorAll('.nav-item-dropdown').forEach(item => {
+      item.querySelector(':scope > a').addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

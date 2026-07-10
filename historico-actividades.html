@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico de Actividades · Aldeanueva de Cameros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ── Page hero ────────────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      padding: 160px 0 80px;
+      background: var(--dark);
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('assets/img/villa/paisaje1.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .page-hero-content {
+      position: relative; z-index: 1;
+      text-align: center; color: var(--white);
+    }
+    .page-hero-content .section-tag { margin-bottom: 16px; }
+    .page-hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .page-hero-content p {
+      color: rgba(255,255,255,.7);
+      max-width: 520px; margin: 0 auto;
+      font-size: 1.05rem;
+    }
+    .page-breadcrumb {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 28px;
+      font-size: 0.82rem; color: rgba(255,255,255,.45);
+    }
+    .page-breadcrumb a { color: rgba(255,255,255,.65); transition: color var(--transition); }
+    .page-breadcrumb a:hover { color: var(--white); }
+    .page-breadcrumb span { color: rgba(255,255,255,.3); }
+
+    /* ── Filtro categorías ────────────────────────────────────── */
+    .cat-nav {
+      background: var(--stone-light);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+      position: sticky; top: 60px; z-index: 100;
+    }
+    .cat-nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; gap: 4px; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-nav-inner::-webkit-scrollbar { display: none; }
+    .cat-btn {
+      padding: 14px 22px; font-size: 0.88rem; font-weight: 600;
+      border: none; background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all var(--transition);
+      white-space: nowrap; border-bottom: 3px solid transparent;
+      flex-shrink: 0;
+    }
+    .cat-btn:hover { color: var(--text); }
+    .cat-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+    /* ── Timeline ─────────────────────────────────────────────── */
+    .actividades-section {
+      padding: 80px 0 96px;
+      background: var(--white);
+    }
+
+    .act-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* línea vertical central */
+    .act-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+
+    .act-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      align-items: start;
+      margin-bottom: 64px;
+      gap: 0;
+    }
+    .act-item:last-child { margin-bottom: 0; }
+
+    /* Nodo central */
+    .act-node {
+      grid-column: 2;
+      display: flex; flex-direction: column; align-items: center;
+      z-index: 2; padding: 0 8px;
+    }
+    .act-dot {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--red); border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .act-year-label {
+      font-size: 0.72rem; font-weight: 700; color: var(--red);
+      letter-spacing: .06em; margin-top: 6px; white-space: nowrap;
+    }
+
+    /* Tarjeta (izquierda o derecha) */
+    .act-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .act-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .act-card-left  { grid-column: 1; margin-right: 16px; }
+    .act-card-right { grid-column: 3; margin-left: 16px; }
+    .act-spacer-left  { grid-column: 1; }
+    .act-spacer-right { grid-column: 3; }
+
+    .act-foto {
+      height: 200px; overflow: hidden; position: relative; cursor: pointer;
+    }
+    .act-foto img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .act-foto:hover img { transform: scale(1.06); }
+    .act-foto-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      background: linear-gradient(135deg, var(--stone-light), #e5e7eb);
+      color: var(--text-muted); font-size: 0.85rem;
+    }
+    .act-foto-placeholder-icon { font-size: 2rem; }
+    .act-foto-zoom {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(0,0,0,.45); color: var(--white);
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; opacity: 0; transition: opacity var(--transition);
+    }
+    .act-foto:hover .act-foto-zoom { opacity: 1; }
+    .act-foto:has(.act-foto-placeholder) { cursor: default; }
+    .act-foto:has(.act-foto-placeholder) .act-foto-zoom { display: none; }
+
+    .act-body { padding: 20px 22px 22px; }
+    .act-cat {
+      font-size: 0.7rem; font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px;
+    }
+    .act-body h3 {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .act-body p {
+      color: var(--text-muted); font-size: 0.88rem; line-height: 1.65;
+    }
+    .act-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px;
+    }
+    .act-tag {
+      padding: 3px 10px; border-radius: 100px;
+      background: var(--stone-light); color: var(--stone);
+      font-size: 0.72rem; font-weight: 500;
+    }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .historico-cta {
+      background: var(--dark); padding: 72px 0; text-align: center; color: var(--white);
+    }
+    .historico-cta h2 {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 16px;
+    }
+    .historico-cta p { color: rgba(255,255,255,.65); max-width: 480px; margin: 0 auto 28px; }
+
+    /* ── Lightbox ─────────────────────────────────────────────── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.93); backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+
+    .lightbox-inner {
+      position: relative; display: flex; flex-direction: column; align-items: center;
+      max-width: 92vw; max-height: 92vh;
+    }
+    .lightbox-img {
+      max-width: 90vw; max-height: 80vh;
+      object-fit: contain; border-radius: var(--radius);
+      box-shadow: 0 24px 80px rgba(0,0,0,.6);
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .lightbox-meta {
+      margin-top: 16px; text-align: center;
+    }
+    .lightbox-title {
+      color: var(--white); font-family: var(--font-serif);
+      font-size: 1.1rem; font-weight: 600;
+    }
+    .lightbox-desc {
+      color: rgba(255,255,255,.55); font-size: 0.82rem; margin-top: 4px;
+    }
+    .lightbox-close {
+      position: fixed; top: 20px; right: 24px;
+      background: rgba(255,255,255,.12); border: none; color: var(--white);
+      font-size: 1.4rem; width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background var(--transition); z-index: 10;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.24); }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .page-hero { padding: 110px 0 56px; }
+    }
+    @media (max-width: 720px) {
+      .page-hero { padding: 96px 0 44px; }
+      .act-timeline::before { left: 20px; }
+      .act-item {
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto auto;
+      }
+      .act-node {
+        grid-column: 1; grid-row: 1;
+        flex-direction: row; align-items: center; gap: 8px;
+        padding: 0 0 12px 0;
+      }
+      .act-year-label { margin-top: 0; }
+      .act-dot { width: 36px; height: 36px; font-size: 0.9rem; }
+      .act-card-left,
+      .act-card-right { grid-column: 2; grid-row: 2; margin: 0; }
+      .act-spacer-left,
+      .act-spacer-right { display: none; }
+    }
+    @media (max-width: 480px) {
+      .act-body { padding: 16px; }
+      .act-foto { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-escudo">⛰️</span>
+        <div>
+          <span class="nav-title">Aldeanueva de Cameros</span>
+          <span class="nav-subtitle">Asociación de Vecinos</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#noticias">Noticias</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#fiestas">Fiestas <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#fiestas">Programa de fiestas</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-fiestas.html" class="dropdown-highlight">📅 Histórico de fiestas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#actividades">Actividades <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#actividades">Próximas actividades</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-actividades.html" class="dropdown-highlight">📋 Histórico de actividades</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#patrimonio">Patrimonio</a></li>
+        <li><a href="index.html#naturaleza">Naturaleza</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#contacto">Contacto <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="merchandising.html" class="dropdown-highlight">🛍️ Tienda</a></li>
+            <li><a href="documentos.html" class="dropdown-highlight">📄 Documentos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag section-tag--light">Memoria de la asociación</span>
+        <h1>Histórico de Actividades</h1>
+        <p>Todo lo que hemos organizado, construido y celebrado juntos a lo largo del tiempo</p>
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <span>Histórico de Actividades</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTRO CATEGORÍAS -->
+  <nav class="cat-nav" id="catNav" aria-label="Filtrar por categoría">
+    <div class="cat-nav-inner">
+      <button class="cat-btn active" data-cat="todas">Todas</button>
+      <button class="cat-btn" data-cat="patrimonio">Patrimonio</button>
+      <button class="cat-btn" data-cat="naturaleza">Naturaleza</button>
+      <button class="cat-btn" data-cat="comunidad">Comunidad</button>
+      <button class="cat-btn" data-cat="cultura">Cultura</button>
+      <button class="cat-btn" data-cat="mejoras">Mejoras del pueblo</button>
+    </div>
+  </nav>
+
+  <!-- TIMELINE DE ACTIVIDADES -->
+  <section class="actividades-section">
+    <div class="container">
+      <div class="act-timeline" id="actTimeline">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="historico-cta">
+    <div class="container">
+      <h2>¿Nos falta alguna actividad?</h2>
+      <p>Si recuerdas alguna iniciativa o actividad que no aparece en este histórico, cuéntanosla. Queremos que este archivo sea lo más completo posible.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Actividad para el histórico" class="btn btn-primary">Sugerir actividad</a>
+        <a href="index.html#contacto" class="btn btn-outline">Contactar con la asociación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand" style="flex-direction:column;align-items:flex-start;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <span class="footer-escudo">⛰️</span>
+          <div>
+            <h4>Aldeanueva de Cameros</h4>
+            <p>Asociación de Vecinos</p>
+          </div>
+        </div>
+        <p class="footer-desc">Preservando la memoria, fomentando la comunidad y difundiendo la riqueza de nuestro pueblo en la Sierra de Cameros, La Rioja.</p>
+        <div class="footer-links">
+          <a href="https://www.larioja.org" target="_blank" rel="noopener">Gobierno de La Rioja</a>
+          <a href="https://lariojaturismo.com" target="_blank" rel="noopener">La Rioja Turismo</a>
+          <a href="https://www.riojarchivo.com/localidad/aldeanueva-de-cameros/" target="_blank" rel="noopener">Riojarchivo</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="index.html#fiestas">Fiestas</a></li>
+          <li><a href="historico-fiestas.html">Histórico fiestas</a></li>
+          <li><a href="historico-actividades.html">Histórico actividades</a></li>
+          <li><a href="index.html#patrimonio">Patrimonio</a></li>
+          <li><a href="index.html#naturaleza">Naturaleza</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-data">
+        <h5>El pueblo en cifras</h5>
+        <ul class="footer-stats">
+          <li><span>Municipio</span><strong>Villanueva de Cameros</strong></li>
+          <li><span>Comarca</span><strong>Sierra de Cameros</strong></li>
+          <li><span>Altitud</span><strong>1.140 m s.n.m.</strong></li>
+          <li><span>Río</span><strong>Iregua</strong></li>
+          <li><span>Provincia</span><strong>La Rioja</strong></li>
+          <li><span>Fiestas</span><strong>25-26 de Julio</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Asociación de Vecinos de Aldeanueva de Cameros · La Rioja · España</p>
+      <p>Diseñado con ❤️ para nuestro pueblo</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-meta">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-desc"  id="lightboxDesc"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Navbar toggle ─────────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      const navbar = document.getElementById('navbar');
+      if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('open');
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+    document.querySelectorAll('.nav-item-dropdown').forEach(item => {
+      item.querySelector(':scope > a').addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        }
+      });
+    });
+
+    // El filtro por categoría y el lightbox se enlazan en actividades.js,
+    // DESPUÉS de que las actividades se rendericen desde actividades.json.
+  </script>
+
+  <!-- Render dinámico del timeline desde actividades.json -->
+  <script src="assets/js/actividades.js" defer></script>
+
+</body>
+</html>

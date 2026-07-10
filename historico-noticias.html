@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico de Noticias · Aldeanueva de Cameros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ── Page hero ─────────────────────────────────────────────── */
+    .page-hero {
+      position: relative; padding: 160px 0 80px;
+      background: var(--dark); overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('assets/img/villa/general.jpg') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .page-hero-content {
+      position: relative; z-index: 1;
+      text-align: center; color: var(--white);
+    }
+    .page-hero-content .section-tag { margin-bottom: 16px; }
+    .page-hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+    }
+    .page-hero-content p {
+      color: rgba(255,255,255,.7); max-width: 520px;
+      margin: 0 auto; font-size: 1.05rem;
+    }
+    .page-breadcrumb {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 28px; font-size: 0.82rem; color: rgba(255,255,255,.45);
+    }
+    .page-breadcrumb a { color: rgba(255,255,255,.65); transition: color var(--transition); }
+    .page-breadcrumb a:hover { color: var(--white); }
+    .page-breadcrumb span { color: rgba(255,255,255,.3); }
+
+    /* ── Filtros ───────────────────────────────────────────────── */
+    .fuente-nav {
+      background: var(--stone-light); border-bottom: 1px solid var(--border);
+      position: sticky; top: 60px; z-index: 100;
+    }
+    .fuente-nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+    }
+    .fuente-nav-inner::-webkit-scrollbar { display: none; }
+    .fuente-btn {
+      padding: 14px 22px; font-size: 0.88rem; font-weight: 600;
+      border: none; background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all var(--transition);
+      white-space: nowrap; border-bottom: 3px solid transparent; flex-shrink: 0;
+    }
+    .fuente-btn:hover { color: var(--text); }
+    .fuente-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+    /* ── Feed de noticias ──────────────────────────────────────── */
+    .noticias-section { padding: 72px 0 96px; }
+
+    .noticias-feed {
+      display: flex; flex-direction: column; gap: 24px;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    .noticia-item {
+      display: grid; grid-template-columns: 180px 1fr; gap: 0;
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .noticia-item:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+    .noticia-fecha-col {
+      background: var(--dark); color: var(--white);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 24px 16px; gap: 10px; text-align: center;
+    }
+    .noticia-dia   { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; line-height: 1; }
+    .noticia-mes   { font-size: 0.78rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.6); }
+    .noticia-anio  { font-size: 0.72rem; color: rgba(255,255,255,.4); }
+    .noticia-fuente-logo {
+      margin-top: 8px; padding: 5px 12px; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    }
+    .fuente--larioja   { background: #c0392b; color: #fff; }
+    .fuente--web       { background: #0284c7; color: #fff; }
+    .fuente--redes     { background: #7c3aed; color: #fff; }
+    .fuente--riojarchivo { background: #065f46; color: #fff; }
+    .fuente--otro      { background: #78716c; color: #fff; }
+
+    .noticia-body { padding: 22px 26px; display: flex; flex-direction: column; gap: 8px; }
+    .noticia-body-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .noticia-cat {
+      font-size: 0.7rem; font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: .08em; flex-shrink: 0;
+    }
+    .noticia-tipo {
+      font-size: 0.72rem; padding: 3px 10px; border-radius: 100px;
+      background: var(--stone-light); color: var(--stone); font-weight: 600;
+      flex-shrink: 0;
+    }
+    .noticia-body h3 {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      line-height: 1.35; color: var(--text);
+    }
+    .noticia-body p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.65; }
+    .noticia-footer { display: flex; align-items: center; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+    .noticia-medio { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
+    .noticia-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.8rem; font-weight: 600; color: var(--red);
+      transition: text-decoration var(--transition);
+    }
+    .noticia-link:hover { text-decoration: underline; }
+
+    /* Item sin enlace externo */
+    .noticia-item--sin-enlace .noticia-link { display: none; }
+
+    /* ── Añadir noticia CTA ────────────────────────────────────── */
+    .anadir-noticia {
+      max-width: 860px; margin: 40px auto 0;
+      border: 2px dashed var(--border); border-radius: var(--radius-lg);
+      padding: 36px; text-align: center; background: var(--stone-light);
+    }
+    .anadir-noticia-icon { font-size: 2rem; margin-bottom: 12px; }
+    .anadir-noticia h4 { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 8px; }
+    .anadir-noticia p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .page-hero { padding: 110px 0 56px; }
+      .noticia-item { grid-template-columns: 140px 1fr; }
+    }
+    @media (max-width: 600px) {
+      .page-hero { padding: 96px 0 44px; }
+      .noticia-item { grid-template-columns: 1fr; }
+      .noticia-fecha-col { flex-direction: row; padding: 14px 20px; justify-content: flex-start; gap: 14px; }
+      .noticia-dia { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-escudo">⛰️</span>
+        <div>
+          <span class="nav-title">Aldeanueva de Cameros</span>
+          <span class="nav-subtitle">Asociación de Vecinos</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#noticias">Noticias <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#noticias">Últimas noticias</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-noticias.html" class="dropdown-highlight">📰 Histórico de noticias</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#fiestas">Fiestas <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#fiestas">Programa de fiestas</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-fiestas.html" class="dropdown-highlight">📅 Histórico de fiestas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#actividades">Actividades <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#actividades">Próximas actividades</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-actividades.html" class="dropdown-highlight">📋 Histórico de actividades</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#patrimonio">Patrimonio</a></li>
+        <li><a href="index.html#naturaleza">Naturaleza</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li class="nav-item-dropdown">
+          <a href="index.html#contacto">Contacto <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="merchandising.html" class="dropdown-highlight">🛍️ Tienda</a></li>
+            <li><a href="documentos.html" class="dropdown-highlight">📄 Documentos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag section-tag--light">Prensa y medios</span>
+        <h1>Histórico de Noticias</h1>
+        <p>Todas las veces que Aldeanueva de Cameros ha aparecido en prensa, medios digitales y publicaciones</p>
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <a href="index.html#noticias">Noticias</a>
+          <span>›</span>
+          <span>Histórico</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTRO POR FUENTE -->
+  <nav class="fuente-nav" id="fuenteNav" aria-label="Filtrar por fuente">
+    <div class="fuente-nav-inner">
+      <button class="fuente-btn active" data-fuente="todas">Todas las fuentes</button>
+      <button class="fuente-btn" data-fuente="larioja">La Rioja</button>
+      <button class="fuente-btn" data-fuente="riojarchivo">Riojarchivo</button>
+      <button class="fuente-btn" data-fuente="web">Web / Digital</button>
+      <button class="fuente-btn" data-fuente="redes">Redes sociales</button>
+      <button class="fuente-btn" data-fuente="otro">Otros medios</button>
+    </div>
+  </nav>
+
+  <!-- FEED DE NOTICIAS -->
+  <section class="noticias-section">
+    <div class="container">
+      <div class="noticias-feed" id="noticiasFeed">
+
+        <!-- ── Plantilla: copia este bloque para añadir nuevas noticias ──
+        <div class="noticia-item" data-fuente="larioja">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">DD</span>
+            <span class="noticia-mes">MMM</span>
+            <span class="noticia-anio">AAAA</span>
+            <span class="noticia-fuente-logo fuente--larioja">La Rioja</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Categoría</span>
+              <span class="noticia-tipo">Tipo</span>
+            </div>
+            <h3>Título de la noticia</h3>
+            <p>Descripción breve de la noticia y su contenido.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">Diario La Rioja</span>
+              <a href="URL" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+        ──────────────────────────────────────────────────────────── -->
+
+        <!-- ══════════════════════════════════════════════════════════
+             NOTICIAS ENCONTRADAS EN PRENSA Y MEDIOS DIGITALES
+             ══════════════════════════════════════════════════════════ -->
+
+        <!-- 2026 · Orquesta Sinfónica de Madrid en el pueblo -->
+        <div class="noticia-item" data-fuente="web">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">08</span>
+            <span class="noticia-mes">Abr</span>
+            <span class="noticia-anio">2026</span>
+            <span class="noticia-fuente-logo fuente--web">eldiario.es</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Cultura</span>
+              <span class="noticia-tipo">Reportaje</span>
+            </div>
+            <h3>Las 20 almas de Aldeanueva de Cameros también se merecen a la Sinfónica de Madrid: «Viviremos algo único»</h3>
+            <p>Seis solistas de la Orquesta Sinfónica de Madrid visitaron el pueblo para realizar actividades pedagógicas con el alumnado del colegio rural y ofrecer un concierto abierto al público. El proyecto INSIEME, impulsado por el trombonista Simeón Galduf —residente en Aldeanueva desde hace casi 20 años—, busca llevar música de excelencia a zonas rurales despobladas.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">eldiario.es · La Rioja</span>
+              <a href="https://www.eldiario.es/la-rioja/20-almas-aldeanueva-cameros-merecen-sinfonica-madrid-viviremos-unico_1_13126051.html" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022 · Mejora de accesos carretera LR-455 -->
+        <div class="noticia-item" data-fuente="web">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">26</span>
+            <span class="noticia-mes">Jul</span>
+            <span class="noticia-anio">2022</span>
+            <span class="noticia-fuente-logo fuente--web">NueveCuatroUno</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Infraestructuras</span>
+              <span class="noticia-tipo">Noticia</span>
+            </div>
+            <h3>Gallinero y Aldeanueva de Cameros mejoran sus accesos a la N-111</h3>
+            <p>La Consejería de Sostenibilidad ejecutó obras de mejora de firme en la carretera LR-455, el acceso de 3,7 km que une la N-111 con Aldeanueva de Cameros. Los trabajos incluyeron tratamiento superficial triple para mejorar el pavimento y la seguridad vial del tramo.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">NueveCuatroUno</span>
+              <a href="https://nuevecuatrouno.com/2022/07/26/gallinero-aldeanueva-cameros-mejora-accesos-n111/" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nov 2018 · Moncloa se niega a dar datos sobre el viaje de Sánchez -->
+        <div class="noticia-item" data-fuente="web">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">06</span>
+            <span class="noticia-mes">Nov</span>
+            <span class="noticia-anio">2018</span>
+            <span class="noticia-fuente-logo fuente--web">eldiario.es</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Política</span>
+              <span class="noticia-tipo">Noticia</span>
+            </div>
+            <h3>Moncloa se niega a dar datos sobre el viaje privado de Sánchez a Aldeanueva de Cameros</h3>
+            <p>El Gobierno rechazó proporcionar detalles sobre el dispositivo de seguridad desplegado cuando el presidente Pedro Sánchez viajó en helicóptero oficial a La Rioja el 30 de junio de 2018 para asistir a una boda familiar en el pueblo. Las autoridades argumentaron «razones de seguridad» para no revelar información sobre la protección de personalidades del Estado.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">eldiario.es · La Rioja</span>
+              <a href="https://www.eldiario.es/la-rioja/moncloa-se-niega-a-dar-datos-sobre-el-viaje-privado-de-sanchez-a-aldeanueva-de-cameros_1_11124124.html" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jul 2018 · Boda del cuñado de Sánchez -->
+        <div class="noticia-item" data-fuente="web">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">22</span>
+            <span class="noticia-mes">Jul</span>
+            <span class="noticia-anio">2018</span>
+            <span class="noticia-fuente-logo fuente--web">eldiario.es</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Sociedad</span>
+              <span class="noticia-tipo">Reportaje</span>
+            </div>
+            <h3>Las curiosidades de la boda del cuñado de Pedro Sánchez en Aldeanueva de Cameros</h3>
+            <p>El pequeño municipio riojano, con apenas 20 habitantes, acogió la boda civil de Miguel, cuñado del presidente del Gobierno, con la diseñadora de interiores Fayette Proper, ante unos 85 invitados. La presencia de Sánchez obligó a desplegar un dispositivo de seguridad de medio centenar de agentes que limitó la libre circulación por el pueblo, y el presidente llegó en helicóptero oficial desde La Moncloa hasta la base aérea de Agoncillo.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">eldiario.es · La Rioja</span>
+              <a href="https://www.eldiario.es/la-rioja/las-curiosidades-de-la-boda-del-cunado-de-pedro-sanchez-en-aldeanueva_1_11119052.html" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="noticia-item" data-fuente="riojarchivo">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">—</span>
+            <span class="noticia-mes">2023</span>
+            <span class="noticia-anio">&nbsp;</span>
+            <span class="noticia-fuente-logo fuente--riojarchivo">Riojarchivo</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Patrimonio</span>
+              <span class="noticia-tipo">Publicación</span>
+            </div>
+            <h3>Aldeanueva de Cameros en el archivo histórico de La Rioja</h3>
+            <p>Riojarchivo recoge documentación histórica del municipio de Aldeanueva de Cameros, incluyendo referencias a la fundación de la escuela de 1798, la ermita barroca de Santa Ana y el archivo parroquial de la iglesia de Nuestra Señora del Valle.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">Riojarchivo · Archivo Histórico Provincial de La Rioja</span>
+              <a href="https://www.riojarchivo.com/localidad/aldeanueva-de-cameros/" target="_blank" rel="noopener" class="noticia-link">Ver ficha →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="noticia-item" data-fuente="otro">
+          <div class="noticia-fecha-col">
+            <span class="noticia-dia">—</span>
+            <span class="noticia-mes">2020</span>
+            <span class="noticia-anio">&nbsp;</span>
+            <span class="noticia-fuente-logo fuente--otro">Blog</span>
+          </div>
+          <div class="noticia-body">
+            <div class="noticia-body-top">
+              <span class="noticia-cat">Turismo rural</span>
+              <span class="noticia-tipo">Artículo</span>
+            </div>
+            <h3>Hoja de la Sierra — Aldeanueva de Cameros</h3>
+            <p>El blog "Hoja de la Sierra" dedica una entrada al pueblo de Aldeanueva de Cameros, describiendo su patrimonio, sus yacimientos de icnitas de dinosaurio y el entorno natural de la Sierra de Cameros.</p>
+            <div class="noticia-footer">
+              <span class="noticia-medio">Hoja de la Sierra</span>
+              <a href="https://hojadelasierra.wordpress.com/aldeanueva/" target="_blank" rel="noopener" class="noticia-link">Leer artículo →</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- CTA añadir noticia -->
+      <div class="anadir-noticia">
+        <div class="anadir-noticia-icon">📰</div>
+        <h4>¿Has visto una noticia sobre el pueblo?</h4>
+        <p>Si encuentras una aparición en prensa, radio, televisión o cualquier medio digital que no esté recogida aquí, cuéntanosla para añadirla al archivo.</p>
+        <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Noticia para el histórico" class="btn btn-primary">Enviar enlace a la asociación</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand" style="flex-direction:column;align-items:flex-start;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <span class="footer-escudo">⛰️</span>
+          <div>
+            <h4>Aldeanueva de Cameros</h4>
+            <p>Asociación de Vecinos</p>
+          </div>
+        </div>
+        <p class="footer-desc">Preservando la memoria, fomentando la comunidad y difundiendo la riqueza de nuestro pueblo en la Sierra de Cameros, La Rioja.</p>
+        <div class="footer-links">
+          <a href="https://www.larioja.org" target="_blank" rel="noopener">Gobierno de La Rioja</a>
+          <a href="https://lariojaturismo.com" target="_blank" rel="noopener">La Rioja Turismo</a>
+          <a href="https://www.riojarchivo.com/localidad/aldeanueva-de-cameros/" target="_blank" rel="noopener">Riojarchivo</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#noticias">Noticias</a></li>
+          <li><a href="historico-noticias.html">Histórico noticias</a></li>
+          <li><a href="index.html#fiestas">Fiestas</a></li>
+          <li><a href="historico-fiestas.html">Histórico fiestas</a></li>
+          <li><a href="historico-actividades.html">Histórico actividades</a></li>
+          <li><a href="index.html#patrimonio">Patrimonio</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-data">
+        <h5>El pueblo en cifras</h5>
+        <ul class="footer-stats">
+          <li><span>Municipio</span><strong>Villanueva de Cameros</strong></li>
+          <li><span>Comarca</span><strong>Sierra de Cameros</strong></li>
+          <li><span>Altitud</span><strong>1.140 m s.n.m.</strong></li>
+          <li><span>Río</span><strong>Iregua</strong></li>
+          <li><span>Provincia</span><strong>La Rioja</strong></li>
+          <li><span>Fiestas</span><strong>25-26 de Julio</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Asociación de Vecinos de Aldeanueva de Cameros · La Rioja · España</p>
+      <p>Diseñado con ❤️ para nuestro pueblo</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Navbar toggle ─────────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      const navbar = document.getElementById('navbar');
+      if (!navbar.contains(e.target)) {
+        navLinks.classList.remove('open');
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+    document.querySelectorAll('.nav-item-dropdown').forEach(item => {
+      item.querySelector(':scope > a').addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        }
+      });
+    });
+
+    // ── Filtro por fuente ─────────────────────────────────────
+    const fuenteBtns = document.querySelectorAll('.fuente-btn');
+    const noticias   = document.querySelectorAll('.noticias-feed .noticia-item:not(.noticia-item--placeholder)');
+
+    fuenteBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        fuenteBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const fuente = btn.dataset.fuente;
+        document.querySelectorAll('.noticias-feed .noticia-item').forEach(n => {
+          if (n.classList.contains('noticia-item--placeholder')) return;
+          n.style.display = (fuente === 'todas' || n.dataset.fuente === fuente) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

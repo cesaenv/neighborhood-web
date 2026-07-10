@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(find /home/csaenzvillalta/Documentos -type f 2>/dev/null | head -100)",
+      "Read(//home/csaenzvillalta/Documentos/**)"
+    ]
+  }
+}

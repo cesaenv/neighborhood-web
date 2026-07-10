@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asociación de Vecinos de Aldeanueva de Cameros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-escudo">⛰️</span>
+        <div>
+          <span class="nav-title">Aldeanueva de Cameros</span>
+          <span class="nav-subtitle">Asociación de Vecinos</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#noticias">Noticias <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="#noticias">Últimas noticias</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-noticias.html" class="dropdown-highlight">📰 Histórico de noticias</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="#fiestas">Fiestas <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="#fiestas">Programa de fiestas</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-fiestas.html" class="dropdown-highlight">📅 Histórico de fiestas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="#actividades">Actividades <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="#actividades">Próximas actividades</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="historico-actividades.html" class="dropdown-highlight">📋 Histórico de actividades</a></li>
+          </ul>
+        </li>
+        <li><a href="#patrimonio">Patrimonio</a></li>
+        <li><a href="#naturaleza">Naturaleza</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li class="nav-item-dropdown">
+          <a href="#contacto">Contacto <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+          <ul class="nav-dropdown">
+            <li><a href="#contacto">Contacto</a></li>
+            <li><div class="nav-dropdown-divider"></div></li>
+            <li><a href="merchandising.html" class="dropdown-highlight">🛍️ Tienda</a></li>
+            <li><a href="documentos.html" class="dropdown-highlight">📄 Documentos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="assets/img/hero.jpg" alt="Puente medieval y casas de piedra en Aldeanueva de Cameros" class="hero-real-img" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sierra de Cameros · La Rioja · 1.140 m</p>
+      <h1 class="hero-title">Aldeanueva<br><span>de Cameros</span></h1>
+      <p class="hero-desc">Un rincón auténtico en el corazón de la Sierra Riojana donde la naturaleza, la historia y la comunidad se unen para preservar nuestra identidad.</p>
+      <div class="hero-actions">
+        <a href="#noticias" class="btn btn-primary">Ver novedades</a>
+        <a href="#fiestas" class="btn btn-outline">Nuestras fiestas</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">~18</span>
+        <span class="stat-label">Vecinos censados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1.140m</span>
+        <span class="stat-label">Altitud</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">S. XVI</span>
+        <span class="stat-label">Iglesia parroquial</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">25-26</span>
+        <span class="stat-label">Julio · Fiestas patronales</span>
+      </div>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('noticias').scrollIntoView({behavior:'smooth'})">
+      <span>Descubrir</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section class="section" id="noticias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Actualidad</span>
+        <h2>Noticias y Anuncios</h2>
+        <p>Mantente al día con todo lo que ocurre en nuestro pueblo</p>
+      </div>
+      <div class="news-grid">
+
+        <article class="news-card news-card--featured">
+          <div class="news-card-img" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">
+            <span class="news-badge">Próximamente</span>
+            <div class="news-date-big">
+              <span class="day">25</span>
+              <span class="month">Jul</span>
+            </div>
+          </div>
+          <div class="news-body">
+            <span class="news-cat">Fiestas</span>
+            <h3>Fiestas Patronales de Santiago y Santa Ana 2026</h3>
+            <p>Preparamos los festejos en honor a nuestros patrones. Dos días de misa, procesión, música y juegos para todos los vecinos y visitantes.</p>
+            <a href="#fiestas" class="news-link">Ver programa →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card-img" style="background:linear-gradient(135deg,#059669,#065f46)">
+            <span class="news-badge news-badge--green">Actividad</span>
+          </div>
+          <div class="news-body">
+            <span class="news-cat">Naturaleza</span>
+            <h3>Ruta guiada por las icnitas de dinosaurio</h3>
+            <p>Este verano organizamos una visita guiada a los yacimientos de huellas fosilizadas en Vuelta de los Manzanos.</p>
+            <span class="news-date-text">Verano 2026</span>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card-img" style="background:linear-gradient(135deg,#d97706,#92400e)">
+            <span class="news-badge news-badge--amber">Convocatoria</span>
+          </div>
+          <div class="news-body">
+            <span class="news-cat">Asociación</span>
+            <h3>Asamblea anual de la Asociación de Vecinos</h3>
+            <p>Se convoca a todos los vecinos a la asamblea ordinaria para tratar asuntos del pueblo y renovar la junta directiva.</p>
+            <span class="news-date-text">Pendiente de fecha</span>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card-img" style="background:linear-gradient(135deg,#0891b2,#0e7490)">
+            <span class="news-badge news-badge--blue">Infraestructuras</span>
+          </div>
+          <div class="news-body">
+            <span class="news-cat">Mejoras</span>
+            <h3>Rehabilitación de la fuente del pueblo</h3>
+            <p>La asociación solicita al Ayuntamiento de Villanueva de Cameros la restauración de la fuente tradicional del casco urbano.</p>
+            <span class="news-date-text">En trámite</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FIESTAS -->
+  <section class="section section--dark" id="fiestas">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-tag section-tag--light">Tradición</span>
+        <h2>Fiestas y Celebraciones</h2>
+        <p>El latido de nuestro pueblo a lo largo del año</p>
+      </div>
+
+      <div class="fiestas-featured">
+        <div class="fiesta-main">
+          <div class="fiesta-main-header">
+            <span class="fiesta-icon">🎉</span>
+            <div>
+              <h3>Fiestas Patronales</h3>
+              <span class="fiesta-date">25 y 26 de Julio</span>
+            </div>
+          </div>
+          <p class="fiesta-desc">Nuestras fiestas mayores se celebran en honor a <strong>Santiago Apóstol</strong> y <strong>Santa Ana</strong>. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.</p>
+          <div class="fiesta-program">
+            <h4>Programa típico</h4>
+            <div class="program-timeline">
+              <div class="program-item">
+                <span class="program-time">Día 25 · Santiago</span>
+                <div class="program-events">
+                  <span>⛪ Misa solemne en la Iglesia de Santa María del Valle</span>
+                  <span>🚶 Procesión por el casco urbano</span>
+                  <span>🎵 Actuación musical en la plaza</span>
+                  <span>🎆 Verbena popular nocturna</span>
+                </div>
+              </div>
+              <div class="program-item">
+                <span class="program-time">Día 26 · Santa Ana</span>
+                <div class="program-events">
+                  <span>🏔️ Romería a la Ermita de Santa Ana</span>
+                  <span>⛪ Misa en la ermita</span>
+                  <span>🍽️ Comida popular</span>
+                  <span>🎮 Juegos para niños y mayores</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fiesta-sidebar">
+          <div class="fiesta-card">
+            <span class="fiesta-card-icon">🕯️</span>
+            <h4>Novena de Santa Ana</h4>
+            <p>Durante los nueve días anteriores a la fiesta, se celebra la novena en honor a Santa Ana en su ermita barroca.</p>
+          </div>
+          <div class="fiesta-card">
+            <span class="fiesta-card-icon">🌿</span>
+            <h4>San Isidro</h4>
+            <p>Celebración tradicional del patrón de los labradores. Bendición del campo y actos en reconocimiento a la tierra.</p>
+          </div>
+          <div class="fiesta-card">
+            <span class="fiesta-card-icon">🎄</span>
+            <h4>Navidad en el pueblo</h4>
+            <p>Tradiciones navideñas serranas: Belén, misa del gallo y reunión de vecinos en la plaza.</p>
+          </div>
+          <div class="fiesta-card">
+            <span class="fiesta-card-icon">🌸</span>
+            <h4>Fiestas de Primavera</h4>
+            <p>Actividades al aire libre para celebrar la llegada del buen tiempo en la sierra camerana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVIDADES -->
+  <section class="section" id="actividades">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Agenda</span>
+        <h2>Próximas Actividades</h2>
+        <p>Todo lo que estamos organizando para vecinos y visitantes</p>
+      </div>
+
+      <div class="actividades-grid">
+
+        <div class="actividad-card actividad-card--featured">
+          <div class="actividad-card-aside">
+            <div class="actividad-fecha-bloque">
+              <span class="actividad-mes">Jul</span>
+              <span class="actividad-dia">25</span>
+              <span class="actividad-anio">2026</span>
+            </div>
+            <span class="actividad-estado actividad-estado--proximo">Próximamente</span>
+          </div>
+          <div class="actividad-card-body">
+            <span class="actividad-cat">Fiestas patronales</span>
+            <h3>Fiestas de Santiago y Santa Ana 2026</h3>
+            <p>Los días 25 y 26 de julio se celebran nuestras fiestas mayores en honor a Santiago Apóstol y Santa Ana. Misa solemne, procesión, verbena popular y romería a la ermita.</p>
+            <div class="actividad-tags">
+              <span>🎉 Fiestas</span>
+              <span>⛪ Procesión</span>
+              <span>🏔️ Romería</span>
+              <span>🎵 Verbena</span>
+            </div>
+            <a href="#fiestas" class="actividad-link">Ver programa →</a>
+          </div>
+        </div>
+
+        <div class="actividad-card">
+          <div class="actividad-card-aside">
+            <div class="actividad-fecha-bloque actividad-fecha-bloque--green">
+              <span class="actividad-mes">Verano</span>
+              <span class="actividad-dia" style="font-size:1.4rem">2026</span>
+            </div>
+            <span class="actividad-estado actividad-estado--planificado">Planificado</span>
+          </div>
+          <div class="actividad-card-body">
+            <span class="actividad-cat">Naturaleza</span>
+            <h3>Ruta guiada a las icnitas de dinosaurio</h3>
+            <p>Visita guiada a los yacimientos paleontológicos de Vuelta de los Manzanos, El Encinar y Los Colmenares. Actividad familiar apta para todas las edades.</p>
+            <div class="actividad-tags">
+              <span>🦕 Paleontología</span>
+              <span>👨‍👩‍👧 Familiar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actividad-card">
+          <div class="actividad-card-aside">
+            <div class="actividad-fecha-bloque actividad-fecha-bloque--amber">
+              <span class="actividad-mes">Pendiente</span>
+              <span class="actividad-dia" style="font-size:1.2rem">fecha</span>
+            </div>
+            <span class="actividad-estado actividad-estado--tramite">En trámite</span>
+          </div>
+          <div class="actividad-card-body">
+            <span class="actividad-cat">Asociación</span>
+            <h3>Asamblea anual de vecinos</h3>
+            <p>Reunión ordinaria para tratar asuntos del pueblo, presentar cuentas del ejercicio y renovar la junta directiva. Convocatoria abierta a todos los socios.</p>
+            <div class="actividad-tags">
+              <span>📋 Asamblea</span>
+              <span>🗳️ Junta directiva</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actividad-card">
+          <div class="actividad-card-aside">
+            <div class="actividad-fecha-bloque actividad-fecha-bloque--blue">
+              <span class="actividad-mes">En</span>
+              <span class="actividad-dia" style="font-size:1.2rem">trámite</span>
+            </div>
+            <span class="actividad-estado actividad-estado--tramite">Solicitud</span>
+          </div>
+          <div class="actividad-card-body">
+            <span class="actividad-cat">Mejoras del pueblo</span>
+            <h3>Rehabilitación de la fuente del pueblo</h3>
+            <p>Tramitación ante el Ayuntamiento de Villanueva de Cameros de la restauración de la fuente tradicional del casco urbano. Informe técnico en curso.</p>
+            <div class="actividad-tags">
+              <span>⛲ Patrimonio</span>
+              <span>🏗️ Obras</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="actividades-footer">
+        <a href="historico-actividades.html" class="btn btn-primary">Ver histórico de actividades</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATRIMONIO -->
+  <section class="section" id="patrimonio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Historia</span>
+        <h2>Patrimonio e Historia</h2>
+        <p>Siglos de historia que merecen ser conservados y recordados</p>
+      </div>
+      <div class="patrimonio-grid">
+
+        <div class="patrimonio-card patrimonio-card--full">
+          <div class="patrimonio-img">
+            <img src="assets/img/villa/igle1.jpg" alt="Iglesia parroquial de Santa María del Valle - Aldeanueva de Cameros" loading="lazy" />
+            <div class="patrimonio-overlay">
+              <span class="patrimonio-century">S. XVI</span>
+            </div>
+          </div>
+          <div class="patrimonio-body">
+            <span class="patrimonio-type">Templo parroquial</span>
+            <h3>Iglesia de Nuestra Señora del Valle</h3>
+            <p>La iglesia parroquial de Aldeanueva recibe el nombre de <strong>Santa María del Valle</strong>. Se trata de un edificio del siglo XVI construido en mampostería, de planta rectangular con una nave dividida en tres tramos.</p>
+            <p>Está cubierta por <em>crucería de terceletes</em> sobre arcos apuntados sujetos con pilastras, y dispone de un coro con estructura de madera. La entrada está protegida por un pórtico enrejado. Se sitúa en el centro de la población y es el escenario principal de las celebraciones patronales.</p>
+            <div class="patrimonio-tags">
+              <span>Siglo XVI</span>
+              <span>Mampostería</span>
+              <span>Crucería de terceletes</span>
+              <span>Centro del pueblo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="patrimonio-card">
+          <div class="patrimonio-img">
+            <img src="assets/img/villa/igle2.jpg" alt="Ermita de Santa Ana entre árboles" loading="lazy" style="object-position: center 20%;" />
+          </div>
+          <div class="patrimonio-body">
+            <span class="patrimonio-type">Ermita · S. XVIII</span>
+            <h3>Ermita de Santa Ana</h3>
+            <p>A unos 200 metros sobre el pueblo se encuentra esta joya del barroco, de sillería y mampostería, reedificada en el último cuarto del siglo XVIII. Consta de una nave con cabecera cuadrangular, cúpula sobre pechinas y arcos de medio punto.</p>
+            <p>Dos hileras de árboles flanquean el pórtico hasta la puerta. Sobre ella, una espadaña de dos cuerpos con tres vanos. Sede de la novena y destino de la romería del 26 de julio.</p>
+            <div class="patrimonio-tags">
+              <span>Barroco</span>
+              <span>Sillería</span>
+              <span>Cúpula sobre pechinas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="patrimonio-card">
+          <div class="patrimonio-img">
+            <img src="assets/img/villa/escuela1.jpg" alt="Edificio de la antigua escuela - sede de la Asociación" loading="lazy" />
+          </div>
+          <div class="patrimonio-body">
+            <span class="patrimonio-type">Patrimonio civil</span>
+            <h3>La Escuela de Fundación</h3>
+            <p>Fundada en 1798 gracias a la donación de <strong>Matías Manuel de la Peña</strong>, hijo del pueblo nacido en 1733 que logró fortuna en Cádiz. Destinó 86.000 reales para su creación. En 1846 llegó a albergar hasta 50 alumnos.</p>
+            <p>El maestro tenía la obligación de enseñar a leer, escribir, doctrina cristiana y <em>tocar el órgano de la parroquia</em>. Hoy es la sede social de la Asociación de Vecinos.</p>
+            <div class="patrimonio-tags">
+              <span>Fundación 1798</span>
+              <span>Escuela histórica</span>
+              <span>Sede de la Asociación</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="patrimonio-card">
+          <div class="patrimonio-img">
+            <img src="assets/img/puente2.jpg" alt="Casas de piedra y puente medieval de Aldeanueva" loading="lazy" />
+          </div>
+          <div class="patrimonio-body">
+            <span class="patrimonio-type">Arquitectura popular</span>
+            <h3>Casas y puente medieval</h3>
+            <p>El pueblo está dividido en dos barrios por el Arroyo de la Aldea: el <em>barrio de la iglesia</em> y el <em>barrio de Santa Ana</em>. Un puente medieval de arco de piedra une ambas orillas y es uno de los elementos más fotografiados del pueblo.</p>
+            <p>Son muchas las casas restauradas en los últimos años, intentando respetar la construcción original de mampostería serrana.</p>
+            <div class="patrimonio-tags">
+              <span>Puente medieval</span>
+              <span>Dos barrios</span>
+              <span>Restauración</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="patrimonio-card patrimonio-card--timeline">
+          <h3>Línea de tiempo histórica</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-year">S. XVI</span>
+              <div class="timeline-content">Construcción de la Iglesia parroquial de Santa María del Valle</div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">S. XVIII</span>
+              <div class="timeline-content">Reedificación de la Ermita de Santa Ana en estilo barroco (último cuarto del siglo)</div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1798</span>
+              <div class="timeline-content">Fundación de la escuela por Matías Manuel de la Peña. 86.000 reales de dotación</div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">1846</span>
+              <div class="timeline-content">La escuela alcanza su máximo con 50 alumnos matriculados</div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">S. XX</span>
+              <div class="timeline-content">Declive demográfico por el éxodo rural. El pueblo llega a estar casi deshabitado</div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">Hoy</span>
+              <div class="timeline-content">Renacimiento como destino de turismo rural. La Asociación vela por el patrimonio y la comunidad</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NATURALEZA -->
+  <section class="section section--green" id="naturaleza">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-tag section-tag--light">Entorno natural</span>
+        <h2>Naturaleza y Rutas</h2>
+        <p>La Sierra de Cameros a tu alcance</p>
+      </div>
+      <div class="naturaleza-intro">
+        <p>Aldeanueva de Cameros se sitúa en la margen derecha del río Iregua, a 1.140 metros de altitud, en plena Sierra de Cameros. El entorno ofrece parajes de montaña espectaculares y algunos de los yacimientos paleontológicos más singulares de La Rioja.</p>
+      </div>
+      <div class="naturaleza-grid">
+
+        <div class="nat-card nat-card--dinos">
+          <div class="nat-card-foto">
+            <img src="assets/img/villa/huellas.jpg" alt="Huellas de dinosaurio en Vuelta de los Manzanos" loading="lazy" />
+          </div>
+          <div class="nat-card-content">
+            <div class="nat-card-icon">🦕</div>
+            <h3>Huellas de dinosaurio</h3>
+            <p>En el entorno de Aldeanueva se han encontrado varios lugares con huellas de dinosaurio y algún otro animal. El emplazamiento más destacable se encuentra en la <strong>Vuelta de los Manzanos</strong>, junto a la carretera de acceso, a pocos metros del núcleo urbano.</p>
+            <p>Pueden verse unas <strong>50 huellas</strong> de dinosaurios carnívoros de dos patas, algunas de herbívoros y parece ser que alguna se atribuye a un cocodrilo, tal como indican los carteles de la zona.</p>
+            <p>Estas huellas datan de la <strong>Era Secundaria</strong>, hace más de 100 millones de años. Se formaron por encontrarse en zona pantanosa y los posteriores movimientos geológicos.</p>
+            <div class="nat-yacimientos">
+              <span class="yac">📍 Vuelta de los Manzanos (principal)</span>
+              <span class="yac">📍 El Encinar</span>
+              <span class="yac">📍 Los Colmenares</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nat-card nat-card--rio">
+          <div class="nat-card-foto">
+            <img src="assets/img/villa/rio4.jpg" alt="El Arroyo de la Aldea en Aldeanueva de Cameros" loading="lazy" />
+          </div>
+          <div class="nat-card-content">
+            <div class="nat-card-icon">🌊</div>
+            <h3>El Arroyo de la Aldea</h3>
+            <p>El Arroyo de la Aldea nace en el término municipal de Lumbreras, cerca de Laguna, a unos <strong>1.340 metros de altitud</strong>, entre el Alto de los Lapazares y Peñas de Alcubilla.</p>
+            <p>Tras un rápido descenso, atraviesa el pueblo a unos 1.100 metros. En su desembocadura en el Iregua, la altitud es de unos 950 metros. En apenas <strong>6 km de recorrido</strong> desciende casi 400 metros, creando bellos rincones naturales a lo largo de su cauce.</p>
+            <p>El pequeño puente de piedra que une las dos orillas del arroyo es uno de los elementos más característicos del pueblo.</p>
+          </div>
+        </div>
+
+        <div class="nat-card nat-card--sierra">
+          <div class="nat-card-foto">
+            <img src="assets/img/villa/paisaje1.jpg" alt="Paisaje de Aldeanueva de Cameros" loading="lazy" />
+          </div>
+          <div class="nat-card-content">
+            <div class="nat-card-icon">⛰️</div>
+            <h3>Sierra de Cameros</h3>
+            <p>Aldeanueva nos deja impresionantes paisajes en cada época del año. Integrado en la comarca de Cameros Nuevo, el municipio forma parte de uno de los paisajes de montaña más auténticos de La Rioja, con senderos, bosques y vistas panorámicas excepcionales.</p>
+          </div>
+        </div>
+
+        <div class="nat-card nat-card--flora">
+          <div class="nat-card-foto">
+            <img src="assets/img/villa/paisaje2.jpg" alt="Paisaje natural de Aldeanueva de Cameros" loading="lazy" />
+          </div>
+          <div class="nat-card-content">
+            <div class="nat-card-icon">🌿</div>
+            <h3>Flora y fauna serrana</h3>
+            <p>Encinas, robles y pinos pueblan los montes circundantes. El avistamiento de fauna local —corzos, jabalíes, rapaces— es habitual en los paseos por la sierra. El pueblo constituye uno de los entornos más bonitos de la comarca.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rutas-section">
+        <h3>Rutas recomendadas</h3>
+        <div class="rutas-grid">
+          <div class="ruta-item">
+            <div class="ruta-header">
+              <span class="ruta-dif ruta-dif--easy">Fácil</span>
+              <span class="ruta-time">⏱ 1h 30min</span>
+            </div>
+            <h4>Paseo fluvial del Iregua</h4>
+            <p>Ruta circular por la orilla del río Iregua. Ideal para familias con niños.</p>
+            <div class="ruta-info">
+              <span>📏 4 km</span>
+              <span>📈 80 m desnivel</span>
+            </div>
+          </div>
+          <div class="ruta-item">
+            <div class="ruta-header">
+              <span class="ruta-dif ruta-dif--medium">Media</span>
+              <span class="ruta-time">⏱ 3h</span>
+            </div>
+            <h4>Ruta de las Icnitas</h4>
+            <p>Visita los yacimientos paleontológicos de Vuelta de los Manzanos y El Encinar.</p>
+            <div class="ruta-info">
+              <span>📏 8 km</span>
+              <span>📈 250 m desnivel</span>
+            </div>
+          </div>
+          <div class="ruta-item">
+            <div class="ruta-header">
+              <span class="ruta-dif ruta-dif--hard">Difícil</span>
+              <span class="ruta-time">⏱ 5h</span>
+            </div>
+            <h4>Cresta de la Sierra</h4>
+            <p>Ascenso a las cumbres de la Sierra de Cameros con vistas panorámicas de La Rioja.</p>
+            <div class="ruta-info">
+              <span>📏 14 km</span>
+              <span>📈 600 m desnivel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Recuerdos</span>
+        <h2>Galería del Pueblo</h2>
+        <p>Momentos y rincones que hacen único a Aldeanueva de Cameros</p>
+      </div>
+
+      <div class="galeria-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="fiestas">Fiestas</button>
+        <button class="filter-btn" data-filter="patrimonio">Patrimonio</button>
+        <button class="filter-btn" data-filter="naturaleza">Naturaleza</button>
+        <button class="filter-btn" data-filter="vida">Vida del pueblo</button>
+      </div>
+
+      <div class="galeria-grid" id="galeriaGrid">
+        <div class="galeria-item" data-cat="vida">
+          <div class="galeria-real">
+            <img src="assets/img/hero.jpg" alt="Puente medieval de Aldeanueva de Cameros" loading="lazy" />
+            <div class="galeria-caption">Puente medieval sobre el arroyo</div>
+          </div>
+        </div>
+        <div class="galeria-item galeria-item--tall" data-cat="patrimonio">
+          <div class="galeria-real">
+            <img src="assets/img/villa/igle2.jpg" alt="Ermita de Santa Ana entre árboles" loading="lazy" style="object-position: center 15%;" />
+            <div class="galeria-caption">Ermita de Santa Ana · Espadaña barroca</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="naturaleza">
+          <div class="galeria-real">
+            <img src="assets/img/villa/huellas.jpg" alt="Huellas de dinosaurio - Vuelta de los Manzanos" loading="lazy" />
+            <div class="galeria-caption">Icnitas de dinosaurio · Vuelta de los Manzanos</div>
+          </div>
+        </div>
+        <div class="galeria-item galeria-item--wide" data-cat="vida">
+          <div class="galeria-real">
+            <img src="assets/img/puente2.jpg" alt="Puente y casas en primavera" loading="lazy" />
+            <div class="galeria-caption">Primavera en Aldeanueva · Puente medieval y casas de piedra</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="vida">
+          <div class="galeria-real">
+            <img src="assets/img/villa/plaza.jpg" alt="La Plaza de Aldeanueva de Cameros" loading="lazy" />
+            <div class="galeria-caption">La Plaza · Centro de reunión en verano y fiestas</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="naturaleza">
+          <div class="galeria-real">
+            <img src="assets/img/villa/rio4.jpg" alt="El Arroyo de la Aldea" loading="lazy" />
+            <div class="galeria-caption">El Arroyo de la Aldea · 400 m de desnivel en 6 km</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="patrimonio">
+          <div class="galeria-real">
+            <img src="assets/img/villa/igle1.jpg" alt="Iglesia de Santa María del Valle" loading="lazy" />
+            <div class="galeria-caption">Iglesia Ntra. Sra. del Valle · Siglo XVI</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="vida">
+          <div class="galeria-real">
+            <img src="assets/img/villa/casarural.jpg" alt="Casa rural La Posada de Urreci" loading="lazy" />
+            <div class="galeria-caption">Casa rural La Posada de Urreci</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="vida">
+          <div class="galeria-real">
+            <img src="assets/img/villa/horno.jpg" alt="Horno de pan tradicional" loading="lazy" />
+            <div class="galeria-caption">Horno de pan tradicional</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="patrimonio">
+          <div class="galeria-real">
+            <img src="assets/img/villa/escuela1.jpg" alt="Edificio de la antigua escuela y sede de la Asociación" loading="lazy" />
+            <div class="galeria-caption">Antigua Escuela de Fundación · Hoy sede de la Asociación</div>
+          </div>
+        </div>
+        <div class="galeria-item" data-cat="naturaleza">
+          <div class="galeria-real">
+            <img src="assets/img/arroyo.jpg" alt="Arroyo y puente medieval" loading="lazy" />
+            <div class="galeria-caption">El arroyo en el corazón del pueblo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-upload">
+        <div class="upload-box">
+          <span class="upload-icon">📤</span>
+          <h4>¿Tienes fotos del pueblo?</h4>
+          <p>Comparte tus fotografías con la asociación y formarán parte de nuestra memoria colectiva.</p>
+          <button class="btn btn-primary" onclick="alert('Pronto podrás subir fotos. Contáctanos mientras tanto.')">Enviar fotografías</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTOS -->
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Comunidad</span>
+        <h2>Contacto y Asociación</h2>
+        <p>Estamos aquí para escucharte y servir al pueblo</p>
+      </div>
+
+
+      <!-- Hazte socio/a — ancho completo -->
+      <div class="cuota-full">
+        <div class="cuota-full-inner">
+          <div class="cuota-full-icon">🤝</div>
+          <div class="cuota-full-text">
+            <h3>Hazte socio/a de la Asociación</h3>
+            <p>Únete a la comunidad que preserva la identidad, el patrimonio y la calidad de vida de Aldeanueva de Cameros. Incluye tu nombre completo y datos de contacto en el correo.</p>
+          </div>
+          <div class="cuota-full-precio">
+            <span class="cuota-num">20€</span>
+            <span class="cuota-label">/ año</span>
+          </div>
+          <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Solicitud de inscripción como socio/a" class="btn btn-primary">Solicitar inscripción</a>
+        </div>
+      </div>
+
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <h3>Asociación de Vecinos<br>de Aldeanueva de Cameros</h3>
+          <p>La asociación trabaja para preservar la identidad, el patrimonio y la calidad de vida de todos los vecinos de Aldeanueva de Cameros.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Aldeanueva de Cameros, Villanueva de Cameros<br>La Rioja, España · CP 26127</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <div>
+                <strong>Correo electrónico</strong>
+                <span>asociacion@aldeanuevadecameros.es</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🏛️</span>
+              <div>
+                <strong>Dependencia municipal</strong>
+                <span>Ayuntamiento de Villanueva de Cameros</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📅</span>
+              <div>
+                <strong>Reuniones ordinarias</strong>
+                <span>Primer sábado de cada mes (verano)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contacto-form-col">
+          <h3 class="contacto-form-title">Envíanos un mensaje</h3>
+          <p class="contacto-form-subtitle">¿Tienes una sugerencia, quieres colaborar o necesitas información? Escríbenos.</p>
+          <div class="contacto-form-wrap">
+          <form class="contacto-form" onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" required placeholder="Tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" required placeholder="tu@email.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="asunto">Asunto</label>
+              <select id="asunto">
+                <option value="">Selecciona un asunto</option>
+                <option>Información general</option>
+                <option>Fiestas y actividades</option>
+                <option>Patrimonio e historia</option>
+                <option>Sugerencias de mejora</option>
+                <option>Colaboración</option>
+                <option>Otras consultas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" required rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" id="privacy" required />
+              <label for="privacy">Acepto la política de privacidad y el tratamiento de mis datos</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+          </form>
+          <div id="formSuccess" class="form-success hidden">
+            <span class="success-icon">✅</span>
+            <h4>¡Mensaje enviado!</h4>
+            <p>Gracias por contactarnos. Te responderemos lo antes posible.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Junta Directiva — ancho completo -->
+      <div class="junta-section junta-section--full">
+        <h4>Junta Directiva</h4>
+        <div class="junta-grid">
+          <div class="junta-item">
+            <span class="junta-role">Presidente/a</span>
+            <span class="junta-name">Por designar</span>
+          </div>
+          <div class="junta-item">
+            <span class="junta-role">Secretario/a</span>
+            <span class="junta-name">Por designar</span>
+          </div>
+          <div class="junta-item">
+            <span class="junta-role">Tesorero/a</span>
+            <span class="junta-name">Por designar</span>
+          </div>
+          <div class="junta-item">
+            <span class="junta-role">Vocales</span>
+            <span class="junta-name">Por designar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- CRÉDITOS FOTOGRÁFICOS -->
+  <div class="foto-creditos">
+    <p>📷 Algunas fotografías proceden de <a href="https://commons.wikimedia.org/wiki/Category:Aldeanueva_de_Cameros" target="_blank" rel="noopener">Wikimedia Commons</a> bajo licencia libre · <a href="https://hojadelasierra.wordpress.com/aldeanueva/" target="_blank" rel="noopener">Hoja de la Sierra</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="footer-escudo">⛰️</span>
+          <div>
+            <h4>Aldeanueva de Cameros</h4>
+            <p>Asociación de Vecinos</p>
+          </div>
+        </div>
+        <p class="footer-desc">Preservando la memoria, fomentando la comunidad y difundiendo la riqueza de nuestro pueblo en la Sierra de Cameros, La Rioja.</p>
+        <div class="footer-links">
+          <a href="https://www.larioja.org" target="_blank" rel="noopener">Gobierno de La Rioja</a>
+          <a href="https://lariojaturismo.com" target="_blank" rel="noopener">La Rioja Turismo</a>
+          <a href="https://www.riojarchivo.com/localidad/aldeanueva-de-cameros/" target="_blank" rel="noopener">Riojarchivo</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h5>Secciones</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#fiestas">Fiestas</a></li>
+          <li><a href="#patrimonio">Patrimonio</a></li>
+          <li><a href="#naturaleza">Naturaleza</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#documentos">Documentos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-data">
+        <h5>El pueblo en cifras</h5>
+        <ul class="footer-stats">
+          <li><span>Municipio</span><strong>Villanueva de Cameros</strong></li>
+          <li><span>Comarca</span><strong>Sierra de Cameros</strong></li>
+          <li><span>Altitud</span><strong>1.140 m s.n.m.</strong></li>
+          <li><span>Río</span><strong>Iregua</strong></li>
+          <li><span>Provincia</span><strong>La Rioja</strong></li>
+          <li><span>Fiestas</span><strong>25-26 de Julio</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Asociación de Vecinos de Aldeanueva de Cameros · La Rioja · España</p>
+      <p>Diseñado con ❤️ para nuestro pueblo</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
