@@ -72,7 +72,8 @@ const lightboxImg   = document.getElementById('lightboxImg');
 const lightboxCap   = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 
-document.querySelectorAll('.galeria-real, .patrimonio-img, .nat-card-foto').forEach(item => {
+// Note: gallery items (.galeria-real) are rendered and bound by galeria.js.
+document.querySelectorAll('.patrimonio-img, .nat-card-foto').forEach(item => {
   const img = item.querySelector('img');
   if (!img) return;
   item.style.cursor = 'pointer';
@@ -95,23 +96,7 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// ── Galería filters ───────────────────────────────────────────
-const filterBtns = document.querySelectorAll('.filter-btn');
-const galeriaItems = document.querySelectorAll('.galeria-item');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-
-    galeriaItems.forEach(item => {
-      const show = filter === 'all' || item.dataset.cat === filter;
-      item.classList.toggle('hidden', !show);
-    });
-  });
-});
+// Note: gallery filters are handled by galeria.js (items are dynamic).
 
 // ── Formulario de contacto ────────────────────────────────────
 function handleForm(e) {

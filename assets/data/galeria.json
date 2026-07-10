@@ -1,0 +1,101 @@
+[
+  {
+    "id": "galeria-puente-medieval-arroyo",
+    "categoria": "vida",
+    "img": "assets/img/hero.jpg",
+    "alt": "Puente medieval de Aldeanueva de Cameros",
+    "caption": "Puente medieval sobre el arroyo",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-santa-ana",
+    "categoria": "patrimonio",
+    "img": "assets/img/villa/igle2.jpg",
+    "alt": "Ermita de Santa Ana entre árboles",
+    "caption": "Ermita de Santa Ana · Espadaña barroca",
+    "size": "tall",
+    "imgStyle": "object-position: center 15%;"
+  },
+  {
+    "id": "galeria-icnitas-dinosaurio",
+    "categoria": "naturaleza",
+    "img": "assets/img/villa/huellas.jpg",
+    "alt": "Huellas de dinosaurio - Vuelta de los Manzanos",
+    "caption": "Icnitas de dinosaurio · Vuelta de los Manzanos",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-primavera-puente",
+    "categoria": "vida",
+    "img": "assets/img/puente2.jpg",
+    "alt": "Puente y casas en primavera",
+    "caption": "Primavera en Aldeanueva · Puente medieval y casas de piedra",
+    "size": "wide",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-la-plaza",
+    "categoria": "vida",
+    "img": "assets/img/villa/plaza.jpg",
+    "alt": "La Plaza de Aldeanueva de Cameros",
+    "caption": "La Plaza · Centro de reunión en verano y fiestas",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-aldea",
+    "categoria": "naturaleza",
+    "img": "assets/img/villa/rio4.jpg",
+    "alt": "El Arroyo de la Aldea",
+    "caption": "El Arroyo de la Aldea · 400 m de desnivel en 6 km",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-valle",
+    "categoria": "patrimonio",
+    "img": "assets/img/villa/igle1.jpg",
+    "alt": "Iglesia de Santa María del Valle",
+    "caption": "Iglesia Ntra. Sra. del Valle · Siglo XVI",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-casa-rural-urreci",
+    "categoria": "vida",
+    "img": "assets/img/villa/casarural.jpg",
+    "alt": "Casa rural La Posada de Urreci",
+    "caption": "Casa rural La Posada de Urreci",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-horno-pan",
+    "categoria": "vida",
+    "img": "assets/img/villa/horno.jpg",
+    "alt": "Horno de pan tradicional",
+    "caption": "Horno de pan tradicional",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-antigua-escuela",
+    "categoria": "patrimonio",
+    "img": "assets/img/villa/escuela1.jpg",
+    "alt": "Edificio de la antigua escuela y sede de la Asociación",
+    "caption": "Antigua Escuela de Fundación · Hoy sede de la Asociación",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-corazon-pueblo",
+    "categoria": "naturaleza",
+    "img": "assets/img/arroyo.jpg",
+    "alt": "Arroyo y puente medieval",
+    "caption": "El arroyo en el corazón del pueblo",
+    "size": "",
+    "imgStyle": ""
+  }
+]
