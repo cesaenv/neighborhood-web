@@ -106,5 +106,185 @@
     "caption": "El arroyo en el corazón del pueblo",
     "size": "",
     "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-helado-invierno",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-arroyo-helado-invierno.jpg",
+    "alt": "Arroyo helado en invierno",
+    "caption": "El arroyo helado en invierno",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-sendero-nevado-sierra",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-sendero-nevado-sierra.jpg",
+    "alt": "Sendero nevado en la sierra",
+    "caption": "Sendero nevado en la Sierra de Cameros",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-casa-tradicional-serrana",
+    "categoria": "patrimonio",
+    "img": "assets/img/galeria/galeria-casa-tradicional-serrana.jpg",
+    "alt": "Casa tradicional serrana",
+    "caption": "Casa tradicional de arquitectura serrana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-cascada-arroyo",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-cascada-arroyo.jpg",
+    "alt": "Cascada en el arroyo",
+    "caption": "Pequeña cascada en el arroyo",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-atardecer-casco-historico",
+    "categoria": "patrimonio",
+    "img": "assets/img/galeria/galeria-atardecer-casco-historico.jpg",
+    "alt": "Atardecer en el casco histórico",
+    "caption": "Atardecer en el casco histórico",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-atardecer-tejados",
+    "categoria": "vida",
+    "img": "assets/img/galeria/galeria-atardecer-tejados.jpg",
+    "alt": "Atardecer sobre los tejados del pueblo",
+    "caption": "Atardecer sobre los tejados del pueblo",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-pueblo-anochecer",
+    "categoria": "vida",
+    "img": "assets/img/galeria/galeria-pueblo-anochecer.jpg",
+    "alt": "El pueblo al anochecer",
+    "caption": "El pueblo al anochecer",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-atardecer-sierra",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-atardecer-sierra.jpg",
+    "alt": "Atardecer sobre la Sierra de Cameros",
+    "caption": "Atardecer sobre la Sierra de Cameros",
+    "size": "wide",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-casa-serrana-prados",
+    "categoria": "patrimonio",
+    "img": "assets/img/galeria/galeria-casa-serrana-prados.jpg",
+    "alt": "Casa serrana entre prados",
+    "caption": "Casa serrana entre prados verdes",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-camino-piedra-arroyo",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-camino-piedra-arroyo.jpg",
+    "alt": "Camino de piedra junto al arroyo",
+    "caption": "Camino de piedra junto al arroyo",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-bosque-sierra-camerana",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-bosque-sierra-camerana.jpg",
+    "alt": "Bosque de la Sierra Camerana",
+    "caption": "Bosque de la Sierra Camerana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-valle-verde-cameros",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-valle-verde-cameros.jpg",
+    "alt": "Valle verde de Cameros",
+    "caption": "Valle verde de Cameros",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-muros-piedra",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-arroyo-muros-piedra.jpg",
+    "alt": "El arroyo entre muros de piedra",
+    "caption": "El arroyo entre muros de piedra",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-torre-iglesia",
+    "categoria": "patrimonio",
+    "img": "assets/img/galeria/galeria-torre-iglesia.jpg",
+    "alt": "Torre de la iglesia",
+    "caption": "Torre de la iglesia al atardecer",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-calle-atardecer",
+    "categoria": "vida",
+    "img": "assets/img/galeria/galeria-calle-atardecer.jpg",
+    "alt": "Calle del pueblo al atardecer",
+    "caption": "Calle del pueblo al atardecer",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-vista-panoramica-pueblo",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-vista-panoramica-pueblo.jpg",
+    "alt": "Vista panorámica del pueblo entre montañas",
+    "caption": "Vista panorámica del pueblo entre montañas",
+    "size": "wide",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-reflejos-atardecer",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-reflejos-atardecer.jpg",
+    "alt": "Reflejos de atardecer en el agua",
+    "caption": "Reflejos de atardecer",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-nieve-en-el-pueblo",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-nieve-en-el-pueblo.jpg",
+    "alt": "Nieve en el pueblo",
+    "caption": "Nieve en el pueblo",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-cascada-invierno",
+    "categoria": "naturaleza",
+    "img": "assets/img/galeria/galeria-cascada-invierno.jpg",
+    "alt": "Cascada en invierno",
+    "caption": "Cascada en invierno",
+    "size": "tall",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-pueblo-primavera",
+    "categoria": "vida",
+    "img": "assets/img/galeria/galeria-pueblo-primavera.jpg",
+    "alt": "El pueblo en primavera",
+    "caption": "El pueblo en primavera",
+    "size": "tall",
+    "imgStyle": ""
   }
 ]

@@ -1,0 +1,48 @@
+name: Publish social
+
+# Fans out activities marked "pendiente" in actividades.json to Instagram and
+# Facebook. Triggers right after the bot commits a new activity, plus a daily
+# cron as a safety net for retries (see MAX_ATTEMPTS in publish_social.py).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/data/actividades.json"
+  schedule:
+    - cron: "0 8 * * *" # 08:00 UTC daily, retries any entry still "pendiente"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-social
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Publish pending activities
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/publish_social.py
+
+      - name: Commit updated publication status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/actividades.json
+          git diff --staged --quiet || git commit -m "chore: update social publication status [skip ci]"
+          git push

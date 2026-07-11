@@ -1,26 +1,49 @@
 {
-  "titulo": "Fiestas Patronales",
-  "fechas": "25 y 26 de Julio",
-  "descripcion": "Nuestras fiestas mayores se celebran en honor a Santiago Apóstol y Santa Ana. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.",
+  "titulo": "Fiestas de Aldeanueva de Cameros 2026",
+  "fechas": "17 al 26 de Julio · Santiago y Santa Ana",
+  "descripcion": "Nuestras fiestas mayores se celebran en honor a Santiago Apóstol y Santa Ana. Durante estos días el pueblo se llena de vida con actos religiosos, música, deporte y festividades que reúnen a vecinos y visitantes.",
   "programa": [
     {
-      "dia": "Día 25 · Santiago",
+      "dia": "Viernes 17 de julio",
       "eventos": [
-        "⛪ Misa solemne en la Iglesia de Santa María del Valle",
-        "🚶 Procesión por el casco urbano",
-        "🎵 Actuación musical en la plaza",
-        "🎆 Verbena popular nocturna"
+        "19:00 · Comienza la novena"
       ]
     },
     {
-      "dia": "Día 26 · Santa Ana",
+      "dia": "Viernes 24 de julio",
       "eventos": [
-        "🏔️ Romería a la Ermita de Santa Ana",
-        "⛪ Misa en la ermita",
-        "🍽️ Comida popular",
-        "🎮 Juegos para niños y mayores"
+        "12:30 · Gincana",
+        "13:00 · Charla a cargo de Roberto Peso — La Aldea Negra (hechos escabrosos y leyendas oscuras de nuestro pueblo)",
+        "17:30 · Campeonato de pin-pon",
+        "19:00 · Lanzamiento de sartén",
+        "20:00 a 22:00 · DJ en la plaza (karaoke y bingo)",
+        "00:00 a 04:00 · DJ en la plaza"
+      ]
+    },
+    {
+      "dia": "Sábado 25 de julio · Santiago",
+      "eventos": [
+        "12:30 · Misa y procesión",
+        "13:30 · Pasacalles a cargo de David y Diego",
+        "15:00 · Comida popular",
+        "17:00 · Campeonato de mus",
+        "19:00 · Degustación de choricillo a la sidra",
+        "20:00 a 22:00 · DJ en la plaza",
+        "21:00 · Bingo + disfraces infantiles",
+        "00:00 a 04:00 · DJ en la plaza"
+      ]
+    },
+    {
+      "dia": "Domingo 26 de julio · Santa Ana",
+      "eventos": [
+        "12:30 · Misa y procesión",
+        "13:30 · Pasacalles a cargo de David, Diego y Enrique",
+        "17:00 · Campeonato de parchís",
+        "18:30 · Tinín \"El Mago\" — magia para todos",
+        "20:30 · Disfraces infantiles + chocolatada + entrega de premios",
+        "21:00 · Cena popular (pizzas y tortilla)"
       ]
     }
   ],
-  "cartel": null
+  "cartel": "assets/img/carteles/cartel-fiestas-2026.jpg"
 }

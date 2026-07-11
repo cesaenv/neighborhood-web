@@ -23,7 +23,14 @@
 
     const imgBox = el('div', 'merch-img');
     const placeholder = el('div', `merch-placeholder merch-placeholder--${color}`);
-    placeholder.appendChild(el('span', 'merch-placeholder-icon', product.emoji || '🛍️'));
+    if (product.imagen) {
+      const img = el('img');
+      img.src = product.imagen;
+      img.alt = product.titulo || '';
+      placeholder.appendChild(img);
+    } else {
+      placeholder.appendChild(el('span', 'merch-placeholder-icon', product.emoji || '🛍️'));
+    }
     imgBox.appendChild(placeholder);
     card.appendChild(imgBox);
 

@@ -5,7 +5,19 @@
     "titulo": "Camiseta Aldeanueva de Cameros",
     "descripcion": "Camiseta 100% algodón con el diseño exclusivo de la asociación. Disponible en varios colores y tallas.",
     "emoji": "👕",
+    "imagen": "assets/img/camiseta.png",
     "color": "red",
+    "badge": "Nuevo diseño",
+    "precio": null
+  },
+  {
+    "id": "sudadera-aldeanueva",
+    "categoria": "Ropa",
+    "titulo": "Sudadera Aldeanueva de Cameros",
+    "descripcion": "Sudadera con capucha 100% algodón con el escudo de la asociación y el mapa del pueblo bordado en la espalda.",
+    "emoji": "🧥",
+    "imagen": "assets/img/sudadera.png",
+    "color": "purple",
     "badge": "Nuevo diseño",
     "precio": null
   },
@@ -15,6 +27,7 @@
     "titulo": "Tote bag Sierra de Cameros",
     "descripcion": "Bolsa de tela ecológica con ilustración de la sierra y el escudo del pueblo. Resistente y reutilizable.",
     "emoji": "🛍️",
+    "imagen": "assets/img/totebag.png",
     "color": "green",
     "badge": null,
     "precio": null
@@ -25,6 +38,7 @@
     "titulo": "Plato decorativo del pueblo",
     "descripcion": "Plato de cerámica artesanal con vista aérea de Aldeanueva y el puente medieval. Ideal como recuerdo o regalo.",
     "emoji": "🍽️",
+    "imagen": "assets/img/plato.png",
     "color": "blue",
     "badge": "Edición limitada",
     "precio": null
