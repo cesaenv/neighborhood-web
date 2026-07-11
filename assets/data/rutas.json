@@ -28,5 +28,15 @@
     "descripcion": "Ascenso a las cumbres de la Sierra de Cameros con vistas panorámicas de La Rioja.",
     "distancia": "14 km",
     "desnivel": "600 m desnivel"
+  },
+  {
+    "id": "ruta-senda-hacia-el-horcajo",
+    "dificultad": "facil",
+    "dificultadLabel": "Fácil",
+    "tiempo": "2 horas",
+    "titulo": "Senda hacia el Horcajo",
+    "descripcion": "Un recorrido imprescindible por el corazón de la Sierra de Cameros. Esta ruta une la tranquilidad de Aldeanueva de Cameros con el paraje de El Horcajo. La senda, que se encuentra correctamente señalizada, parte desde el pueblo en dirección a la ermita de Santa Ana, ofreciendo un paseo inmersivo entre hayedos y robledales, perfecto para disfrutar de la biodiversidad de nuestra montaña.",
+    "distancia": "8 km",
+    "desnivel": "250 m desnivel"
   }
 ]
