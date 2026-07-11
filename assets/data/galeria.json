@@ -1,5 +1,14 @@
 [
   {
+    "id": "galeria-fiestas-santa-ana-2025",
+    "categoria": "fiestas",
+    "img": "assets/img/galeria/galeria-fiestas-santa-ana-2025.jpg",
+    "alt": "Fiestas Santa Ana 2025",
+    "caption": "Fiestas Santa Ana 2025",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
     "id": "galeria-ventanas-rurales",
     "categoria": "vida",
     "img": "assets/img/galeria/galeria-ventanas-rurales.jpg",
