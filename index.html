@@ -137,12 +137,16 @@
             </div>
           </div>
           <p class="fiesta-desc" id="fiestaDesc">Nuestras fiestas mayores se celebran en honor a Santiago Apóstol y Santa Ana. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.</p>
-          <div class="fiesta-program">
+          <div class="fiesta-tabs">
+            <button type="button" class="fiesta-tab-btn active" data-tab="programa">📋 Visualizar el programa</button>
+            <button type="button" class="fiesta-tab-btn" data-tab="cartel">🖼️ Visualizar el cartel</button>
+          </div>
+          <div class="fiesta-program" id="fiestaProgramaPanel">
             <h4>Programa típico</h4>
             <div class="program-timeline" id="fiestaPrograma">
             </div>
           </div>
-          <div id="fiestaCartelBox" style="margin-top:20px;">
+          <div id="fiestaCartelBox" class="fiesta-panel-hidden" style="margin-top:20px;">
           </div>
         </div>
         <div class="fiesta-sidebar">
@@ -711,7 +715,7 @@
   <script src="assets/js/galeria.js" defer></script>
   <script src="assets/js/noticias.js" defer></script>
   <script src="assets/js/rutas.js" defer></script>
-  <script src="assets/js/fiestas.js" defer></script>
+  <script src="assets/js/fiestas.js?v=2" defer></script>
   <script src="assets/js/site-config.js" defer></script>
 </body>
 </html>

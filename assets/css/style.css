@@ -341,6 +341,16 @@ button { cursor: pointer; font-family: inherit; }
 .program-events { display: flex; flex-direction: column; gap: 8px; }
 .program-events span { color: rgba(255,255,255,.75); font-size: 0.9rem; }
 
+.fiesta-tabs { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.fiesta-tab-btn {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.75); border-radius: var(--radius); padding: 10px 18px;
+  font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: background var(--transition), color var(--transition);
+}
+.fiesta-tab-btn:hover { background: rgba(255,255,255,.12); }
+.fiesta-tab-btn.active { background: #f9a825; border-color: #f9a825; color: var(--dark); }
+.fiesta-panel-hidden { display: none !important; }
+
 .fiesta-cartel-img {
   display: block; max-width: 320px; width: 100%; border-radius: var(--radius-lg);
   margin-bottom: 16px; border: 1px solid rgba(255,255,255,.1);

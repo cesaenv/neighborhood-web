@@ -29,6 +29,8 @@
     const descEl = document.getElementById('fiestaDesc');
     const programaEl = document.getElementById('fiestaPrograma');
     const cartelBox = document.getElementById('fiestaCartelBox');
+    const programaPanel = document.getElementById('fiestaProgramaPanel');
+    const tabBtns = document.querySelectorAll('.fiesta-tab-btn');
     if (!programaEl) return; // page has no fiestas section
 
     let data;
@@ -63,6 +65,18 @@
         link.setAttribute('download', '');
         cartelBox.appendChild(link);
       }
+    }
+
+    if (tabBtns.length && programaPanel && cartelBox) {
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const showCartel = btn.dataset.tab === 'cartel';
+          programaPanel.classList.toggle('fiesta-panel-hidden', showCartel);
+          cartelBox.classList.toggle('fiesta-panel-hidden', !showCartel);
+        });
+      });
     }
   }
 
