@@ -1,0 +1,52 @@
+[
+  {
+    "id": "camiseta-aldeanueva",
+    "categoria": "Ropa",
+    "titulo": "Camiseta Aldeanueva de Cameros",
+    "descripcion": "Camiseta 100% algodón con el diseño exclusivo de la asociación. Disponible en varios colores y tallas.",
+    "emoji": "👕",
+    "color": "red",
+    "badge": "Nuevo diseño",
+    "precio": null
+  },
+  {
+    "id": "tote-bag-sierra-cameros",
+    "categoria": "Complementos",
+    "titulo": "Tote bag Sierra de Cameros",
+    "descripcion": "Bolsa de tela ecológica con ilustración de la sierra y el escudo del pueblo. Resistente y reutilizable.",
+    "emoji": "🛍️",
+    "color": "green",
+    "badge": null,
+    "precio": null
+  },
+  {
+    "id": "plato-decorativo-pueblo",
+    "categoria": "Cerámica",
+    "titulo": "Plato decorativo del pueblo",
+    "descripcion": "Plato de cerámica artesanal con vista aérea de Aldeanueva y el puente medieval. Ideal como recuerdo o regalo.",
+    "emoji": "🍽️",
+    "color": "blue",
+    "badge": "Edición limitada",
+    "precio": null
+  },
+  {
+    "id": "gorra-aldeanueva",
+    "categoria": "Ropa",
+    "titulo": "Gorra Aldeanueva",
+    "descripcion": "Gorra bordada con el logo de la asociación. Perfecta para las rutas por la sierra camerana.",
+    "emoji": "🧢",
+    "color": "amber",
+    "badge": null,
+    "precio": null
+  },
+  {
+    "id": "lamina-ilustrada-pueblo",
+    "categoria": "Arte",
+    "titulo": "Lámina ilustrada del pueblo",
+    "descripcion": "Impresión artística en papel de alta calidad con ilustración del casco histórico, la ermita y el puente medieval.",
+    "emoji": "🖼️",
+    "color": "purple",
+    "badge": "Edición limitada",
+    "precio": null
+  }
+]

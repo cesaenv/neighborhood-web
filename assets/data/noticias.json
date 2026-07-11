@@ -1,0 +1,50 @@
+[
+  {
+    "id": "2026-fiestas-patronales-santiago-santa-ana",
+    "categoria": "fiestas",
+    "categoriaLabel": "Fiestas",
+    "badgeColor": "red",
+    "badgeTexto": "Próximamente",
+    "titulo": "Fiestas Patronales de Santiago y Santa Ana 2026",
+    "descripcion": "Preparamos los festejos en honor a nuestros patrones. Dos días de misa, procesión, música y juegos para todos los vecinos y visitantes.",
+    "fechaTexto": "25 y 26 de Julio",
+    "fecha": "2026-07-25",
+    "enlace": { "texto": "Ver programa →", "href": "#fiestas" }
+  },
+  {
+    "id": "2026-ruta-icnitas-dinosaurio",
+    "categoria": "naturaleza",
+    "categoriaLabel": "Naturaleza",
+    "badgeColor": "green",
+    "badgeTexto": "Actividad",
+    "titulo": "Ruta guiada por las icnitas de dinosaurio",
+    "descripcion": "Este verano organizamos una visita guiada a los yacimientos de huellas fosilizadas en Vuelta de los Manzanos.",
+    "fechaTexto": "Verano 2026",
+    "fecha": "2026-07-01",
+    "enlace": null
+  },
+  {
+    "id": "2025-asamblea-anual",
+    "categoria": "comunidad",
+    "categoriaLabel": "Asociación",
+    "badgeColor": "amber",
+    "badgeTexto": "Convocatoria",
+    "titulo": "Asamblea anual de la Asociación de Vecinos",
+    "descripcion": "Se convoca a todos los vecinos a la asamblea ordinaria para tratar asuntos del pueblo y renovar la junta directiva.",
+    "fechaTexto": "Pendiente de fecha",
+    "fecha": "2025-12-01",
+    "enlace": null
+  },
+  {
+    "id": "2025-rehabilitacion-fuente",
+    "categoria": "mejoras",
+    "categoriaLabel": "Mejoras",
+    "badgeColor": "blue",
+    "badgeTexto": "Infraestructuras",
+    "titulo": "Rehabilitación de la fuente del pueblo",
+    "descripcion": "La asociación solicita al Ayuntamiento de Villanueva de Cameros la restauración de la fuente tradicional del casco urbano.",
+    "fechaTexto": "En trámite",
+    "fecha": "2025-06-01",
+    "enlace": null
+  }
+]

@@ -113,60 +113,7 @@
         <h2>Noticias y Anuncios</h2>
         <p>Mantente al día con todo lo que ocurre en nuestro pueblo</p>
       </div>
-      <div class="news-grid">
-
-        <article class="news-card news-card--featured">
-          <div class="news-card-img" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">
-            <span class="news-badge">Próximamente</span>
-            <div class="news-date-big">
-              <span class="day">25</span>
-              <span class="month">Jul</span>
-            </div>
-          </div>
-          <div class="news-body">
-            <span class="news-cat">Fiestas</span>
-            <h3>Fiestas Patronales de Santiago y Santa Ana 2026</h3>
-            <p>Preparamos los festejos en honor a nuestros patrones. Dos días de misa, procesión, música y juegos para todos los vecinos y visitantes.</p>
-            <a href="#fiestas" class="news-link">Ver programa →</a>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-card-img" style="background:linear-gradient(135deg,#059669,#065f46)">
-            <span class="news-badge news-badge--green">Actividad</span>
-          </div>
-          <div class="news-body">
-            <span class="news-cat">Naturaleza</span>
-            <h3>Ruta guiada por las icnitas de dinosaurio</h3>
-            <p>Este verano organizamos una visita guiada a los yacimientos de huellas fosilizadas en Vuelta de los Manzanos.</p>
-            <span class="news-date-text">Verano 2026</span>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-card-img" style="background:linear-gradient(135deg,#d97706,#92400e)">
-            <span class="news-badge news-badge--amber">Convocatoria</span>
-          </div>
-          <div class="news-body">
-            <span class="news-cat">Asociación</span>
-            <h3>Asamblea anual de la Asociación de Vecinos</h3>
-            <p>Se convoca a todos los vecinos a la asamblea ordinaria para tratar asuntos del pueblo y renovar la junta directiva.</p>
-            <span class="news-date-text">Pendiente de fecha</span>
-          </div>
-        </article>
-
-        <article class="news-card">
-          <div class="news-card-img" style="background:linear-gradient(135deg,#0891b2,#0e7490)">
-            <span class="news-badge news-badge--blue">Infraestructuras</span>
-          </div>
-          <div class="news-body">
-            <span class="news-cat">Mejoras</span>
-            <h3>Rehabilitación de la fuente del pueblo</h3>
-            <p>La asociación solicita al Ayuntamiento de Villanueva de Cameros la restauración de la fuente tradicional del casco urbano.</p>
-            <span class="news-date-text">En trámite</span>
-          </div>
-        </article>
-
+      <div class="news-grid" id="newsGrid">
       </div>
     </div>
   </section>
@@ -185,33 +132,17 @@
           <div class="fiesta-main-header">
             <span class="fiesta-icon">🎉</span>
             <div>
-              <h3>Fiestas Patronales</h3>
-              <span class="fiesta-date">25 y 26 de Julio</span>
+              <h3 id="fiestaTitulo">Fiestas Patronales</h3>
+              <span class="fiesta-date" id="fiestaFechas">25 y 26 de Julio</span>
             </div>
           </div>
-          <p class="fiesta-desc">Nuestras fiestas mayores se celebran en honor a <strong>Santiago Apóstol</strong> y <strong>Santa Ana</strong>. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.</p>
+          <p class="fiesta-desc" id="fiestaDesc">Nuestras fiestas mayores se celebran en honor a Santiago Apóstol y Santa Ana. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.</p>
           <div class="fiesta-program">
             <h4>Programa típico</h4>
-            <div class="program-timeline">
-              <div class="program-item">
-                <span class="program-time">Día 25 · Santiago</span>
-                <div class="program-events">
-                  <span>⛪ Misa solemne en la Iglesia de Santa María del Valle</span>
-                  <span>🚶 Procesión por el casco urbano</span>
-                  <span>🎵 Actuación musical en la plaza</span>
-                  <span>🎆 Verbena popular nocturna</span>
-                </div>
-              </div>
-              <div class="program-item">
-                <span class="program-time">Día 26 · Santa Ana</span>
-                <div class="program-events">
-                  <span>🏔️ Romería a la Ermita de Santa Ana</span>
-                  <span>⛪ Misa en la ermita</span>
-                  <span>🍽️ Comida popular</span>
-                  <span>🎮 Juegos para niños y mayores</span>
-                </div>
-              </div>
+            <div class="program-timeline" id="fiestaPrograma">
             </div>
+          </div>
+          <div id="fiestaCartelBox" style="margin-top:20px;">
           </div>
         </div>
         <div class="fiesta-sidebar">
@@ -525,43 +456,7 @@
 
       <div class="rutas-section">
         <h3>Rutas recomendadas</h3>
-        <div class="rutas-grid">
-          <div class="ruta-item">
-            <div class="ruta-header">
-              <span class="ruta-dif ruta-dif--easy">Fácil</span>
-              <span class="ruta-time">⏱ 1h 30min</span>
-            </div>
-            <h4>Paseo fluvial del Iregua</h4>
-            <p>Ruta circular por la orilla del río Iregua. Ideal para familias con niños.</p>
-            <div class="ruta-info">
-              <span>📏 4 km</span>
-              <span>📈 80 m desnivel</span>
-            </div>
-          </div>
-          <div class="ruta-item">
-            <div class="ruta-header">
-              <span class="ruta-dif ruta-dif--medium">Media</span>
-              <span class="ruta-time">⏱ 3h</span>
-            </div>
-            <h4>Ruta de las Icnitas</h4>
-            <p>Visita los yacimientos paleontológicos de Vuelta de los Manzanos y El Encinar.</p>
-            <div class="ruta-info">
-              <span>📏 8 km</span>
-              <span>📈 250 m desnivel</span>
-            </div>
-          </div>
-          <div class="ruta-item">
-            <div class="ruta-header">
-              <span class="ruta-dif ruta-dif--hard">Difícil</span>
-              <span class="ruta-time">⏱ 5h</span>
-            </div>
-            <h4>Cresta de la Sierra</h4>
-            <p>Ascenso a las cumbres de la Sierra de Cameros con vistas panorámicas de La Rioja.</p>
-            <div class="ruta-info">
-              <span>📏 14 km</span>
-              <span>📈 600 m desnivel</span>
-            </div>
-          </div>
+        <div class="rutas-grid" id="rutasGrid">
         </div>
       </div>
     </div>
@@ -643,7 +538,7 @@
               <span class="contact-icon">📧</span>
               <div>
                 <strong>Correo electrónico</strong>
-                <span>asociacion@aldeanuevadecameros.es</span>
+                <span id="contactEmail">asociacion@aldeanuevadecameros.es</span>
               </div>
             </div>
             <div class="contact-item">
@@ -713,7 +608,7 @@
       <!-- Junta Directiva — ancho completo -->
       <div class="junta-section junta-section--full">
         <h4>Junta Directiva</h4>
-        <div class="junta-grid">
+        <div class="junta-grid" id="juntaGrid">
           <div class="junta-item">
             <span class="junta-role">Presidente/a</span>
             <span class="junta-name">Por designar</span>
@@ -800,7 +695,11 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <!-- Dynamic gallery render from assets/data/galeria.json -->
+  <!-- Dynamic content renders (each is a no-op if its container is absent) -->
   <script src="assets/js/galeria.js" defer></script>
+  <script src="assets/js/noticias.js" defer></script>
+  <script src="assets/js/rutas.js" defer></script>
+  <script src="assets/js/fiestas.js" defer></script>
+  <script src="assets/js/site-config.js" defer></script>
 </body>
 </html>

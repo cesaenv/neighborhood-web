@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ruta-paseo-fluvial-iregua",
+    "dificultad": "facil",
+    "dificultadLabel": "Fácil",
+    "tiempo": "1h 30min",
+    "titulo": "Paseo fluvial del Iregua",
+    "descripcion": "Ruta circular por la orilla del río Iregua. Ideal para familias con niños.",
+    "distancia": "4 km",
+    "desnivel": "80 m desnivel"
+  },
+  {
+    "id": "ruta-icnitas",
+    "dificultad": "media",
+    "dificultadLabel": "Media",
+    "tiempo": "3h",
+    "titulo": "Ruta de las Icnitas",
+    "descripcion": "Visita los yacimientos paleontológicos de Vuelta de los Manzanos y El Encinar.",
+    "distancia": "8 km",
+    "desnivel": "250 m desnivel"
+  },
+  {
+    "id": "ruta-cresta-sierra",
+    "dificultad": "dificil",
+    "dificultadLabel": "Difícil",
+    "tiempo": "5h",
+    "titulo": "Cresta de la Sierra",
+    "descripcion": "Ascenso a las cumbres de la Sierra de Cameros con vistas panorámicas de La Rioja.",
+    "distancia": "14 km",
+    "desnivel": "600 m desnivel"
+  }
+]

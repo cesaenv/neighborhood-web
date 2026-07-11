@@ -1,0 +1,26 @@
+{
+  "titulo": "Fiestas Patronales",
+  "fechas": "25 y 26 de Julio",
+  "descripcion": "Nuestras fiestas mayores se celebran en honor a Santiago Apóstol y Santa Ana. Durante dos días el pueblo se llena de vida con actos religiosos, música y festividades que reúnen a vecinos y visitantes.",
+  "programa": [
+    {
+      "dia": "Día 25 · Santiago",
+      "eventos": [
+        "⛪ Misa solemne en la Iglesia de Santa María del Valle",
+        "🚶 Procesión por el casco urbano",
+        "🎵 Actuación musical en la plaza",
+        "🎆 Verbena popular nocturna"
+      ]
+    },
+    {
+      "dia": "Día 26 · Santa Ana",
+      "eventos": [
+        "🏔️ Romería a la Ermita de Santa Ana",
+        "⛪ Misa en la ermita",
+        "🍽️ Comida popular",
+        "🎮 Juegos para niños y mayores"
+      ]
+    }
+  ],
+  "cartel": null
+}
