@@ -1,5 +1,14 @@
 [
   {
+    "id": "galeria-ventanas-rurales",
+    "categoria": "vida",
+    "img": "assets/img/galeria/galeria-ventanas-rurales.jpg",
+    "alt": "Ventanas rurales",
+    "caption": "Ventanas rurales",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
     "id": "galeria-puente-medieval-arroyo",
     "categoria": "vida",
     "img": "assets/img/hero.jpg",
