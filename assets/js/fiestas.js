@@ -52,6 +52,12 @@
     if (cartelBox) {
       cartelBox.innerHTML = '';
       if (data.cartel) {
+        const preview = el('img', 'fiesta-cartel-img');
+        preview.src = data.cartel;
+        preview.alt = 'Cartel de ' + (data.titulo || 'fiestas');
+        preview.loading = 'lazy';
+        cartelBox.appendChild(preview);
+
         const link = el('a', 'btn btn-outline', '📥 Descargar cartel');
         link.href = data.cartel;
         link.setAttribute('download', '');
