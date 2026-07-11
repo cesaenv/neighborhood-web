@@ -1,5 +1,17 @@
 [
   {
+    "id": "2026-cena-con-motivo-del-mundial-de-futbol-2026",
+    "categoria": "comunidad",
+    "categoriaLabel": "Comunidad",
+    "badgeColor": "amber",
+    "badgeTexto": "Comunidad",
+    "titulo": "Cena con motivo del mundial de fútbol 2026",
+    "descripcion": "¡La mejor forma de animar a la Selección es en buena compañía! Nuestros vecinos se reunieron anoche en la sede de la asociación para vivir juntos la emoción del Mundial. Entre pinchos, risas y muchos nervios frente a la pantalla, demostramos que la afición riojana sabe cómo apoyar a los nuestros.",
+    "fechaTexto": "Julio 2026",
+    "fecha": "2026-07-01",
+    "enlace": null
+  },
+  {
     "id": "2026-fiestas-patronales-santiago-santa-ana",
     "categoria": "fiestas",
     "categoriaLabel": "Fiestas",
@@ -9,7 +21,10 @@
     "descripcion": "Preparamos los festejos en honor a nuestros patrones. Dos días de misa, procesión, música y juegos para todos los vecinos y visitantes.",
     "fechaTexto": "25 y 26 de Julio",
     "fecha": "2026-07-25",
-    "enlace": { "texto": "Ver programa →", "href": "#fiestas" }
+    "enlace": {
+      "texto": "Ver programa →",
+      "href": "#fiestas"
+    }
   },
   {
     "id": "2026-ruta-icnitas-dinosaurio",
