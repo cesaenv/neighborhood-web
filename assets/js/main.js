@@ -75,7 +75,7 @@ const lightboxCap   = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 
 // Note: gallery items (.galeria-real) are rendered and bound by galeria.js.
-document.querySelectorAll('.patrimonio-img:not(.patrimonio-carousel), .nat-card-foto').forEach(item => {
+document.querySelectorAll('.patrimonio-img:not(.patrimonio-carousel), .nat-card-foto:not(.patrimonio-carousel)').forEach(item => {
   const img = item.querySelector('img');
   if (!img) return;
   item.style.cursor = 'pointer';
