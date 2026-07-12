@@ -179,10 +179,26 @@ function closeLightbox() {
 // Note: gallery filters are handled by galeria.js (items are dynamic).
 
 // ── Formulario de contacto ────────────────────────────────────
+const CONTACT_EMAIL = 'asociacion@aldeanuevadecameros.es';
+
 function handleForm(e) {
   e.preventDefault();
   const form    = e.target;
   const success = document.getElementById('formSuccess');
+
+  const nombre  = form.querySelector('#nombre').value.trim();
+  const email   = form.querySelector('#email').value.trim();
+  const asunto  = form.querySelector('#asunto').value.trim();
+  const mensaje = form.querySelector('#mensaje').value.trim();
+
+  const subject = asunto || 'Contacto desde la web';
+  const body =
+    `Nombre: ${nombre}\n` +
+    `Email: ${email}\n\n` +
+    `${mensaje}`;
+
+  const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoUrl;
 
   form.style.opacity = '0';
   form.style.transition = 'opacity 0.3s ease';
