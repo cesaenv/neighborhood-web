@@ -17,9 +17,23 @@
     return node;
   }
 
+  function openLightbox(src, alt) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCap = document.getElementById('lightboxCaption');
+    if (!lightbox || !lightboxImg) return;
+
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    if (lightboxCap) lightboxCap.textContent = alt || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
   function buildCard(product) {
     const color = VALID_COLORS.includes(product.color) ? product.color : 'red';
     const card = el('div', 'merch-card');
+    if (product.categoria) card.dataset.categoria = product.categoria;
 
     const imgBox = el('div', 'merch-img');
     const placeholder = el('div', `merch-placeholder merch-placeholder--${color}`);
@@ -28,6 +42,9 @@
       img.src = product.imagen;
       img.alt = product.titulo || '';
       placeholder.appendChild(img);
+      placeholder.appendChild(el('span', 'merch-zoom', '🔍'));
+      placeholder.style.cursor = 'zoom-in';
+      placeholder.addEventListener('click', () => openLightbox(img.src, img.alt));
     } else {
       placeholder.appendChild(el('span', 'merch-placeholder-icon', product.emoji || '🛍️'));
     }
