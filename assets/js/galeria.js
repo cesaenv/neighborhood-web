@@ -58,25 +58,24 @@
     });
   }
 
-  /* --- Lightbox open (close handled by main.js) --------------- */
+  /* --- Lightbox open (navigation + close handled by main.js) -- */
   function bindLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCap = document.getElementById('lightboxCaption');
-    if (!lightbox || !lightboxImg) return;
+    if (typeof openLightbox !== 'function') return;
 
     document.querySelectorAll('#' + GRID_ID + ' .galeria-real').forEach(realEl => {
       realEl.addEventListener('click', () => {
-        const img = realEl.querySelector('img');
-        if (!img) return;
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        if (lightboxCap) {
-          lightboxCap.textContent =
-            realEl.querySelector('.galeria-caption')?.textContent || img.alt || '';
-        }
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        // Navega solo entre las fotos visibles con el filtro actual.
+        const visibleItems = Array.from(
+          document.querySelectorAll('#' + GRID_ID + ' .galeria-item:not(.hidden) .galeria-real')
+        );
+        const images = visibleItems.map(el => {
+          const img = el.querySelector('img');
+          const caption = el.querySelector('.galeria-caption')?.textContent || img.alt || '';
+          return { src: img.src, alt: img.alt, caption };
+        });
+        const idx = visibleItems.indexOf(realEl);
+        const startIdx = idx === -1 ? 0 : idx;
+        openLightbox(images, startIdx, images[startIdx].caption);
       });
     });
   }

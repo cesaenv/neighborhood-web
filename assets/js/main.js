@@ -99,7 +99,7 @@ function updateLightboxImage() {
   lightboxImg.src = current.src;
   lightboxImg.alt = current.alt;
   const base = lightboxImages.length > 1
-    ? (current.alt || lightboxCap.dataset.base || '')
+    ? (current.caption || current.alt || lightboxCap.dataset.base || '')
     : (lightboxCap.dataset.base || current.alt || '');
   lightboxCap.textContent = lightboxImages.length > 1
     ? `${base} · ${lightboxIdx + 1} / ${lightboxImages.length}`
@@ -179,7 +179,12 @@ function closeLightbox() {
 // Note: gallery filters are handled by galeria.js (items are dynamic).
 
 // ── Formulario de contacto ────────────────────────────────────
-const CONTACT_EMAIL = 'asociacion@aldeanuevadecameros.es';
+// El email real vive en assets/data/config.json (contactoEmail);
+// site-config.js reescribe #contactEmail cuando carga, y lo leemos
+// de ahí para que el formulario use siempre la misma fuente.
+function getContactEmail() {
+  return document.getElementById('contactEmail')?.textContent.trim() || 'asociacion@aldeanuevadecameros.es';
+}
 
 function handleForm(e) {
   e.preventDefault();
@@ -197,7 +202,7 @@ function handleForm(e) {
     `Email: ${email}\n\n` +
     `${mensaje}`;
 
-  const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailtoUrl = `mailto:${getContactEmail()}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoUrl;
 
   form.style.opacity = '0';
