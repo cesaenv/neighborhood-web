@@ -19,6 +19,8 @@ navToggle.addEventListener('click', () => {
 
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
+    // Los enlaces que abren un submenú desplegable en móvil no deben cerrar el menú principal
+    if (link.parentElement.classList.contains('nav-item-dropdown') && window.innerWidth <= 768) return;
     navLinks.classList.remove('open');
     navToggle.classList.remove('open');
   });
