@@ -94,6 +94,7 @@ button { cursor: pointer; font-family: inherit; }
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
+.nav-left { display: flex; align-items: center; gap: 14px; }
 .nav-brand { display: flex; align-items: center; gap: 12px; }
 .nav-escudo { font-size: 1.8rem; }
 .nav-title { display: block; color: var(--white); font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; line-height: 1.2; }
@@ -115,14 +116,15 @@ button { cursor: pointer; font-family: inherit; }
 }
 .nav-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all var(--transition); }
 
-.nav-socials { display: flex; align-items: center; gap: 8px; margin-left: 4px; padding-left: 8px; }
-.nav-links a.nav-social-link {
+.nav-socials { display: flex; align-items: center; gap: 6px; }
+.nav-social-link {
   display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; padding: 0; border-radius: 50%;
+  width: 28px; height: 28px; border-radius: 50%;
   background: rgba(255,255,255,.08); color: rgba(255,255,255,.85);
+  transition: all var(--transition);
 }
-.nav-social-link svg { width: 16px; height: 16px; }
-.nav-links a.nav-social-link:hover { background: rgba(255,255,255,.18); color: var(--white); }
+.nav-social-link svg { width: 14px; height: 14px; display: block; }
+.nav-social-link:hover { background: rgba(255,255,255,.18); color: var(--white); }
 
 /* ── Dropdown ──────────────────────────────────────────────── */
 .nav-item-dropdown {
@@ -626,14 +628,14 @@ button { cursor: pointer; font-family: inherit; }
 .junta-role { display: block; font-size: 0.75rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
 .junta-name { font-size: 0.9rem; color: var(--text-muted); }
 
-.social-follow-links { display: flex; flex-wrap: wrap; gap: 14px; }
+.social-follow-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .social-follow-link {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 10px 20px; border-radius: 100px;
-  color: var(--white); font-weight: 600; font-size: 0.9rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 100px;
+  color: var(--white); font-weight: 600; font-size: 0.85rem;
   transition: all var(--transition);
 }
-.social-follow-link svg { width: 20px; height: 20px; flex-shrink: 0; }
+.social-follow-link svg { width: 15px; height: 15px; flex-shrink: 0; display: block; }
 .social-follow-link--facebook { background: #1877f2; }
 .social-follow-link--facebook:hover { background: #1462d0; }
 .social-follow-link--instagram { background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); }
@@ -832,6 +834,9 @@ button { cursor: pointer; font-family: inherit; }
   .cuota-full-inner { gap: 14px; }
   .cuota-num { font-size: 2.2rem; }
   .nav-container { padding: 0 16px; }
+  .nav-left { gap: 8px; }
+  .nav-social-link { width: 24px; height: 24px; }
+  .nav-social-link svg { width: 12px; height: 12px; }
 }
 
 /* ============================================================

@@ -14,6 +14,20 @@
     return node;
   }
 
+  /* --- Lightbox open (close handled by main.js) --------------- */
+  function openLightbox(src, alt, caption) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCap = document.getElementById('lightboxCaption');
+    if (!lightbox || !lightboxImg) return;
+
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    if (lightboxCap) lightboxCap.textContent = caption || alt || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
   function buildProgramItem(dia) {
     const item = el('div', 'program-item');
     item.appendChild(el('span', 'program-time', dia.dia || ''));
@@ -58,6 +72,8 @@
         preview.src = data.cartel;
         preview.alt = 'Cartel de ' + (data.titulo || 'fiestas');
         preview.loading = 'lazy';
+        preview.style.cursor = 'zoom-in';
+        preview.addEventListener('click', () => openLightbox(preview.src, preview.alt, data.titulo || ''));
         cartelBox.appendChild(preview);
 
         const link = el('a', 'btn btn-outline', '📥 Descargar cartel');
