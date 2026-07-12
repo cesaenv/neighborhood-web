@@ -393,11 +393,15 @@
     // ── Navbar toggle ─────────────────────────────────────────
     const navToggle = document.getElementById('navToggle');
     const navLinks  = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      document.body.classList.toggle('nav-open', navLinks.classList.contains('open'));
+    });
     document.addEventListener('click', e => {
       const navbar = document.getElementById('navbar');
       if (!navbar.contains(e.target)) {
         navLinks.classList.remove('open');
+        document.body.classList.remove('nav-open');
         document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
       }
     });

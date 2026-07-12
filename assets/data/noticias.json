@@ -51,15 +51,16 @@
     "enlace": null
   },
   {
-    "id": "2025-rehabilitacion-fuente",
-    "categoria": "mejoras",
-    "categoriaLabel": "Mejoras",
+    "id": "2026-mejora-suelo-altar-ermita",
+    "categoria": "patrimonio",
+    "categoriaLabel": "Patrimonio",
     "badgeColor": "blue",
-    "badgeTexto": "Infraestructuras",
-    "titulo": "Rehabilitación de la fuente del pueblo",
-    "descripcion": "La asociación solicita al Ayuntamiento de Villanueva de Cameros la restauración de la fuente tradicional del casco urbano.",
-    "fechaTexto": "En trámite",
-    "fecha": "2025-06-01",
+    "badgeTexto": "Mejoras",
+    "titulo": "Renovación del suelo del altar de la ermita",
+    "descripcion": "En junio de 2026 se llevó a cabo una mejora en la ermita, renovando el suelo del altar.",
+    "fechaTexto": "Junio 2026",
+    "fecha": "2026-06-01",
+    "imagen": "assets/img/patrimonio/ermita/ermita-12.jpg",
     "enlace": null
   }
 ]

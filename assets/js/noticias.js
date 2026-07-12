@@ -25,7 +25,13 @@
     const card = el('article', 'news-card' + (index === 0 ? ' news-card--featured' : ''));
 
     const img = el('div', 'news-card-img');
-    img.style.background = COLOR_VARS[item.badgeColor] || 'var(--dark)';
+    if (item.imagen) {
+      img.style.backgroundImage = `url('${item.imagen}')`;
+      img.style.backgroundSize = 'cover';
+      img.style.backgroundPosition = 'center';
+    } else {
+      img.style.background = COLOR_VARS[item.badgeColor] || 'var(--dark)';
+    }
     const badgeClass = item.badgeColor && item.badgeColor !== 'red' ? ` news-badge--${item.badgeColor}` : '';
     img.appendChild(el('span', 'news-badge' + badgeClass, item.badgeTexto || ''));
     card.appendChild(img);

@@ -137,7 +137,6 @@ button { cursor: pointer; font-family: inherit; }
   width: 14px; height: 14px; flex-shrink: 0;
   transition: transform var(--transition);
 }
-.nav-item-dropdown:hover .nav-chevron,
 .nav-item-dropdown.open .nav-chevron {
   transform: rotate(180deg);
 }
@@ -157,10 +156,19 @@ button { cursor: pointer; font-family: inherit; }
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 200;
 }
-.nav-item-dropdown:hover .nav-dropdown,
 .nav-item-dropdown.open .nav-dropdown {
   opacity: 1; pointer-events: all;
   transform: translateX(-50%) translateY(0);
+}
+/* El hover del menú desplegable solo debe activarse con ratón real:
+   en táctil, el primer toque solo simula :hover y bloquea el click,
+   dejando el submenú a medio abrir. */
+@media (hover: hover) and (pointer: fine) {
+  .nav-item-dropdown:hover .nav-chevron { transform: rotate(180deg); }
+  .nav-item-dropdown:hover .nav-dropdown {
+    opacity: 1; pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 .nav-dropdown li a {
   display: block; padding: 9px 14px;
@@ -821,9 +829,11 @@ button { cursor: pointer; font-family: inherit; }
   .section { padding: 64px 0; }
   .section-header { margin-bottom: 40px; }
   .container { padding: 0 16px; }
-  .nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--dark); padding: 80px 24px 24px; gap: 4px; overflow-y: auto; }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; background: var(--dark); padding: 80px 24px 24px; gap: 4px; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 12px 16px; font-size: 1rem; border-radius: var(--radius-sm); }
+  body.nav-open { overflow: hidden; }
+  .nav-links a { display: block; padding: 12px 16px; font-size: 1rem; border-radius: var(--radius-sm); text-align: center; }
+  .nav-item-dropdown > a { display: flex; justify-content: center; }
   /* Dropdown en móvil: expandible */
   .nav-dropdown {
     position: static; transform: none !important;
@@ -832,14 +842,14 @@ button { cursor: pointer; font-family: inherit; }
     border-radius: var(--radius-sm);
     padding: 4px 0 4px 12px;
     max-height: 0; overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.2s ease;
+    transition: max-height 0.35s ease, opacity 0.2s ease;
     opacity: 0; pointer-events: none;
     min-width: 0;
   }
   .nav-item-dropdown.open .nav-dropdown {
-    max-height: 240px; opacity: 1; pointer-events: all;
+    max-height: 400px; opacity: 1; pointer-events: all;
   }
-  .nav-dropdown li a { font-size: 0.92rem; padding: 9px 12px; }
+  .nav-dropdown li a { font-size: 0.92rem; padding: 9px 12px; text-align: center; }
   .nav-toggle { display: flex; z-index: 1100; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); width: 100%; border-radius: var(--radius); }
   .hero-scroll { display: none; }
