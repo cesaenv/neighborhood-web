@@ -2,74 +2,10 @@
    Aldeanueva de Cameros — Asociación de Vecinos
    ============================================================ */
 
-// ── Navbar scroll ────────────────────────────────────────────
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// ── Mobile nav toggle ─────────────────────────────────────────
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
-
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  navToggle.classList.toggle('open');
-  document.body.classList.toggle('nav-open', navLinks.classList.contains('open'));
-});
-
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    // Los enlaces que abren un submenú desplegable en móvil no deben cerrar el menú principal
-    if (link.parentElement.classList.contains('nav-item-dropdown') && window.innerWidth <= 768) return;
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-    document.body.classList.remove('nav-open');
-  });
-});
-
-// Close nav clicking outside
-document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target)) {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-    document.body.classList.remove('nav-open');
-    document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
-  }
-});
-
-// ── Dropdowns ─────────────────────────────────────────────────
-document.querySelectorAll('.nav-item-dropdown').forEach(item => {
-  const trigger = item.querySelector(':scope > a');
-  trigger.addEventListener('click', (e) => {
-    // En móvil: toggle del dropdown
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.nav-item-dropdown.open').forEach(d => d.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    }
-  });
-});
-
-// ── Active nav link on scroll ─────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navAnchors.forEach(a => {
-        a.style.background = a.getAttribute('href') === `#${id}`
-          ? 'rgba(255,255,255,.15)'
-          : '';
-      });
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
-
-sections.forEach(s => observer.observe(s));
+// Nota: la barra de navegación (toggle móvil, dropdowns, estado
+// "scrolled" y el resaltado de sección activa) se carga e inicializa
+// desde assets/js/include-nav.js, una vez que assets/partials/navbar.html
+// se inyecta en la página.
 
 // ── Lightbox galería ──────────────────────────────────────────
 const lightbox      = document.getElementById('lightbox');

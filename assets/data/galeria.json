@@ -295,5 +295,356 @@
     "caption": "El pueblo en primavera",
     "size": "tall",
     "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-01",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-01.jpg",
+    "alt": "Ermita de Santa Ana - foto 1",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-02",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-02.jpg",
+    "alt": "Ermita de Santa Ana - foto 2",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-03",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-03.jpg",
+    "alt": "Ermita de Santa Ana - foto 3",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-04",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-04.jpg",
+    "alt": "Ermita de Santa Ana - foto 4",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-05",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-05.jpg",
+    "alt": "Ermita de Santa Ana - foto 5",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-06",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-06.jpg",
+    "alt": "Ermita de Santa Ana - foto 6",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-07",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-07.jpg",
+    "alt": "Ermita de Santa Ana - foto 7",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-08",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-08.jpg",
+    "alt": "Ermita de Santa Ana - foto 8",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-09",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-09.jpg",
+    "alt": "Ermita de Santa Ana - foto 9",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-10",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-10.jpg",
+    "alt": "Ermita de Santa Ana - foto 10",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-11",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-11.jpg",
+    "alt": "Ermita de Santa Ana - foto 11",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-12",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-12.jpg",
+    "alt": "Ermita de Santa Ana - foto 12",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-13",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-13.jpg",
+    "alt": "Ermita de Santa Ana - foto 13",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-14",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-14.jpg",
+    "alt": "Ermita de Santa Ana - foto 14",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-15",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-15.jpg",
+    "alt": "Ermita de Santa Ana - foto 15",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-ermita-16",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/ermita/ermita-16.jpg",
+    "alt": "Ermita de Santa Ana - foto 16",
+    "caption": "Ermita de Santa Ana",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-01",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-01.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 1",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-02",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-02.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 2",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-03",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-03.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 3",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-04",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-04.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 4",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-05",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-05.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 5",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-06",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-06.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 6",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-07",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-07.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 7",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-08",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-08.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 8",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-09",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-09.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 9",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-10",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-10.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 10",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-11",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-11.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 11",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-12",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-12.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 12",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-13",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-13.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 13",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-14",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-14.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 14",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-15",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-15.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 15",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-iglesia-16",
+    "categoria": "patrimonio",
+    "img": "assets/img/patrimonio/iglesia/iglesia-16.jpg",
+    "alt": "Iglesia Ntra. Sra. del Valle - foto 16",
+    "caption": "Iglesia Ntra. Sra. del Valle",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-vista-aerea",
+    "categoria": "naturaleza",
+    "img": "assets/img/aerea.jpg",
+    "alt": "Vista aérea de Aldeanueva de Cameros",
+    "caption": "Vista aérea del pueblo",
+    "size": "wide",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-casco-historico",
+    "categoria": "patrimonio",
+    "img": "assets/img/casco.jpg",
+    "alt": "Casco histórico de Aldeanueva de Cameros",
+    "caption": "Casco histórico del pueblo",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-puente-medieval",
+    "categoria": "vida",
+    "img": "assets/img/puente3.jpg",
+    "alt": "Puente medieval sobre el Arroyo de la Aldea",
+    "caption": "Puente medieval",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-casa-piedra",
+    "categoria": "vida",
+    "img": "assets/img/villa/casa.jpg",
+    "alt": "Casa de piedra tradicional",
+    "caption": "Casa de piedra tradicional",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-aldea-01",
+    "categoria": "naturaleza",
+    "img": "assets/img/villa/rio1.jpg",
+    "alt": "El Arroyo de la Aldea",
+    "caption": "El Arroyo de la Aldea",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-aldea-02",
+    "categoria": "naturaleza",
+    "img": "assets/img/villa/rio2.jpg",
+    "alt": "El Arroyo de la Aldea",
+    "caption": "El Arroyo de la Aldea",
+    "size": "",
+    "imgStyle": ""
+  },
+  {
+    "id": "galeria-arroyo-aldea-03",
+    "categoria": "naturaleza",
+    "img": "assets/img/villa/rio3.jpg",
+    "alt": "El Arroyo de la Aldea",
+    "caption": "El Arroyo de la Aldea",
+    "size": "tall",
+    "imgStyle": ""
   }
 ]
