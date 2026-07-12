@@ -9,6 +9,7 @@
     "descripcion": "¡La mejor forma de animar a la Selección es en buena compañía! Nuestros vecinos se reunieron anoche en la sede de la asociación para vivir juntos la emoción del Mundial. Entre pinchos, risas y muchos nervios frente a la pantalla, demostramos que la afición riojana sabe cómo apoyar a los nuestros.",
     "fechaTexto": "Julio 2026",
     "fecha": "2026-07-01",
+    "imagen": "assets/img/noticias/cena-futbol.jpeg",
     "enlace": null
   },
   {
@@ -21,6 +22,7 @@
     "descripcion": "Preparamos los festejos en honor a nuestros patrones. Dos días de misa, procesión, música y juegos para todos los vecinos y visitantes.",
     "fechaTexto": "25 y 26 de Julio",
     "fecha": "2026-07-25",
+    "imagen": "assets/img/carteles/cartel-fiestas-2026.jpg",
     "enlace": {
       "texto": "Ver programa →",
       "href": "#fiestas"
@@ -36,6 +38,7 @@
     "descripcion": "Este verano organizamos una visita guiada a los yacimientos de huellas fosilizadas en Vuelta de los Manzanos.",
     "fechaTexto": "Verano 2026",
     "fecha": "2026-07-01",
+    "imagen": "assets/img/villa/huellas.jpg",
     "enlace": null
   },
   {
@@ -43,11 +46,12 @@
     "categoria": "comunidad",
     "categoriaLabel": "Asociación",
     "badgeColor": "amber",
-    "badgeTexto": "Convocatoria",
+    "badgeTexto": "Realizada",
     "titulo": "Asamblea anual de la Asociación de Vecinos",
-    "descripcion": "Se convoca a todos los vecinos a la asamblea ordinaria para tratar asuntos del pueblo y renovar la junta directiva.",
-    "fechaTexto": "Pendiente de fecha",
-    "fecha": "2025-12-01",
+    "descripcion": "Se celebró la asamblea ordinaria de la asociación, en la que se trataron los asuntos del pueblo y se renovó la junta directiva.",
+    "fechaTexto": "Última semana de junio",
+    "fecha": "2026-06-24",
+    "imagen": "assets/img/villa/escuela1.jpg",
     "enlace": null
   },
   {
