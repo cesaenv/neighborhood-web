@@ -75,7 +75,7 @@ const lightboxCap   = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 
 // Note: gallery items (.galeria-real) are rendered and bound by galeria.js.
-document.querySelectorAll('.patrimonio-img, .nat-card-foto').forEach(item => {
+document.querySelectorAll('.patrimonio-img:not(.patrimonio-carousel), .nat-card-foto').forEach(item => {
   const img = item.querySelector('img');
   if (!img) return;
   item.style.cursor = 'pointer';
@@ -86,6 +86,45 @@ document.querySelectorAll('.patrimonio-img, .nat-card-foto').forEach(item => {
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
+});
+
+// ── Carruseles de Patrimonio (Iglesia / Ermita) ────────────────
+document.querySelectorAll('.patrimonio-carousel').forEach(carousel => {
+  const slides = Array.from(carousel.querySelectorAll('.patrimonio-carousel-slide'));
+  const dotsWrap = carousel.querySelector('.carousel-dots');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  const href = carousel.dataset.href;
+  let idx = 0;
+  let timer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Foto ${i + 1}`);
+    dot.addEventListener('click', e => { e.stopPropagation(); goTo(i); resetTimer(); });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.carousel-dot'));
+
+  function goTo(i) {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach((s, si) => s.classList.toggle('active', si === idx));
+    dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+  }
+  function resetTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => goTo(idx + 1), 4500);
+  }
+
+  prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo(idx - 1); resetTimer(); });
+  nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); resetTimer(); });
+  carousel.addEventListener('click', e => {
+    if (e.target.closest('.carousel-arrow, .carousel-dot, .carousel-viewall')) return;
+    if (href) window.location.href = href;
+  });
+
+  resetTimer();
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
