@@ -98,7 +98,9 @@ function updateLightboxImage() {
   const current = lightboxImages[lightboxIdx];
   lightboxImg.src = current.src;
   lightboxImg.alt = current.alt;
-  const base = lightboxCap.dataset.base || current.alt || '';
+  const base = lightboxImages.length > 1
+    ? (current.alt || lightboxCap.dataset.base || '')
+    : (lightboxCap.dataset.base || current.alt || '');
   lightboxCap.textContent = lightboxImages.length > 1
     ? `${base} · ${lightboxIdx + 1} / ${lightboxImages.length}`
     : base;

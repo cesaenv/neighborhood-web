@@ -85,10 +85,19 @@ button { cursor: pointer; font-family: inherit; }
   padding: 12px 0;
 }
 .navbar.scrolled {
-  background: rgba(28,25,23,.96);
-  backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(0,0,0,.25);
   padding: 8px 0;
+}
+/* El fondo/blur del navbar "scrolled" va en un ::before (no en .navbar
+   directamente): backdrop-filter en un ancestro convierte a los hijos
+   position:fixed (el panel .nav-links en móvil) en relativos a ese
+   ancestro en vez de al viewport, dejando el menú móvil encajonado y
+   "sin abrir del todo" en cuanto se hace scroll fuera de Inicio. */
+.navbar.scrolled::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: rgba(28,25,23,.96);
+  backdrop-filter: blur(12px);
 }
 .nav-container {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
