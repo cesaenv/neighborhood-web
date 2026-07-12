@@ -408,8 +408,7 @@ button { cursor: pointer; font-family: inherit; }
 .patrimonio-century { color: var(--white); font-weight: 700; font-size: 0.85rem; }
 
 /* ── Carrusel de fotos (Iglesia / Ermita) ─────────────────────── */
-.patrimonio-carousel { cursor: default; }
-.patrimonio-carousel[data-href] { cursor: pointer; }
+.patrimonio-carousel { cursor: pointer; }
 .patrimonio-carousel-track { position: absolute; inset: 0; }
 .patrimonio-carousel-slide {
   position: absolute; inset: 0;
@@ -1085,6 +1084,23 @@ button { cursor: pointer; font-family: inherit; }
   cursor: pointer; transition: background var(--transition); z-index: 10;
 }
 .lightbox-close:hover { background: rgba(255,255,255,.24); }
+
+.lightbox-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.12); border: none; color: var(--white);
+  font-size: 1.6rem; width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background var(--transition); z-index: 10;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,.24); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-nav.hidden { display: none; }
+@media (max-width: 640px) {
+  .lightbox-nav { width: 42px; height: 42px; font-size: 1.3rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
 
 /* Cursor pointer en imágenes ampliables */
 .galeria-real { cursor: zoom-in; }

@@ -73,6 +73,36 @@ const lightbox      = document.getElementById('lightbox');
 const lightboxImg   = document.getElementById('lightboxImg');
 const lightboxCap   = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev  = document.getElementById('lightboxPrev');
+const lightboxNext  = document.getElementById('lightboxNext');
+
+let lightboxImages = [];
+let lightboxIdx    = 0;
+
+function openLightbox(images, startIdx, baseCaption) {
+  lightboxImages = images;
+  lightboxIdx = startIdx;
+  lightboxCap.dataset.base = baseCaption || '';
+  updateLightboxImage();
+  const multi = lightboxImages.length > 1;
+  lightboxPrev.classList.toggle('hidden', !multi);
+  lightboxNext.classList.toggle('hidden', !multi);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateLightboxImage() {
+  const current = lightboxImages[lightboxIdx];
+  lightboxImg.src = current.src;
+  lightboxImg.alt = current.alt;
+  const base = lightboxCap.dataset.base || current.alt || '';
+  lightboxCap.textContent = lightboxImages.length > 1
+    ? `${base} · ${lightboxIdx + 1} / ${lightboxImages.length}`
+    : base;
+}
+
+function lightboxShowPrev() { lightboxIdx = (lightboxIdx - 1 + lightboxImages.length) % lightboxImages.length; updateLightboxImage(); }
+function lightboxShowNext() { lightboxIdx = (lightboxIdx + 1) % lightboxImages.length; updateLightboxImage(); }
 
 // Note: gallery items (.galeria-real) are rendered and bound by galeria.js.
 document.querySelectorAll('.patrimonio-img:not(.patrimonio-carousel), .nat-card-foto:not(.patrimonio-carousel)').forEach(item => {
@@ -80,21 +110,18 @@ document.querySelectorAll('.patrimonio-img:not(.patrimonio-carousel), .nat-card-
   if (!img) return;
   item.style.cursor = 'pointer';
   item.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightboxCap.textContent = item.querySelector('.galeria-caption')?.textContent || img.alt || '';
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    const caption = item.querySelector('.galeria-caption')?.textContent || img.alt || '';
+    openLightbox([{ src: img.src, alt: img.alt }], 0, caption);
   });
 });
 
-// ── Carruseles de Patrimonio (Iglesia / Ermita) ────────────────
+// ── Carruseles de Patrimonio (Iglesia / Ermita / Pozas) ────────
 document.querySelectorAll('.patrimonio-carousel').forEach(carousel => {
   const slides = Array.from(carousel.querySelectorAll('.patrimonio-carousel-slide'));
   const dotsWrap = carousel.querySelector('.carousel-dots');
   const prevBtn = carousel.querySelector('.carousel-prev');
   const nextBtn = carousel.querySelector('.carousel-next');
-  const href = carousel.dataset.href;
+  const images = slides.map(s => ({ src: s.src, alt: s.alt }));
   let idx = 0;
   let timer = null;
 
@@ -121,15 +148,22 @@ document.querySelectorAll('.patrimonio-carousel').forEach(carousel => {
   nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); resetTimer(); });
   carousel.addEventListener('click', e => {
     if (e.target.closest('.carousel-arrow, .carousel-dot, .carousel-viewall')) return;
-    if (href) window.location.href = href;
+    openLightbox(images, idx, images[idx].alt);
   });
 
   resetTimer();
 });
 
 lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', lightboxShowPrev);
+lightboxNext.addEventListener('click', lightboxShowNext);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lightboxShowPrev();
+  if (e.key === 'ArrowRight') lightboxShowNext();
+});
 
 function closeLightbox() {
   lightbox.classList.remove('open');
