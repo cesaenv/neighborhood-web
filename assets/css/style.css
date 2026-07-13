@@ -656,6 +656,26 @@ button { cursor: pointer; font-family: inherit; }
   .cuota-full-inner .btn { width: 100%; justify-content: center; }
 }
 
+/* Teaser tienda — banner compacto */
+.tienda-teaser {
+  display: flex; align-items: center; gap: 18px;
+  padding: 20px 24px; margin-bottom: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--stone-light);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+.tienda-teaser:hover { border-color: var(--red); background: var(--white); transform: translateX(2px); }
+.tienda-teaser-icon { font-size: 1.6rem; flex-shrink: 0; }
+.tienda-teaser-text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.tienda-teaser-text strong { font-size: 1rem; color: var(--red); }
+.tienda-teaser-text span { font-size: 0.85rem; color: var(--text-muted); }
+
+@media (max-width: 640px) {
+  .tienda-teaser { padding: 16px 18px; gap: 14px; }
+}
+
 .junta-section h4 { font-family: var(--font-serif); margin-bottom: 16px; }
 .junta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .junta-section--full { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
