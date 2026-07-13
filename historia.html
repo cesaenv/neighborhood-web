@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia de Aldeanueva de Cameros · Aldeanueva de Cameros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* ── Page hero ─────────────────────────────────────────────── */
+    .page-hero {
+      position: relative; padding: 160px 0 80px;
+      background: var(--dark); overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('assets/img/villa/escuela1.jpg') center/cover no-repeat;
+      opacity: 0.2;
+    }
+    .page-hero-content {
+      position: relative; z-index: 1;
+      text-align: center; color: var(--white);
+    }
+    .page-hero-content .section-tag { margin-bottom: 16px; }
+    .page-hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+    }
+    .page-hero-content p {
+      color: rgba(255,255,255,.7); max-width: 640px;
+      margin: 0 auto; font-size: 1.05rem;
+    }
+    .page-breadcrumb {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 28px; font-size: 0.82rem; color: rgba(255,255,255,.45);
+    }
+    .page-breadcrumb a { color: rgba(255,255,255,.65); transition: color var(--transition); }
+    .page-breadcrumb a:hover { color: var(--white); }
+    .page-breadcrumb span { color: rgba(255,255,255,.3); }
+
+    /* ── Fuente / créditos ────────────────────────────────────── */
+    .credito-section { padding: 56px 0 0; }
+    .credito-wrap {
+      max-width: 760px; margin: 0 auto;
+      background: var(--stone-light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .credito-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .credito-wrap p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.65; }
+    .credito-wrap strong { color: var(--text); }
+
+    /* ── Índice de capítulos ──────────────────────────────────── */
+    .indice-section { padding: 40px 0 0; }
+    .indice-wrap { max-width: 760px; margin: 0 auto; }
+    .indice-list {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    .indice-list a {
+      padding: 8px 16px; border-radius: 100px;
+      background: var(--white); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.85rem; font-weight: 600;
+      transition: all var(--transition);
+    }
+    .indice-list a:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+
+    /* ── Historia (artículo) ──────────────────────────────────── */
+    .historia-section { padding: 56px 0 96px; }
+    .historia-wrap { max-width: 760px; margin: 0 auto; }
+    .historia-chapter { margin-bottom: 56px; scroll-margin-top: 90px; }
+    .historia-chapter-num {
+      font-size: 0.72rem; font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: .08em; display: block; margin-bottom: 8px;
+    }
+    .historia-chapter h2 {
+      font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 1.9rem);
+      color: var(--text); margin-bottom: 18px; line-height: 1.25;
+    }
+    .historia-chapter p {
+      color: var(--text-muted); font-size: 1.02rem; line-height: 1.8; margin-bottom: 16px;
+    }
+    .historia-chapter p strong { color: var(--text); }
+    .historia-quote {
+      border-left: 3px solid var(--red); padding: 4px 20px;
+      font-style: italic; color: var(--text); margin: 20px 0;
+      font-size: 0.98rem; line-height: 1.7;
+    }
+    .historia-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+    .historia-fig {
+      display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 28px;
+    }
+    .historia-fig span {
+      background: var(--stone-light); color: var(--stone);
+      font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px;
+    }
+
+    /* ── CTA final ────────────────────────────────────────────── */
+    .historia-cta {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      border-top: 1px solid var(--border); padding-top: 40px;
+    }
+    .historia-cta p { color: var(--text-muted); margin-bottom: 20px; }
+
+    @media (max-width: 640px) {
+      .page-hero { padding: 110px 0 56px; }
+      .credito-wrap { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV (loaded from assets/partials/navbar.html) -->
+  <div id="site-navbar-placeholder"></div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag section-tag--light">Historia · Desde 1579</span>
+        <h1>Historia de Aldeanueva de Cameros</h1>
+        <p>La crónica de un pueblo que se negó a desaparecer: los fundadores de la escuela, la lucha por reabrirla, la carretera construida a pulso y el teléfono que llegó la Nochebuena de 1981.</p>
+        <div class="page-breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <a href="index.html#patrimonio">Patrimonio</a>
+          <span>›</span>
+          <span>Historia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRÉDITO A LA FUENTE -->
+  <section class="credito-section">
+    <div class="container">
+      <div class="credito-wrap">
+        <span class="credito-icon">📖</span>
+        <p><strong>Este resumen está basado en el libro «Historia de una escuela… y otras historias»</strong> (Aldeanueva de Cameros, 2026), escrito por <strong>Roberto Peso Sáenz</strong> a partir de documentos, cartas e instancias familiares conservadas por los Peso Abad. Aquí se recoge una versión abreviada; el libro original desarrolla cada episodio con mucho mayor detalle, cartas completas y listados de nombres.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÍNDICE -->
+  <section class="indice-section">
+    <div class="container">
+      <div class="indice-wrap">
+        <div class="indice-list">
+          <a href="#fundadores">Los fundadores</a>
+          <a href="#escuela">La escuela</a>
+          <a href="#cierre">El cierre y la reapertura</a>
+          <a href="#carretera">La carretera</a>
+          <a href="#pago">El Pago</a>
+          <a href="#telefono">El teléfono</a>
+          <a href="#division">La escuela hoy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="historia-section">
+    <div class="container">
+      <div class="historia-wrap">
+
+        <div class="historia-chapter" id="fundadores">
+          <span class="historia-chapter-num">Capítulo 1</span>
+          <h2>Un pastor, un comerciante y una escuela gratuita</h2>
+          <p>Aldeanueva de Cameros nace como pueblo en 1579, cuando los vecinos de Urrezi abandonan las ruinas de su aldea tras un incendio y se asientan en el valle. Durante casi dos siglos la enseñanza queda en manos de la parroquia, hasta que en el siglo XVIII, como ocurrió en varios pueblos de Cameros, un hijo del pueblo hecho fortuna en las Indias decide devolver algo a su tierra.</p>
+          <p><strong>Matías Manuel de la Peña Martínez</strong> nació en Aldeanueva en 1735 y salió del pueblo con apenas 13 años para labrarse un futuro en Extremadura, Sevilla y, después, como comerciante a Indias entre Cádiz y Nueva España. Nunca olvidó su Aldea: financió de su propio bolsillo la reconstrucción de la Ermita de Santa Ana (inaugurada en 1778) y, al morir en Sanlúcar de Barrameda en 1787, dejó en su testamento 75.000 reales para fundar en el pueblo <strong>«una escuela gratuita para todos los que quieran aprender e instruirse en las primeras letras»</strong>.</p>
+          <p>Su padre, <strong>Manuel de la Peña Enciso</strong>, un simple pastor trashumante toda su vida, amplió la donación con 11.000 reales más para que el maestro fuera también organista de la parroquia, y financió con su propio caudal la construcción del edificio de la escuela, terminado en 1788.</p>
+          <div class="historia-quote">"Es mi voluntad se funde en dicho Pueblo de Aldeanueva de Cameros una escuela gratuita para todos los que quieran aprender e instruirse en las primeras letras" — testamento de Matías Manuel de la Peña, 1787.</div>
+          <p>Para financiar la escuela a perpetuidad, los albaceas impusieron el capital sobre una gran finca en Arcos de la Frontera (Cádiz), el <em>Cortijo El Albardén</em>, propiedad del Marqués de Casa Villavicencio. Aldeanueva cobraría cada año, desde Cádiz, la renta de un censo… una dependencia de cientos de kilómetros que causaría pleitos durante más de un siglo.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="escuela">
+          <span class="historia-chapter-num">Capítulo 2</span>
+          <h2>Doscientos años de maestro y organista</h2>
+          <p>La escuela abrió sus puertas en 1788 con <strong>Antonio de Vidaurreta y Elías</strong> como primer maestro. Sus obligaciones eran tan estrictas como curiosas: enseñar a leer, escribir y contar; instruir en la doctrina cristiana; rezar con los niños al entrar y salir de clase; acompañar todas las procesiones del pueblo; y, sobre todo, <strong>tocar el órgano</strong> en misas, funciones y en la Ermita de Santa Ana, corriendo de su bolsillo el pago del "alzafuelles".</p>
+          <p>Durante el siglo XIX la Fundación sufrió el abandono del Marqués de Villavicencio, que dejó de pagar el censo durante la Guerra de la Independencia y no se puso al corriente hasta que los Aldeanos ganaron un pleito en la Audiencia de Sevilla en 1918. Aun así, la escuela siguió funcionando ininterrumpidamente, pasando de ser Escuela de Patronato a <strong>Escuela Nacional en 1923</strong>.</p>
+          <div class="historia-fig">
+            <span>1788 · Fundación</span>
+            <span>1846 · Máximo de alumnos</span>
+            <span>1923 · Escuela Nacional</span>
+          </div>
+          <p>En marzo de 1936, pocos meses antes de la Guerra Civil, una <strong>Misión Pedagógica</strong> de la Segunda República visitó Aldeanueva y dejó decenas de libros para formar una pequeña biblioteca escolar. Varios de aquellos ejemplares —de Cervantes, Homero, Bécquer, Shakespeare— se conservan todavía hoy en el edificio de la escuela.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="cierre">
+          <span class="historia-chapter-num">Capítulo 3</span>
+          <h2>«¿Mano negra?»: la lucha por reabrir la escuela</h2>
+          <p>En 1960, con solo cuatro niños en edad escolar, las autoridades cerraron la escuela. Empezó entonces una lucha de más de dos años liderada por los hermanos <strong>Olegario y María Dolores Peso Abad</strong>, que enviaron instancias sin descanso al Gobernador Civil, a la Inspección de Enseñanza y al propio Ministerio de Educación Nacional, denunciando que pueblos vecinos con menos alumnos seguían teniendo escuela abierta.</p>
+          <div class="historia-quote">"No podemos comprender qué mano negra ha intervenido en esto" — carta de María Dolores Peso, 1961.</div>
+          <p>La correspondencia con Madrid, gestionada gracias a un contacto de la familia en el Ministerio, logró que la escuela reabriera en octubre de 1962. Pero la sangría demográfica ya era imparable: entre 1960 y 1966 la mayoría de las familias con niños emigraron a Logroño, Almarza, Vic o incluso Eibar en busca de escolarización. En julio de 1966, tras 178 años de clases, la escuela cerró sus puertas para siempre. Los últimos alumnos fueron trasladados internos a la Escuela Hogar de Ortigosa de Cameros.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="carretera">
+          <span class="historia-chapter-num">Capítulo 4</span>
+          <h2>La carretera: salir de la Edad Media</h2>
+          <p>Hasta 1969 Aldeanueva solo se comunicaba con el resto del mundo por un camino de herradura de más de 4 km. Ese año, gracias a las gestiones de Olegario Peso Abad con el presidente de la Diputación, <strong>Rufino Briones Matute</strong>, y a una colecta entre los hijos del pueblo, comenzó la construcción de un camino forestal.</p>
+          <p>El proceso se alargó una década: subvenciones concedidas y perdidas, un puente construido a mano por los propios vecinos en Las Martitas, un camión cargado de material pasando "justo, justo" por el estrecho puente de Majalinos, y un ayuntamiento de Villanueva de Cameros —del que Aldeanueva es pedanía— que en más de una ocasión retuvo la correspondencia oficial dirigida al alcalde pedáneo para entorpecer las obras.</p>
+          <p>Finalmente, la carretera llegó asfaltada hasta el pueblo y fue <strong>bendecida el día de Santa Ana de 1979</strong> por el obispo de Calahorra, Francisco Álvarez Martínez.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="pago">
+          <span class="historia-chapter-num">Capítulo 5</span>
+          <h2>El "Pago": la defensa de los pastos</h2>
+          <p>El término municipal de Aldeanueva —el "Pago"— era desde el siglo XIX de uso privativo del ganado de sus vecinos, una condición pactada al integrarse en el municipio de Villanueva en 1866. En 1972, el ayuntamiento de Villanueva intentó abrir esos pastos al ganado de todo el municipio, lo que habría hecho inviable mantener la escasa cabaña ganadera aldeana. Gracias a un recurso de reposición y a contactos de la familia Peso en la administración provincial, la invasión no llegó a producirse.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="telefono">
+          <span class="historia-chapter-num">Capítulo 6</span>
+          <h2>El teléfono: la última pieza</h2>
+          <p>Una gran nevada en enero de 1981 dejó al único vecino permanente del pueblo incomunicado durante casi una semana. Aprovechando un convenio estatal ligado al Mundial de fútbol de 1982, que preveía digitalizar la red telefónica en todos los pueblos de España, la familia Peso Abad tramitó la instalación de una línea de extrarradio de 4 kilómetros.</p>
+          <p>El teléfono llegó el <strong>24 de diciembre de 1981</strong>. La primera llamada, para felicitar la Nochebuena, se hizo desde la "salita" de la casa familiar, donde se instaló el aparato público con su correspondiente cuentapasos.</p>
+        </div>
+
+        <hr class="historia-divider" />
+
+        <div class="historia-chapter" id="division">
+          <span class="historia-chapter-num">Capítulo 7</span>
+          <h2>De aula cerrada a sede de la Asociación</h2>
+          <p>Tras el cierre definitivo de la escuela en 1966, el edificio quedó vacío, usado como lugar de reunión durante las fiestas de Santa Ana. En 1981 surgió un desencuentro entre los vecinos sobre su uso y titularidad, que terminó con el edificio inscrito a nombre del Ayuntamiento de Villanueva de Cameros, cedido para "uso y disfrute de los hijos del pueblo".</p>
+          <p>Con el paso de las décadas y el esfuerzo continuado de los vecinos —arreglos de tejado, canalización de aguas, nuevo suelo, luz eléctrica llegada en 1999— aquella antigua aula de 21 m² se transformó en lo que es hoy: <strong>la sede de la Asociación Santa Ana de Aldeanueva de Cameros</strong>, punto de encuentro de quienes mantienen viva la memoria y la comunidad de este pequeño rincón de la Sierra de Cameros.</p>
+        </div>
+
+      </div>
+
+      <div class="historia-cta">
+        <p>¿Conoces más historias, fotografías o documentos sobre el pueblo? Nos encantaría añadirlos a esta memoria colectiva.</p>
+        <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Historia de Aldeanueva" class="btn btn-primary">Compartir un documento o recuerdo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (loaded from assets/partials/footer.html) -->
+  <div id="site-footer-placeholder"></div>
+
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/include-nav.js" defer></script>
+  <script src="assets/js/include-footer.js" defer></script>
+
+</body>
+</html>
