@@ -1,33 +1,30 @@
 [
   {
-    "id": "2026-torneo-de-ping-pong",
-    "fecha": "2026-07-01",
+    "id": "2026-cena-mundial",
+    "fecha": "2026-07-15",
     "anio": "2026",
     "categoria": "comunidad",
     "categoriaLabel": "Comunidad",
-    "periodo": "Verano 2026",
-    "emoji": "🤝",
-    "titulo": "Torneo de ping pong",
-    "tituloLargo": "Torneo de ping pong",
-    "descripcion": "Un año más, celebramos nuestro torneo de ping pong con las categorías infantil y adulto. Inscripciones vía grupo de WhatsApp de la asociación.",
+    "periodo": "Julio 2026",
+    "emoji": "⚽",
+    "titulo": "Cena con motivo del mundial de fútbol 2026",
+    "tituloLargo": "Cena con motivo del Mundial de fútbol 2026",
+    "descripcion": "¡La mejor forma de animar a la Selección es en buena compañía! Nuestros vecinos se reunieron anoche en la sede de la asociación para vivir juntos la emoción del Mundial. Entre pinchos, risas y muchos nervios frente a la pantalla, demostramos que la afición riojana sabe cómo apoyar a los nuestros.",
     "tags": [],
-    "imagen": "assets/img/actividades/2026-torneo-de-ping-pong/01.jpg",
-    "imagenAlt": "Torneo de ping pong",
+    "imagen": "assets/img/actividades/2026-cena-mundial/01.jpg",
+    "imagenAlt": "Cena popular con motivo del Mundial de fútbol 2026",
     "imgStyle": "",
-    "fotoPlaceholder": "Foto de torneo de ping pong",
-    "imagenes": [
-      "assets/img/actividades/2026-torneo-de-ping-pong/01.jpg"
-    ],
+    "fotoPlaceholder": "Foto de la cena del Mundial",
     "publicacion": {
       "web": {
         "estado": "publicado"
       },
       "instagram": {
-        "estado": "pendiente",
+        "estado": "omitido",
         "post_id": null
       },
       "facebook": {
-        "estado": "pendiente",
+        "estado": "omitido",
         "post_id": null
       }
     }
@@ -48,8 +45,8 @@
       "Familias",
       "Paleontología"
     ],
-    "imagen": null,
-    "imagenAlt": "",
+    "imagen": "assets/img/villa/huellas.jpg",
+    "imagenAlt": "Huellas de dinosaurio - Vuelta de los Manzanos",
     "imgStyle": "",
     "fotoPlaceholder": "Foto de la ruta",
     "publicacion": {
@@ -67,24 +64,21 @@
     }
   },
   {
-    "id": "2025-asamblea-anual",
-    "fecha": "2025-12-01",
-    "anio": "2025",
+    "id": "2026-asamblea-anual",
+    "fecha": "2026-06-24",
+    "anio": "2026",
     "categoria": "comunidad",
-    "categoriaLabel": "Comunidad",
-    "periodo": "Diciembre 2025",
+    "categoriaLabel": "Asociación",
+    "periodo": "Última semana de junio",
     "emoji": "📋",
-    "titulo": "Asamblea anual de la Asociación",
-    "tituloLargo": "Asamblea anual de la Asociación de Vecinos 2025",
-    "descripcion": "Asamblea ordinaria de la asociación con repaso de actividades del año, presentación de cuentas y renovación parcial de la junta directiva. Participación activa de los socios en la toma de decisiones.",
-    "tags": [
-      "Asociación",
-      "Gobierno"
-    ],
-    "imagen": null,
-    "imagenAlt": "",
+    "titulo": "Asamblea anual de la Asociación de Vecinos",
+    "tituloLargo": "Asamblea anual de la Asociación de Vecinos 2026",
+    "descripcion": "Se celebró la asamblea ordinaria de la asociación, en la que se trataron los asuntos del pueblo y se renovó la junta directiva.",
+    "tags": [],
+    "imagen": "assets/img/villa/escuela1.jpg",
+    "imagenAlt": "Antigua Escuela de Fundación, sede de la Asociación",
     "imgStyle": "",
-    "fotoPlaceholder": "Foto asamblea 2025",
+    "fotoPlaceholder": "Foto de la asamblea",
     "publicacion": {
       "web": {
         "estado": "publicado"
@@ -100,262 +94,20 @@
     }
   },
   {
-    "id": "2025-rehabilitacion-fuente",
-    "fecha": "2025-06-01",
-    "anio": "2025",
-    "categoria": "mejoras",
-    "categoriaLabel": "Mejoras del pueblo",
-    "periodo": "2025",
-    "emoji": "⛲",
-    "titulo": "Solicitud de rehabilitación de la fuente",
-    "tituloLargo": "Solicitud de rehabilitación de la fuente",
-    "descripcion": "La asociación formalizó ante el Ayuntamiento de Villanueva de Cameros la solicitud de restauración de la fuente tradicional del casco urbano. Tramitación en curso con informe técnico municipal.",
-    "tags": [
-      "Infraestructuras",
-      "Patrimonio",
-      "Ayuntamiento"
-    ],
-    "imagen": null,
-    "imagenAlt": "",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto fuente del pueblo",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2024-mercado-artesanal",
-    "fecha": "2024-07-15",
-    "anio": "2024",
-    "categoria": "cultura",
-    "categoriaLabel": "Cultura",
-    "periodo": "Julio 2024",
-    "emoji": "🛍️",
-    "titulo": "Primera edición del Mercado Artesanal",
-    "tituloLargo": "Primera edición del Mercado Artesanal",
-    "descripcion": "Durante las fiestas patronales de 2024 se celebró por primera vez un pequeño mercado artesanal con productos locales y de la sierra riojana. La iniciativa despertó gran interés entre los visitantes y se planea su continuidad en años venideros.",
-    "tags": [
-      "Artesanía",
-      "Economía local",
-      "Primera edición"
-    ],
-    "imagen": null,
-    "imagenAlt": "",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto mercado artesanal 2024",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2024-concurso-baile-regional",
-    "fecha": "2024-07-10",
-    "anio": "2024",
-    "categoria": "cultura",
-    "categoriaLabel": "Cultura",
-    "periodo": "Julio 2024",
-    "emoji": "💃",
-    "titulo": "Concurso de baile regional",
-    "tituloLargo": "Concurso de baile regional",
-    "descripcion": "Competición amistosa de danzas tradicionales de La Rioja celebrada en la plaza del pueblo durante las fiestas patronales. Participaron tres parejas finalistas y contó con jurado popular formado por los propios asistentes.",
-    "tags": [
-      "Danza",
-      "Tradición",
-      "La Rioja"
-    ],
-    "imagen": null,
-    "imagenAlt": "",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto concurso de baile",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2023-50-aniversario",
-    "fecha": "2023-06-01",
-    "anio": "2023",
-    "categoria": "comunidad",
-    "categoriaLabel": "Comunidad",
-    "periodo": "2023",
-    "emoji": "🎊",
-    "titulo": "50 Aniversario de la Asociación de Vecinos",
-    "tituloLargo": "50 Aniversario de la Asociación de Vecinos",
-    "descripcion": "Celebración del cincuentenario de la asociación con acto conmemorativo, homenaje a los socios fundadores y presencia de autoridades. Decenas de ex-vecinos de toda España se desplazaron para participar en esta efeméride histórica para el pueblo.",
-    "tags": [
-      "Aniversario",
-      "Fundadores",
-      "Historia"
-    ],
-    "imagen": null,
-    "imagenAlt": "",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto acto 50 aniversario",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2023-exposicion-fotografica",
-    "fecha": "2023-05-01",
-    "anio": "2023",
-    "categoria": "cultura",
-    "categoriaLabel": "Cultura",
-    "periodo": "2023",
-    "emoji": "🖼️",
-    "titulo": "Exposición fotográfica histórica",
-    "tituloLargo": "Exposición fotográfica histórica del pueblo",
-    "descripcion": "Muestra de imágenes históricas del pueblo y de sus fiestas desde los años 70 hasta la actualidad, instalada en la sede de la asociación. Generó gran emoción entre los asistentes, especialmente los de más edad que reconocieron vecinos y lugares ya desaparecidos.",
-    "tags": [
-      "Fotografía",
-      "Memoria",
-      "Historia"
-    ],
-    "imagen": "assets/img/villa/escuela2.jpg",
-    "imagenAlt": "Antigua escuela donde se expusieron las fotografías históricas",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto de la exposición",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2022-limpieza-arroyo",
-    "fecha": "2022-04-01",
-    "anio": "2022",
-    "categoria": "mejoras",
-    "categoriaLabel": "Mejoras del pueblo",
-    "periodo": "Primavera 2022",
-    "emoji": "🏗️",
-    "titulo": "Limpieza del entorno del arroyo",
-    "tituloLargo": "Limpieza y acondicionamiento del entorno del arroyo",
-    "descripcion": "Jornada de voluntarios coordinada por la asociación para limpiar y acondicionar el tramo del Arroyo de la Aldea a su paso por el casco urbano. Se retiraron restos vegetales, se despejaron los accesos y se señalizaron los puntos de interés.",
-    "tags": [
-      "Voluntariado",
-      "Medioambiente",
-      "Arroyo"
-    ],
-    "imagen": "assets/img/arroyo.jpg",
-    "imagenAlt": "El arroyo de la aldea tras los trabajos de limpieza",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto del arroyo",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2021-restauracion-horno-pan",
-    "fecha": "2021-06-01",
-    "anio": "2021",
+    "id": "2026-renovacion-suelo-altar-ermita",
+    "fecha": "2026-06-01",
+    "anio": "2026",
     "categoria": "patrimonio",
     "categoriaLabel": "Patrimonio",
-    "periodo": "2021",
-    "emoji": "🍞",
-    "titulo": "Restauración del horno de pan tradicional",
-    "tituloLargo": "Restauración del horno de pan tradicional",
-    "descripcion": "La asociación impulsó y coordinó la restauración del antiguo horno de pan del pueblo, colaborando en la búsqueda de financiación y en la supervisión de los trabajos. El horno es uno de los elementos etnográficos más singulares del patrimonio popular de Aldeanueva.",
-    "tags": [
-      "Restauración",
-      "Patrimonio etnográfico",
-      "Financiación"
-    ],
-    "imagen": "assets/img/villa/horno.jpg",
-    "imagenAlt": "Horno de pan tradicional restaurado",
+    "periodo": "Junio 2026",
+    "emoji": "⛪",
+    "titulo": "Renovación del suelo del altar de la ermita",
+    "tituloLargo": "Renovación del suelo del altar de la Ermita de Santa Ana",
+    "descripcion": "En junio de 2026 se llevó a cabo una mejora en la ermita, renovando el suelo del altar.",
+    "tags": [],
+    "imagen": "assets/img/actividades/2026-renovacion-suelo-altar-ermita/01.jpg",
+    "imagenAlt": "Suelo del altar de la Ermita de Santa Ana renovado",
     "imgStyle": "",
-    "fotoPlaceholder": "Foto del horno",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "2019-senalizacion-sendero-ermita",
-    "fecha": "2019-09-01",
-    "anio": "2019",
-    "categoria": "naturaleza",
-    "categoriaLabel": "Naturaleza",
-    "periodo": "2019",
-    "emoji": "⛰️",
-    "titulo": "Señalización del sendero a la Ermita",
-    "tituloLargo": "Señalización del sendero a la Ermita de Santa Ana",
-    "descripcion": "Instalación de señales de madera a lo largo del camino de subida a la Ermita de Santa Ana, mejorando la experiencia de caminantes y peregrinos. El recorrido de unos 200 metros con 40 m de desnivel es uno de los más transitados del pueblo.",
-    "tags": [
-      "Senderismo",
-      "Ermita",
-      "Señalética"
-    ],
-    "imagen": "assets/img/villa/igle2.jpg",
-    "imagenAlt": "Ermita de Santa Ana",
-    "imgStyle": "object-position: center 20%;",
     "fotoPlaceholder": "Foto de la ermita",
     "publicacion": {
       "web": {
@@ -372,59 +124,25 @@
     }
   },
   {
-    "id": "2019-inventario-patrimonio",
-    "fecha": "2019-05-01",
-    "anio": "2019",
-    "categoria": "patrimonio",
-    "categoriaLabel": "Patrimonio",
-    "periodo": "2019",
-    "emoji": "📜",
-    "titulo": "Inventario del patrimonio local",
-    "tituloLargo": "Publicación del inventario de patrimonio local",
-    "descripcion": "La asociación colaboró en la elaboración del inventario de bienes patrimoniales de Aldeanueva de Cameros, documento que recoge la iglesia parroquial, la ermita barroca, el puente medieval, el horno de pan y otras construcciones de interés etnográfico e histórico.",
+    "id": "2025-50-aniversario",
+    "fecha": "2025-06-01",
+    "anio": "2025",
+    "categoria": "comunidad",
+    "categoriaLabel": "Comunidad",
+    "periodo": "2025",
+    "emoji": "🎊",
+    "titulo": "50 Aniversario de la Asociación de Vecinos",
+    "tituloLargo": "50 Aniversario de la Asociación de Vecinos",
+    "descripcion": "Se celebró un acto conmemorativo por el cincuentenario de la asociación y, con este motivo, se reelaboraron las camisetas de la asociación y se crearon sudaderas y platos de cerámica, disponibles en el apartado de tienda.",
     "tags": [
-      "Documentación",
-      "Inventario",
-      "Arquitectura"
+      "Aniversario",
+      "Fundadores",
+      "Historia"
     ],
-    "imagen": "assets/img/villa/igle1.jpg",
-    "imagenAlt": "Iglesia de Nuestra Señora del Valle",
+    "imagen": "assets/img/galeria/galeria-fiestas-santa-ana-2025.jpg",
+    "imagenAlt": "Fiestas Santa Ana 2025",
     "imgStyle": "",
-    "fotoPlaceholder": "Foto del patrimonio",
-    "publicacion": {
-      "web": {
-        "estado": "publicado"
-      },
-      "instagram": {
-        "estado": "omitido",
-        "post_id": null
-      },
-      "facebook": {
-        "estado": "omitido",
-        "post_id": null
-      }
-    }
-  },
-  {
-    "id": "anterior-restauracion-casas-piedra",
-    "fecha": "1990-01-01",
-    "anio": "Ant.",
-    "categoria": "mejoras",
-    "categoriaLabel": "Mejoras del pueblo",
-    "periodo": "Años anteriores",
-    "emoji": "🏘️",
-    "titulo": "Asesoramiento en la restauración de casas",
-    "tituloLargo": "Restauración de casas de piedra del casco histórico",
-    "descripcion": "A lo largo de los años, la asociación ha orientado a vecinos y propietarios sobre cómo restaurar sus viviendas respetando la construcción original de mampostería serrana. Muchas de las casas restauradas en el casco histórico siguen criterios promovidos por la asociación.",
-    "tags": [
-      "Arquitectura popular",
-      "Mampostería",
-      "Casco histórico"
-    ],
-    "imagen": "assets/img/puente2.jpg",
-    "imagenAlt": "Casas de piedra restauradas junto al puente medieval",
-    "imgStyle": "",
-    "fotoPlaceholder": "Foto del casco histórico",
+    "fotoPlaceholder": "Foto acto 50 aniversario",
     "publicacion": {
       "web": {
         "estado": "publicado"

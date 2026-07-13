@@ -104,6 +104,16 @@
       .merch-section { padding: 40px 0 56px; }
       .merch-intro { margin-bottom: 28px; }
     }
+
+    /* ── CTA ──────────────────────────────────────────────────── */
+    .historico-cta {
+      background: var(--dark); padding: 72px 0; text-align: center; color: var(--white);
+    }
+    .historico-cta h2 {
+      font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 16px;
+    }
+    .historico-cta p { color: rgba(255,255,255,.65); max-width: 480px; margin: 0 auto 28px; }
   </style>
 </head>
 <body>
@@ -134,7 +144,6 @@
       <button class="cat-btn" data-cat="Ropa">Ropa</button>
       <button class="cat-btn" data-cat="Complementos">Complementos</button>
       <button class="cat-btn" data-cat="Cerámica">Cerámica</button>
-      <button class="cat-btn" data-cat="Arte">Arte</button>
     </div>
   </nav>
 
@@ -144,17 +153,18 @@
       <p class="merch-intro">Todos los artículos son de edición exclusiva diseñados para la Asociación de Vecinos de Aldeanueva de Cameros. Para consultar disponibilidad, tallas, colores y precios, contáctanos por email.</p>
 
       <div class="merch-grid" id="merchGrid">
+      </div>
+    </div>
+  </section>
 
-        <div class="merch-card merch-card--cta">
-          <div class="merch-cta-content">
-            <span class="merch-cta-icon">✉️</span>
-            <h3>¿Te interesa algún artículo?</h3>
-            <p>Escríbenos para consultar disponibilidad, precios y formas de entrega o recogida.</p>
-            <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Merchandising" class="btn btn-primary">Enviar email</a>
-            <a href="index.html#contacto" class="btn btn-outline" style="border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.7);">Formulario de contacto</a>
-          </div>
-        </div>
-
+  <!-- CTA -->
+  <section class="historico-cta">
+    <div class="container">
+      <h2>¿Te interesa algún artículo?</h2>
+      <p>Escríbenos para consultar disponibilidad, precios y formas de entrega o recogida.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:asociacion@aldeanuevadecameros.es?subject=Merchandising" class="btn btn-primary">Enviar email</a>
+        <a href="index.html#contacto" class="btn btn-outline">Formulario de contacto</a>
       </div>
     </div>
   </section>
@@ -177,7 +187,7 @@
         catBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const cat = btn.dataset.cat;
-        document.querySelectorAll('.merch-grid .merch-card:not(.merch-card--cta)').forEach(card => {
+        document.querySelectorAll('.merch-grid .merch-card').forEach(card => {
           card.style.display = (cat === 'todas' || card.dataset.categoria === cat) ? '' : 'none';
         });
       });

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Histórico de Fiestas · Aldeanueva de Cameros</title>
+  <title>Fiestas · Aldeanueva de Cameros</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -76,35 +76,26 @@
     .edicion {
       padding: 80px 0;
       border-bottom: 1px solid var(--border);
-    }
-    .edicion:last-child { border-bottom: none; }
-    .edicion--dark {
       background: var(--dark); color: var(--white);
     }
-    .edicion--dark .edicion-meta-label { color: rgba(255,255,255,.45); }
-    .edicion--dark .edicion-body p { color: rgba(255,255,255,.75); }
-    .edicion--dark .actividad-item { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
-    .edicion--dark .actividad-item h4 { color: var(--white); }
-    .edicion--dark .actividad-item p { color: rgba(255,255,255,.65); }
-    .edicion--dark .foto-caption { color: rgba(255,255,255,.6); }
+    .edicion:last-child { border-bottom: none; }
 
     .edicion-header {
       display: flex; align-items: flex-start; gap: 28px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
     .edicion-anio-badge {
       flex-shrink: 0;
       width: 90px; height: 90px;
-      background: var(--red); color: var(--white);
+      background: #f9a825; color: var(--dark);
       border-radius: var(--radius-lg);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700;
     }
-    .edicion--dark .edicion-anio-badge { background: #f9a825; color: var(--dark); }
     .edicion-meta { flex: 1; }
     .edicion-meta-label {
       font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--text-muted); margin-bottom: 8px;
+      letter-spacing: .1em; color: rgba(255,255,255,.45); margin-bottom: 8px;
     }
     .edicion-meta h2 {
       font-family: var(--font-serif);
@@ -117,95 +108,61 @@
     .edicion-fecha {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 14px; border-radius: 100px;
-      background: rgba(192,57,43,.1); color: var(--red);
+      background: rgba(249,168,37,.15); color: #f9a825;
       font-size: 0.82rem; font-weight: 600;
     }
-    .edicion--dark .edicion-fecha { background: rgba(249,168,37,.15); color: #f9a825; }
-
-    .edicion-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .edicion-body--full { grid-template-columns: 1fr; }
-
-    .edicion-descripcion p {
-      color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 16px;
+    .edicion-nota {
+      margin-top: 14px; font-size: 0.88rem; color: rgba(255,255,255,.6);
     }
-    .edicion-descripcion p:last-child { margin-bottom: 0; }
 
-    .actividades-grid { display: flex; flex-direction: column; gap: 12px; }
-    .actividades-titulo {
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--text-muted); margin-bottom: 4px;
+    /* ── Cartel + Programa (mismo patrón que en el inicio) ─────── */
+    .edicion-fiesta-box {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg); padding: 36px;
     }
-    .edicion--dark .actividades-titulo { color: rgba(255,255,255,.4); }
-    .actividad-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      background: var(--stone-light); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 14px 16px;
-    }
-    .actividad-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
-    .actividad-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
-    .actividad-item p { font-size: 0.82rem; color: var(--text-muted); }
 
-    /* ── Galería de la edición ────────────────────────────────── */
+    /* ── Carrusel de fotos por edición ──────────────────────────── */
     .edicion-galeria { margin-top: 40px; }
     .edicion-galeria-titulo {
       font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--text-muted); margin-bottom: 16px;
+      letter-spacing: .1em; color: rgba(255,255,255,.4); margin-bottom: 16px;
     }
-    .edicion--dark .edicion-galeria-titulo { color: rgba(255,255,255,.4); }
-
-    .fotos-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+    .carousel-wrap {
+      overflow: hidden; position: relative;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     }
-    .fotos-grid--3 { grid-template-columns: repeat(3, 1fr); }
-    .fotos-grid--2 { grid-template-columns: repeat(2, 1fr); }
-
-    .foto-item {
+    .carousel-track {
+      display: flex; gap: 14px; width: max-content;
+      animation: carousel-scroll linear infinite;
+    }
+    .carousel-wrap:hover .carousel-track { animation-play-state: paused; }
+    @keyframes carousel-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .carousel-photo {
+      flex-shrink: 0; width: 260px; height: 180px;
       border-radius: var(--radius-sm); overflow: hidden;
-      aspect-ratio: 4/3; cursor: pointer; position: relative;
+      position: relative; cursor: zoom-in;
     }
-    .foto-item img {
+    .carousel-photo img {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.45s ease;
     }
-    .foto-item:hover img { transform: scale(1.07); }
-    .foto-caption {
+    .carousel-photo:hover img { transform: scale(1.07); }
+    .carousel-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 24px 10px 8px;
       background: linear-gradient(transparent, rgba(0,0,0,.7));
       color: var(--white); font-size: 0.75rem;
       opacity: 0; transition: opacity var(--transition);
     }
-    .foto-item:hover .foto-caption { opacity: 1; }
-
-    .foto-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-      background: linear-gradient(135deg, #7c3aed22, #4f46e522);
-      border: 2px dashed rgba(124,58,237,.25);
-      border-radius: var(--radius-sm);
-      aspect-ratio: 4/3;
-      color: var(--text-muted); font-size: 0.82rem; text-align: center; padding: 12px;
+    .carousel-photo:hover .carousel-caption { opacity: 1; }
+    .carousel-empty {
+      color: rgba(255,255,255,.5); font-size: 0.88rem;
     }
-    .foto-placeholder-icon { font-size: 1.8rem; }
-
-    /* ── Resumen estadístico ──────────────────────────────────── */
-    .edicion-stats {
-      display: flex; gap: 24px; flex-wrap: wrap;
-      margin-top: 24px;
-    }
-    .edicion-stat {
-      display: flex; flex-direction: column; gap: 2px;
-    }
-    .edicion-stat-num {
-      font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--red);
-    }
-    .edicion--dark .edicion-stat-num { color: #f9a825; }
-    .edicion-stat-label { font-size: 0.75rem; color: var(--text-muted); }
-    .edicion--dark .edicion-stat-label { color: rgba(255,255,255,.5); }
-    .edicion-stat-sep { width: 1px; background: var(--border); align-self: stretch; }
-    .edicion--dark .edicion-stat-sep { background: rgba(255,255,255,.12); }
+    .carousel-empty a { color: #f9a825; font-weight: 600; }
 
     /* ── CTA Compartir ────────────────────────────────────────── */
     .historico-cta {
@@ -246,17 +203,11 @@
     @media (max-width: 768px) {
       .page-hero { padding: 110px 0 56px; }
     }
-    @media (max-width: 900px) {
-      .edicion-body { grid-template-columns: 1fr; }
-      .fotos-grid { grid-template-columns: repeat(3, 1fr); }
-      .fotos-grid--2 { grid-template-columns: repeat(2, 1fr); }
-    }
     @media (max-width: 600px) {
       .page-hero { padding: 96px 0 44px; }
       .edicion-header { flex-direction: column; gap: 16px; }
-      .fotos-grid, .fotos-grid--3 { grid-template-columns: repeat(2, 1fr); }
-      .fotos-grid--2 { grid-template-columns: 1fr; }
-      .edicion-stats { gap: 16px; }
+      .edicion-fiesta-box { padding: 24px; }
+      .carousel-photo { width: 200px; height: 140px; }
     }
   </style>
 </head>
@@ -270,12 +221,12 @@
     <div class="container">
       <div class="page-hero-content">
         <span class="section-tag section-tag--light">Memoria festiva</span>
-        <h1>Histórico de Fiestas</h1>
-        <p>Un recorrido por las celebraciones que han dado vida a Aldeanueva de Cameros a lo largo de los años</p>
+        <h1>Fiestas de Aldeanueva</h1>
+        <p>Cartel y programa de las fiestas de Santiago y Santa Ana</p>
         <div class="page-breadcrumb">
           <a href="index.html">Inicio</a>
           <span>›</span>
-          <span>Histórico de Fiestas</span>
+          <span>Fiestas</span>
         </div>
       </div>
     </div>
@@ -285,490 +236,181 @@
   <nav class="anios-nav" id="aniosNav" aria-label="Filtrar por año">
     <div class="anios-nav-inner">
       <button class="anio-btn active" data-anio="todos">Todos los años</button>
+      <button class="anio-btn" data-anio="2026">2026</button>
       <button class="anio-btn" data-anio="2025">2025</button>
-      <button class="anio-btn" data-anio="2024">2024</button>
-      <button class="anio-btn" data-anio="2023">2023</button>
-      <button class="anio-btn" data-anio="2022">2022</button>
-      <button class="anio-btn" data-anio="2019">2019</button>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════════
+       EDICIÓN 2026
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="edicion" data-anio="2026" id="fiestas-2026">
+    <div class="container">
+
+      <div class="edicion-header">
+        <div class="edicion-anio-badge">2026</div>
+        <div class="edicion-meta">
+          <div class="edicion-meta-label">Fiestas patronales · Próxima edición</div>
+          <h2>Santiago y Santa Ana 2026</h2>
+          <div class="edicion-meta-dates">
+            <span class="edicion-fecha">📅 17 al 26 de julio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edicion-fiesta-box">
+        <div class="fiesta-tabs">
+          <button type="button" class="fiesta-tab-btn active" data-tab="programa">📋 Visualizar el programa</button>
+          <button type="button" class="fiesta-tab-btn" data-tab="cartel">🖼️ Visualizar el cartel</button>
+        </div>
+
+        <div class="fiesta-program" data-panel="programa">
+          <div class="program-timeline">
+            <div class="program-item">
+              <span class="program-time">Viernes 17 de julio</span>
+              <div class="program-events">
+                <span>19:00 · Comienza la novena</span>
+              </div>
+            </div>
+            <div class="program-item">
+              <span class="program-time">Viernes 24 de julio</span>
+              <div class="program-events">
+                <span>12:30 · Gincana</span>
+                <span>13:00 · Charla a cargo de Roberto Peso — La Aldea Negra (hechos escabrosos y leyendas oscuras de nuestro pueblo)</span>
+                <span>17:30 · Campeonato de pin-pon</span>
+                <span>19:00 · Lanzamiento de sartén</span>
+                <span>20:00 a 22:00 · DJ en la plaza (karaoke y bingo)</span>
+                <span>00:00 a 04:00 · DJ en la plaza</span>
+              </div>
+            </div>
+            <div class="program-item">
+              <span class="program-time">Sábado 25 de julio · Santiago</span>
+              <div class="program-events">
+                <span>12:30 · Misa y procesión</span>
+                <span>13:30 · Pasacalles a cargo de David y Diego</span>
+                <span>15:00 · Comida popular</span>
+                <span>17:00 · Campeonato de mus</span>
+                <span>19:00 · Degustación de choricillo a la sidra</span>
+                <span>20:00 a 22:00 · DJ en la plaza</span>
+                <span>21:00 · Bingo + disfraces infantiles</span>
+                <span>00:00 a 04:00 · DJ en la plaza</span>
+              </div>
+            </div>
+            <div class="program-item">
+              <span class="program-time">Domingo 26 de julio · Santa Ana</span>
+              <div class="program-events">
+                <span>12:30 · Misa y procesión</span>
+                <span>13:30 · Pasacalles a cargo de David, Diego y Enrique</span>
+                <span>17:00 · Campeonato de parchís</span>
+                <span>18:30 · Tinín "El Mago" — magia para todos</span>
+                <span>20:30 · Disfraces infantiles + chocolatada + entrega de premios</span>
+                <span>21:00 · Cena popular (pizzas y tortilla)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fiesta-panel-hidden" data-panel="cartel">
+          <img class="fiesta-cartel-img" src="assets/img/carteles/cartel-fiestas-2026.jpg" alt="Cartel Fiestas de Aldeanueva de Cameros 2026" loading="lazy" />
+          <a href="assets/img/carteles/cartel-fiestas-2026.jpg" class="btn btn-outline" download>📥 Descargar cartel</a>
+        </div>
+      </div>
+
+      <div class="edicion-galeria">
+        <div class="edicion-galeria-titulo">Fotos de la fiesta · 2026</div>
+        <div class="carousel-wrap">
+          <div class="carousel-track"></div>
+        </div>
+        <p class="carousel-empty" style="display:none;">Aún no hay fotos de esta edición. ¿Tienes alguna? <a href="index.html#contacto">Contáctanos</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
        EDICIÓN 2025
        ═══════════════════════════════════════════════════════════ -->
-  <section class="edicion edicion--dark" data-anio="2025" id="fiestas-2025">
+  <section class="edicion" data-anio="2025" id="fiestas-2025">
     <div class="container">
 
       <div class="edicion-header">
         <div class="edicion-anio-badge">2025</div>
         <div class="edicion-meta">
-          <div class="edicion-meta-label">Fiestas patronales · Edición más reciente</div>
-          <h2>Santiago y Santa Ana 2025</h2>
-          <div class="edicion-meta-dates">
-            <span class="edicion-fecha">📅 25 de julio · Santiago Apóstol</span>
-            <span class="edicion-fecha">📅 26 de julio · Santa Ana</span>
-          </div>
-          <div class="edicion-stats">
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">2</span>
-              <span class="edicion-stat-label">Días de fiesta</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">~60</span>
-              <span class="edicion-stat-label">Asistentes estimados</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">1</span>
-              <span class="edicion-stat-label">Actuación musical</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-body">
-        <div class="edicion-descripcion">
-          <p>Las fiestas de 2025 reunieron a vecinos y visitantes en una celebración marcada por el buen tiempo y la participación de todas las generaciones. La misa solemne del día de Santiago congregó a gran parte del pueblo en la Iglesia de Nuestra Señora del Valle, seguida de la tradicional procesión por las calles del casco histórico.</p>
-          <p>El día 26, la romería a la Ermita de Santa Ana contó con una nutrida participación. La comida popular en la plaza fue el punto álgido de la jornada, con platos tradicionales de la sierra camerana. Los juegos y actividades para los más pequeños mantuvieron la animación hasta bien entrada la tarde.</p>
-          <p>La verbena nocturna del día 25 contó con actuación en directo que mantuvo la plaza animada hasta las madrugada.</p>
-        </div>
-
-        <div>
-          <div class="actividades-titulo">Actividades realizadas</div>
-          <div class="actividades-grid">
-            <div class="actividad-item">
-              <span class="actividad-icon">⛪</span>
-              <div>
-                <h4>Misa solemne de Santiago</h4>
-                <p>Celebración en la Iglesia de Nuestra Señora del Valle con asistencia numerosa.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🚶</span>
-              <div>
-                <h4>Procesión patronal</h4>
-                <p>Procesión por el casco urbano con la imagen del Apóstol Santiago.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🎵</span>
-              <div>
-                <h4>Verbena y actuación en directo</h4>
-                <p>Música en la plaza con grupo de animación. Gran ambiente nocturno.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🏔️</span>
-              <div>
-                <h4>Romería a Santa Ana</h4>
-                <p>Subida a pie a la ermita barroca con misa y ofrenda floral.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🍽️</span>
-              <div>
-                <h4>Comida popular en la plaza</h4>
-                <p>Menú de la sierra con asado, ensalada riojana y postre tradicional.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🎮</span>
-              <div>
-                <h4>Juegos y actividades infantiles</h4>
-                <p>Juegos de plaza para niños y competición amistosa para adultos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-galeria">
-        <div class="edicion-galeria-titulo">Galería fotográfica · 2025</div>
-        <div class="fotos-grid">
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto procesión 2025</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto romería Santa Ana</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto comida popular</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto verbena nocturna</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       EDICIÓN 2024
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="edicion" data-anio="2024" id="fiestas-2024">
-    <div class="container">
-
-      <div class="edicion-header">
-        <div class="edicion-anio-badge">2024</div>
-        <div class="edicion-meta">
           <div class="edicion-meta-label">Fiestas patronales</div>
-          <h2>Santiago y Santa Ana 2024</h2>
+          <h2>Santiago, Santa Ana y Pantaleón 2025</h2>
           <div class="edicion-meta-dates">
-            <span class="edicion-fecha">📅 25 de julio · Santiago Apóstol</span>
-            <span class="edicion-fecha">📅 26 de julio · Santa Ana</span>
+            <span class="edicion-fecha">📅 17 al 27 de julio</span>
           </div>
-          <div class="edicion-stats">
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">2</span>
-              <span class="edicion-stat-label">Días de fiesta</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">~55</span>
-              <span class="edicion-stat-label">Asistentes estimados</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">1</span>
-              <span class="edicion-stat-label">Actuación musical</span>
-            </div>
-          </div>
+          <p class="edicion-nota">250 aniversario del inicio de la construcción de la Ermita de Santa Ana</p>
         </div>
       </div>
 
-      <div class="edicion-body">
-        <div class="edicion-descripcion">
-          <p>La edición de 2024 estuvo marcada por la renovación de algunas tradiciones y el entusiasmo de los más jóvenes por recuperar costumbres antiguas. La novena previa fue especialmente concurrida, con participación de familias venidas de fuera del pueblo para los días grandes.</p>
-          <p>Una de las novedades fue la incorporación de un pequeño mercado artesanal durante el día 25, con productos locales y de la sierra riojana que despertó interés entre los visitantes. La plaza fue el escenario de un concurso de baile regional que resultó todo un éxito.</p>
+      <div class="edicion-fiesta-box">
+        <div class="fiesta-tabs">
+          <button type="button" class="fiesta-tab-btn active" data-tab="programa">📋 Visualizar el programa</button>
+          <button type="button" class="fiesta-tab-btn" data-tab="cartel">🖼️ Visualizar el cartel</button>
         </div>
 
-        <div>
-          <div class="actividades-titulo">Actividades realizadas</div>
-          <div class="actividades-grid">
-            <div class="actividad-item">
-              <span class="actividad-icon">⛪</span>
-              <div>
-                <h4>Misa solemne y procesión</h4>
-                <p>Celebración litúrgica con mayor asistencia registrada en los últimos años.</p>
+        <div class="fiesta-program" data-panel="programa">
+          <div class="program-timeline">
+            <div class="program-item">
+              <span class="program-time">Jueves 17 de julio</span>
+              <div class="program-events">
+                <span>19:00 · Comienza la novena</span>
               </div>
             </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🛍️</span>
-              <div>
-                <h4>Mercado artesanal (novedad)</h4>
-                <p>Primera edición del mercado con productos locales y artesanía serrana.</p>
+            <div class="program-item">
+              <span class="program-time">Viernes 25 de julio · Santiago</span>
+              <div class="program-events">
+                <span>12:30 · Misa y procesión</span>
+                <span>17:30 · Campeonato de pin pon</span>
+                <span>19:00 · Lanzamiento de sartén</span>
+                <span>20:00 a 22:00 · DJ en la plaza</span>
+                <span>20:30 · Concurso de disfraces y chocolatada · Karaoke</span>
+                <span>00:00 a 04:00 · DJ en la plaza</span>
               </div>
             </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">💃</span>
-              <div>
-                <h4>Concurso de baile regional</h4>
-                <p>Competición amistosa de danzas tradicionales de La Rioja con tres parejas finalistas.</p>
+            <div class="program-item">
+              <span class="program-time">Sábado 26 de julio · Santa Ana</span>
+              <div class="program-events">
+                <span>12:30 · Misa y procesión</span>
+                <span>13:30 · Anecdotario "Historias de una Aldea" a cargo de nuestros aldeanos más longevos</span>
+                <span>15:00 · Comida popular (paella)</span>
+                <span>17:00 · Campeonato de mus</span>
+                <span>19:00 · Degustación de choricillo a la sidra</span>
+                <span>20:00 a 22:00 · DJ en la plaza</span>
+                <span>21:00 · Bingo en la plaza</span>
+                <span>00:00 a 04:00 · DJ en la plaza</span>
               </div>
             </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🏔️</span>
-              <div>
-                <h4>Romería a Santa Ana</h4>
-                <p>Subida a la ermita con misa y celebración en el entorno del pórtico.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🍽️</span>
-              <div>
-                <h4>Comida popular</h4>
-                <p>Asado de cordero y menú de la sierra para todos los asistentes.</p>
+            <div class="program-item">
+              <span class="program-time">Domingo 27 de julio · Pantaleón</span>
+              <div class="program-events">
+                <span>12:00 · Misa</span>
+                <span>12:30 · Gymkana infantil</span>
+                <span>13:00 · "Aldeanueva 1775" — charla en la iglesia</span>
+                <span>13:30 · Pasacalles a cargo de David y Diego (música popular y zurracapote aldeano)</span>
+                <span>17:00 · Campeonato de parchís</span>
+                <span>18:30 · "Magomino" — espectáculo teatral y de magia</span>
+                <span>20:00 · Sorteo de los números de la rifa</span>
+                <span>21:00 · Cena popular (tortillas y pizzas)</span>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="fiesta-panel-hidden" data-panel="cartel">
+          <img class="fiesta-cartel-img" src="assets/img/carteles/cartel-fiestas-2025.png" alt="Cartel Fiestas de Aldeanueva de Cameros 2025" loading="lazy" />
+          <a href="assets/img/carteles/cartel-fiestas-2025.png" class="btn btn-outline" download>📥 Descargar cartel</a>
         </div>
       </div>
 
       <div class="edicion-galeria">
-        <div class="edicion-galeria-titulo">Galería fotográfica · 2024</div>
-        <div class="fotos-grid">
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto misa solemne 2024</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto mercado artesanal</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto concurso de baile</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto comida popular</span>
-          </div>
+        <div class="edicion-galeria-titulo">Fotos de la fiesta · 2025</div>
+        <div class="carousel-wrap">
+          <div class="carousel-track"></div>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       EDICIÓN 2023
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="edicion edicion--dark" data-anio="2023" id="fiestas-2023">
-    <div class="container">
-
-      <div class="edicion-header">
-        <div class="edicion-anio-badge">2023</div>
-        <div class="edicion-meta">
-          <div class="edicion-meta-label">Fiestas patronales</div>
-          <h2>Santiago y Santa Ana 2023</h2>
-          <div class="edicion-meta-dates">
-            <span class="edicion-fecha">📅 25 de julio · Santiago Apóstol</span>
-            <span class="edicion-fecha">📅 26 de julio · Santa Ana</span>
-          </div>
-          <div class="edicion-stats">
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">2</span>
-              <span class="edicion-stat-label">Días de fiesta</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">~50</span>
-              <span class="edicion-stat-label">Asistentes estimados</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">50</span>
-              <span class="edicion-stat-label">Años de la Asociación</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-body">
-        <div class="edicion-descripcion">
-          <p>Las fiestas de 2023 fueron especialmente emotivas al coincidir con el 50 aniversario de la Asociación de Vecinos. La celebración incorporó actos conmemorativos que repasaron la historia de la asociación y su papel en la preservación del patrimonio y la comunidad del pueblo.</p>
-          <p>Se realizó una exposición fotográfica con imágenes históricas del pueblo y de las fiestas de décadas anteriores que generó gran interés. Muchos ex-vecinos se desplazaron expresamente desde distintos puntos de España para participar en esta edición especial.</p>
-          <p>El acto de homenaje a los socios fundadores fue el momento más emocionante de las fiestas, con reconocimiento a las familias que mantuvieron viva la asociación en sus momentos más difíciles.</p>
-        </div>
-
-        <div>
-          <div class="actividades-titulo">Actividades realizadas</div>
-          <div class="actividades-grid">
-            <div class="actividad-item">
-              <span class="actividad-icon">🎊</span>
-              <div>
-                <h4>50 aniversario de la Asociación</h4>
-                <p>Acto conmemorativo con presencia de socios fundadores y autoridades locales.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🖼️</span>
-              <div>
-                <h4>Exposición fotográfica histórica</h4>
-                <p>Imágenes del pueblo y las fiestas desde los años 70 hasta la actualidad.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">⛪</span>
-              <div>
-                <h4>Misa solemne y procesión</h4>
-                <p>Celebración con homilía especial por el aniversario de la asociación.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🏅</span>
-              <div>
-                <h4>Homenaje a socios fundadores</h4>
-                <p>Reconocimiento a las familias que crearon y sostuvieron la asociación.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🏔️</span>
-              <div>
-                <h4>Romería multitudinaria a Santa Ana</h4>
-                <p>Récord de asistencia en la romería, con más de 70 personas en la ermita.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🎵</span>
-              <div>
-                <h4>Concierto especial aniversario</h4>
-                <p>Actuación musical temática con canciones tradicionales de la sierra.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-galeria">
-        <div class="edicion-galeria-titulo">Galería fotográfica · 2023</div>
-        <div class="fotos-grid">
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Exposición fotográfica</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Acto 50 aniversario</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Romería a Santa Ana</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Homenaje fundadores</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       EDICIÓN 2022
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="edicion" data-anio="2022" id="fiestas-2022">
-    <div class="container">
-
-      <div class="edicion-header">
-        <div class="edicion-anio-badge">2022</div>
-        <div class="edicion-meta">
-          <div class="edicion-meta-label">Fiestas patronales · Vuelta a la normalidad</div>
-          <h2>Santiago y Santa Ana 2022</h2>
-          <div class="edicion-meta-dates">
-            <span class="edicion-fecha">📅 25 de julio · Santiago Apóstol</span>
-            <span class="edicion-fecha">📅 26 de julio · Santa Ana</span>
-          </div>
-          <div class="edicion-stats">
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">2</span>
-              <span class="edicion-stat-label">Días de fiesta</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">+40</span>
-              <span class="edicion-stat-label">Asistentes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-body">
-        <div class="edicion-descripcion">
-          <p>Tras las restricciones de los años anteriores por la pandemia, las fiestas de 2022 supusieron la plena vuelta a la normalidad festiva del pueblo. La alegría de poder celebrar sin límites de aforo ni restricciones llenó cada acto de una energía especial.</p>
-          <p>Se recuperaron tradiciones que habían tenido que suspenderse, y la respuesta de vecinos y familiares fue masiva. Fue el primer año en que la verbena pudo celebrarse sin restricciones horarias desde 2019, y el ambiente se prolongó hasta bien entrada la noche.</p>
-        </div>
-
-        <div>
-          <div class="actividades-titulo">Actividades realizadas</div>
-          <div class="actividades-grid">
-            <div class="actividad-item">
-              <span class="actividad-icon">⛪</span>
-              <div>
-                <h4>Misa solemne y procesión</h4>
-                <p>Primera procesión sin restricciones desde 2019. Gran participación.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🎵</span>
-              <div>
-                <h4>Verbena sin restricciones</h4>
-                <p>Primera verbena nocturna completa desde la pandemia. Noche de fiesta hasta el amanecer.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🏔️</span>
-              <div>
-                <h4>Romería a Santa Ana</h4>
-                <p>Subida a la ermita con récord de participación tras los años de pandemia.</p>
-              </div>
-            </div>
-            <div class="actividad-item">
-              <span class="actividad-icon">🍽️</span>
-              <div>
-                <h4>Comida popular ampliada</h4>
-                <p>Menú especial para celebrar la vuelta a la normalidad. Más de 40 comensales.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-galeria">
-        <div class="edicion-galeria-titulo">Galería fotográfica · 2022</div>
-        <div class="fotos-grid fotos-grid--3">
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto fiestas 2022</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto fiestas 2022</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto fiestas 2022</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════
-       EDICIÓN 2019
-       ═══════════════════════════════════════════════════════════ -->
-  <section class="edicion edicion--dark" data-anio="2019" id="fiestas-2019">
-    <div class="container">
-
-      <div class="edicion-header">
-        <div class="edicion-anio-badge">2019</div>
-        <div class="edicion-meta">
-          <div class="edicion-meta-label">Fiestas patronales · Última prepandemia</div>
-          <h2>Santiago y Santa Ana 2019</h2>
-          <div class="edicion-meta-dates">
-            <span class="edicion-fecha">📅 25 de julio · Santiago Apóstol</span>
-            <span class="edicion-fecha">📅 26 de julio · Santa Ana</span>
-          </div>
-          <div class="edicion-stats">
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">2</span>
-              <span class="edicion-stat-label">Días de fiesta</span>
-            </div>
-            <div class="edicion-stat-sep"></div>
-            <div class="edicion-stat">
-              <span class="edicion-stat-num">~45</span>
-              <span class="edicion-stat-label">Asistentes estimados</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edicion-body edicion-body--full">
-        <div class="edicion-descripcion">
-          <p>Las fiestas de 2019 fueron las últimas antes del paréntesis provocado por la pandemia de COVID-19. En aquel momento nadie podía imaginar que serían las últimas de plena normalidad durante varios años. Los vecinos recuerdan aquellas fiestas con especial cariño precisamente por ese motivo.</p>
-          <p>El programa siguió los cauces habituales: misa, procesión, verbena el día 25; y romería, misa en la ermita y comida popular el día 26. La participación fue buena y el ambiente inmejorable, como correspondía a unas fiestas sin ningún tipo de restricción.</p>
-        </div>
-      </div>
-
-      <div class="edicion-galeria">
-        <div class="edicion-galeria-titulo">Galería fotográfica · 2019</div>
-        <div class="fotos-grid fotos-grid--2">
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto fiestas 2019</span>
-          </div>
-          <div class="foto-placeholder">
-            <span class="foto-placeholder-icon">📷</span>
-            <span>Foto fiestas 2019</span>
-          </div>
-        </div>
+        <p class="carousel-empty" style="display:none;">Aún no hay fotos de esta edición. ¿Tienes alguna? <a href="index.html#contacto">Contáctanos</a>.</p>
       </div>
 
     </div>
@@ -816,23 +458,39 @@
       });
     });
 
-    // ── Lightbox para fotos reales ────────────────────────────
+    // ── Pestañas programa / cartel (una por edición) ──────────
+    document.querySelectorAll('.edicion').forEach(edicion => {
+      const tabBtns = edicion.querySelectorAll('.fiesta-tab-btn');
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          edicion.querySelectorAll('[data-panel]').forEach(panel => {
+            panel.classList.toggle('fiesta-panel-hidden', panel.dataset.panel !== btn.dataset.tab);
+          });
+        });
+      });
+    });
+
+    // ── Lightbox para fotos (delegado: cartel + carrusel) ─────
     const lightbox      = document.getElementById('lightbox');
     const lightboxImg   = document.getElementById('lightboxImg');
     const lightboxCap   = document.getElementById('lightboxCaption');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    document.querySelectorAll('.foto-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        const cap = item.querySelector('.foto-caption');
-        if (!img) return;
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxCap.textContent = cap ? cap.textContent : '';
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
+    document.addEventListener('click', e => {
+      const cartel = e.target.closest('.fiesta-cartel-img');
+      const photo  = e.target.closest('.carousel-photo');
+      const target = cartel || photo;
+      if (!target) return;
+      const img = target.tagName === 'IMG' ? target : target.querySelector('img');
+      const cap = target.querySelector('.carousel-caption');
+      if (!img) return;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = cap ? cap.textContent : img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
@@ -843,6 +501,64 @@
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
     }
+
+    // ── Carrusel infinito de fotos por año ─────────────────────
+    async function initCarousels() {
+      let photos = [];
+      try {
+        const res = await fetch('assets/data/galeria.json', { cache: 'no-cache' });
+        if (res.ok) photos = await res.json();
+      } catch (err) {
+        console.error('No se pudieron cargar las fotos:', err);
+      }
+      const fiestaPhotos = Array.isArray(photos) ? photos.filter(p => p.categoria === 'fiestas') : [];
+
+      document.querySelectorAll('.edicion').forEach(edicion => {
+        const anio  = Number(edicion.dataset.anio);
+        const wrap  = edicion.querySelector('.carousel-wrap');
+        const track = edicion.querySelector('.carousel-track');
+        const empty = edicion.querySelector('.carousel-empty');
+        if (!track) return;
+
+        const items = fiestaPhotos.filter(p => Number(p.anio) === anio);
+
+        if (!items.length) {
+          wrap.style.display = 'none';
+          if (empty) empty.style.display = '';
+          return;
+        }
+        if (empty) empty.style.display = 'none';
+
+        const buildPhoto = p => {
+          const fig = document.createElement('div');
+          fig.className = 'carousel-photo';
+          const img = document.createElement('img');
+          img.src = p.img;
+          img.alt = p.alt || p.caption || '';
+          img.loading = 'lazy';
+          fig.appendChild(img);
+          if (p.caption) {
+            const cap = document.createElement('span');
+            cap.className = 'carousel-caption';
+            cap.textContent = p.caption;
+            fig.appendChild(cap);
+          }
+          return fig;
+        };
+
+        if (items.length === 1) {
+          // Una sola foto: se muestra fija, sin desplazamiento.
+          track.style.animation = 'none';
+          track.appendChild(buildPhoto(items[0]));
+        } else {
+          // Se duplica la lista una vez: con translateX(-50%) el bucle es perfecto.
+          [...items, ...items].forEach(p => track.appendChild(buildPhoto(p)));
+          track.style.animationDuration = Math.max(items.length * 6, 16) + 's';
+        }
+      });
+    }
+
+    initCarousels();
   </script>
 
   <script src="assets/js/site-config.js" defer></script>

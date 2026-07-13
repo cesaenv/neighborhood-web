@@ -1,14 +1,15 @@
 /* ============================================================
    Tienda (merchandising) — dynamic render from JSON
    Source of truth: assets/data/tienda.json
-   Products are inserted before the fixed "contact us" CTA card.
    ============================================================ */
 (function () {
   'use strict';
 
   const GRID_ID = 'merchGrid';
   const DATA_URL = 'assets/data/tienda.json';
+  const CONFIG_URL = 'assets/data/config.json';
   const VALID_COLORS = ['red', 'green', 'blue', 'amber', 'purple'];
+  const DEFAULT_EMAIL = 'asociacion@aldeanuevadecameros.es';
 
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -57,7 +58,15 @@
     body.appendChild(el('p', null, product.descripcion || ''));
 
     const meta = el('div', 'merch-meta');
-    meta.appendChild(el('span', 'merch-price', product.precio || 'Consultar precio'));
+    if (product.precio) {
+      meta.appendChild(el('span', 'merch-price', product.precio));
+    } else {
+      const subject = encodeURIComponent(`Consulta de precio: ${product.titulo || ''}`);
+      const mailBody = encodeURIComponent(`Hola,\n\nMe gustaría consultar el precio y disponibilidad de: ${product.titulo || ''}\n\n`);
+      const link = el('a', 'merch-price merch-price--link', 'Consultar precio');
+      link.href = `mailto:${DEFAULT_EMAIL}?subject=${subject}&body=${mailBody}`;
+      meta.appendChild(link);
+    }
     if (product.badge) {
       const isLimited = /limitad/i.test(product.badge);
       meta.appendChild(el('span', 'merch-badge' + (isLimited ? ' merch-badge--limited' : ''), product.badge));
@@ -70,7 +79,6 @@
   async function init() {
     const grid = document.getElementById(GRID_ID);
     if (!grid) return;
-    const ctaCard = grid.querySelector('.merch-card--cta');
 
     let products;
     try {
@@ -83,13 +91,24 @@
     }
     if (!Array.isArray(products)) return;
 
-    grid.querySelectorAll('.merch-card:not(.merch-card--cta)').forEach(n => n.remove());
+    grid.querySelectorAll('.merch-card').forEach(n => n.remove());
     const frag = document.createDocumentFragment();
     products.forEach(p => frag.appendChild(buildCard(p)));
-    if (ctaCard) {
-      grid.insertBefore(frag, ctaCard);
-    } else {
-      grid.appendChild(frag);
+    grid.appendChild(frag);
+
+    try {
+      const res = await fetch(CONFIG_URL, { cache: 'no-cache' });
+      if (res.ok) {
+        const config = await res.json();
+        if (config.contactoEmail) {
+          grid.querySelectorAll(`a[href^="mailto:${DEFAULT_EMAIL}"]`).forEach(a => {
+            const url = new URL(a.href);
+            a.href = `mailto:${config.contactoEmail}${url.search}`;
+          });
+        }
+      }
+    } catch (err) {
+      console.error('Could not load site config:', err);
     }
   }
 

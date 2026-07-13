@@ -25,7 +25,7 @@
       dropdown: [
         { href: '#fiestas', label: 'Programa de fiestas' },
         { divider: true },
-        { href: 'historico-fiestas.html', label: '📅 Histórico de fiestas', highlight: true },
+        { href: 'historico-fiestas.html', label: '📅 Cartel y programa', highlight: true },
       ],
     },
     {
@@ -45,7 +45,6 @@
         { href: '#contacto', label: 'Contacto' },
         { divider: true },
         { href: 'merchandising.html', label: '🛍️ Tienda', highlight: true },
-        { href: 'documentos.html', label: '📄 Documentos', highlight: true },
       ],
     },
   ];

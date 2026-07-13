@@ -50,15 +50,15 @@
     "descripcion": "Gorra bordada con el logo de la asociación. Perfecta para las rutas por la sierra camerana.",
     "emoji": "🧢",
     "color": "amber",
-    "badge": null,
+    "badge": "Próximamente",
     "precio": null
   },
   {
-    "id": "lamina-ilustrada-pueblo",
-    "categoria": "Arte",
-    "titulo": "Lámina ilustrada del pueblo",
-    "descripcion": "Impresión artística en papel de alta calidad con ilustración del casco histórico, la ermita y el puente medieval.",
-    "emoji": "🖼️",
+    "id": "iman-pueblo",
+    "categoria": "Complementos",
+    "titulo": "Imán del pueblo",
+    "descripcion": "Imán ilustrado con el casco histórico, la ermita y el puente medieval. Un pequeño recuerdo para la nevera.",
+    "emoji": "🧲",
     "color": "purple",
     "badge": "Edición limitada",
     "precio": null

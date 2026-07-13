@@ -38,22 +38,28 @@
 
     if (photo.caption) real.appendChild(el('div', 'galeria-caption', photo.caption));
     item.appendChild(real);
+    item.dataset.destacada = photo.destacada ? '1' : '0';
     return item;
   }
 
-  /* --- Category filter ---------------------------------------- */
+  /* --- Category filter -----------------------------------------
+     "Todos" solo muestra las fotos marcadas como destacadas en el
+     JSON, para no saturar la vista general con el archivo completo.
+     Cada categoría concreta sigue mostrando todas sus fotos. -------- */
+  function applyFilter(filter) {
+    document.querySelectorAll('#' + GRID_ID + ' .galeria-item').forEach(it => {
+      const show = filter === 'all' ? it.dataset.destacada === '1' : it.dataset.cat === filter;
+      it.classList.toggle('hidden', !show);
+    });
+  }
+
   function bindFilter() {
     const filterBtns = document.querySelectorAll('.galeria-filters .filter-btn');
-    const items = document.querySelectorAll('#' + GRID_ID + ' .galeria-item');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        items.forEach(it => {
-          const show = filter === 'all' || it.dataset.cat === filter;
-          it.classList.toggle('hidden', !show);
-        });
+        applyFilter(btn.dataset.filter);
       });
     });
   }
@@ -100,6 +106,9 @@
     photos.forEach(p => frag.appendChild(buildItem(p)));
     grid.innerHTML = '';
     grid.appendChild(frag);
+
+    const activeBtn = document.querySelector('.galeria-filters .filter-btn.active');
+    applyFilter(activeBtn ? activeBtn.dataset.filter : 'all');
 
     bindFilter();
     bindLightbox();

@@ -17,7 +17,6 @@
     { href: 'index.html#naturaleza', label: 'Naturaleza' },
     { href: 'index.html#galeria', label: 'Galería' },
     { href: 'merchandising.html', label: 'Tienda' },
-    { href: 'documentos.html', label: 'Documentos' },
     { href: 'index.html#contacto', label: 'Contacto' },
   ];
 
@@ -35,13 +34,10 @@
 
   const PAGE_STATS = {
     'historico-fiestas.html': {
-      title: 'Ediciones en el archivo',
+      title: 'Fiestas de Aldeanueva',
       items: [
-        ['2025', 'Santiago y Santa Ana'],
-        ['2024', 'Mercado artesanal'],
-        ['2023', '50 Aniv. Asociación'],
-        ['2022', 'Vuelta a la normalidad'],
-        ['2019', 'Última prepandemia'],
+        ['2026', 'Santiago y Santa Ana'],
+        ['2025', 'Santiago, Sta. Ana y Pantaleón'],
       ],
     },
   };

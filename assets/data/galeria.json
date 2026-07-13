@@ -2,6 +2,8 @@
   {
     "id": "galeria-fiestas-santa-ana-2025",
     "categoria": "fiestas",
+    "anio": 2025,
+    "destacada": true,
     "img": "assets/img/galeria/galeria-fiestas-santa-ana-2025.jpg",
     "alt": "Fiestas Santa Ana 2025",
     "caption": "Fiestas Santa Ana 2025",
@@ -47,6 +49,7 @@
   {
     "id": "galeria-primavera-puente",
     "categoria": "vida",
+    "destacada": true,
     "img": "assets/img/puente2.jpg",
     "alt": "Puente y casas en primavera",
     "caption": "Primavera en Aldeanueva · Puente medieval y casas de piedra",
@@ -110,6 +113,7 @@
   {
     "id": "galeria-arroyo-corazon-pueblo",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/arroyo.jpg",
     "alt": "Arroyo y puente medieval",
     "caption": "El arroyo en el corazón del pueblo",
@@ -137,6 +141,7 @@
   {
     "id": "galeria-casa-tradicional-serrana",
     "categoria": "patrimonio",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-casa-tradicional-serrana.jpg",
     "alt": "Casa tradicional serrana",
     "caption": "Casa tradicional de arquitectura serrana",
@@ -146,6 +151,7 @@
   {
     "id": "galeria-cascada-arroyo",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-cascada-arroyo.jpg",
     "alt": "Cascada en el arroyo",
     "caption": "Pequeña cascada en el arroyo",
@@ -155,6 +161,7 @@
   {
     "id": "galeria-atardecer-casco-historico",
     "categoria": "patrimonio",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-atardecer-casco-historico.jpg",
     "alt": "Atardecer en el casco histórico",
     "caption": "Atardecer en el casco histórico",
@@ -182,6 +189,7 @@
   {
     "id": "galeria-atardecer-sierra",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-atardecer-sierra.jpg",
     "alt": "Atardecer sobre la Sierra de Cameros",
     "caption": "Atardecer sobre la Sierra de Cameros",
@@ -236,6 +244,7 @@
   {
     "id": "galeria-torre-iglesia",
     "categoria": "patrimonio",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-torre-iglesia.jpg",
     "alt": "Torre de la iglesia",
     "caption": "Torre de la iglesia al atardecer",
@@ -245,6 +254,7 @@
   {
     "id": "galeria-calle-atardecer",
     "categoria": "vida",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-calle-atardecer.jpg",
     "alt": "Calle del pueblo al atardecer",
     "caption": "Calle del pueblo al atardecer",
@@ -254,6 +264,7 @@
   {
     "id": "galeria-vista-panoramica-pueblo",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-vista-panoramica-pueblo.jpg",
     "alt": "Vista panorámica del pueblo entre montañas",
     "caption": "Vista panorámica del pueblo entre montañas",
@@ -272,6 +283,7 @@
   {
     "id": "galeria-nieve-en-el-pueblo",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-nieve-en-el-pueblo.jpg",
     "alt": "Nieve en el pueblo",
     "caption": "Nieve en el pueblo",
@@ -281,6 +293,7 @@
   {
     "id": "galeria-cascada-invierno",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/galeria/galeria-cascada-invierno.jpg",
     "alt": "Cascada en invierno",
     "caption": "Cascada en invierno",
@@ -587,6 +600,7 @@
   {
     "id": "galeria-vista-aerea",
     "categoria": "naturaleza",
+    "destacada": true,
     "img": "assets/img/aerea.jpg",
     "alt": "Vista aérea de Aldeanueva de Cameros",
     "caption": "Vista aérea del pueblo",
